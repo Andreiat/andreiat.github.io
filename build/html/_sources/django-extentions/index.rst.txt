@@ -1,0 +1,22 @@
+
+=================
+DJANGO-EXTENTIONS
+=================
+
+
+.. toctree::
+   :maxdepth: 2
+
+   django-rest-framework/index
+   django-precise-bbcode
+   django-taggit
+   easy-thumbnails
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

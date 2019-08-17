@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dropable &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Effects" href="effects.html" />
+    <link rel="prev" title="draggable - перетаскиваемый объект" href="draggable.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">JQUERY</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../jquery.html">jQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../selectors.html">Селекторы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../base.html">Базовые свойства и методы объекта jQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getters.html">Методы выбора</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setter.html">Методы вставки и удаления</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events.html">Методы для работы с событиями</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation.html">Методы анимации</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ajax.html">Методы ajax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../methods.html">Вспомогательные функции библиотеки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Deffered.html">Deffered</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">jQueryUI</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="accordion.html">accordion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autocomplete.html">autocomplete - автозаполнение текстовых полей</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button.html">button - Виджет кнопка</a></li>
+<li class="toctree-l3"><a class="reference internal" href="buttonset.html">buttonset - создает группу кнопок</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datepicker.html">datepicker - виджет Datepicker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dialog.html">dialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="draggable.html">draggable - перетаскиваемый объект</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">dropable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="effects.html">Effects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="progressbar.html">progressbar - виджет прогрессбара</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resizable.html">resizable - элемент с изменяемым размером</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selectable.html">selectable - выбираемый элемент</a></li>
+<li class="toctree-l3"><a class="reference internal" href="slider.html">slider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sortable.html">sortable - сортируемый элемент</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tabs.html">tabs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../jquerymobile/index.html">jQuery Mobile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jquery_validation/index.html">jqueryvalidation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">JQUERY</a> &raquo;</li>
+        
+          <li><a href="index.html">jQueryUI</a> &raquo;</li>
+        
+      <li>dropable</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/jquery/jqueryui/dropable.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dropable">
+<h1>dropable<a class="headerlink" href="#dropable" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Создание области падания элементов (например, у вас есть корзина товаров в интернет магазине, куда будут падать элементы, перенесённые в необходимую область мышкой)</p>
+<dl class="function">
+<dt>
+<code class="sig-name descname">dropable</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">methodName</em>, <em class="sig-param">option</em>, <em class="sig-param">value</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="sig-name descname">dropable</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">methodName</em>, <em class="sig-param">param_obj</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<code class="sig-name descname">dropable</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">param_obj</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#dropable&#39;</span><span class="p">).</span><span class="nx">dropable</span><span class="p">({</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<ul>
+<li><p><cite>methodName</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>destroy</cite> - Полностью удаляет функциональность взаимодействия Droppable из эле­мента</p></li>
+<li><p><cite>disable</cite> - Временно отключает функциональность взаимодействия Droppable для базового элемента</p></li>
+<li><p><cite>enable</cite> - Включает ранее отключенную функциональность взаимодействия Droppable для базового элемента</p></li>
+<li><p><cite>option</cite> - Позволяет получить или изменить значение одной или нескольких опций</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><cite>param_obj</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>accept</cite> - Сужает множество перемещаемых элементов, на которые будет реагировать прини­мающий элемент. Значение по умолчанию — *; ему соответствует любой элемент</p></li>
+<li><p><cite>activate</cite> - Происходит, когда пользователь начинает перетаскивать перемещаемый элемент</p></li>
+<li><p><cite>activeClass</cite> - Определяет класс, который будет присваиваться в ответ на событие activate и уда­ляться В ответ на СОбытие deactivate</p></li>
+<li><p><cite>create</cite> - Происходит в момент применения взаимодействия Draggable к элементу</p></li>
+<li><p><cite>deactivate</cite> - Происходит, когда пользователь прекращает перетаскивать перемещаемый элемент</p></li>
+<li><p><cite>disabled</cite> - Если эта опция равна true, то функциональность взаимодействия Droppable первона­чально отключена. Значение по умолчанию — false</p></li>
+<li><p><cite>drop</cite> - Происходит, когда пользователь оставляет перемещаемый элемент на принимающем элементе</p></li>
+<li><p><cite>fit</cite> - Перетаскиваемый элемент должен полностью находиться в области принимающего элемента</p></li>
+<li><p><cite>helper</cite></p></li>
+<li><p><cite>hoverClass</cite> - Определяет класс, который будет присваиваться в ответ на событие over и удалятьсяв ответ на событие out</p></li>
+<li><p><cite>intersect</cite> - Перетаскиваемый элемент должен перекрываться с принимающим элементом по крайней мере наполовину. Это значение используется по умолчанию</p></li>
+<li><p><cite>out</cite> - Происходит, когда пользователь перетаскивает перемещаемый элемент за пределы принимающего элемента</p></li>
+<li><p><cite>over</cite> - Происходит, когда пользователь перетаскивает перемещаемый элемент над прини­мающим элементом (но при условии, что кнопка мыши еще не была отпущена)</p></li>
+<li><p><cite>pointer</cite> - Указатель мыши должен находиться в области принимающего элемента, независимо от того, где именно перетаскиваемый элемент был захвачен пользователем</p></li>
+<li><p><cite>scope</cite></p></li>
+<li><p><cite>snap</cite></p></li>
+<li><p><cite>snapMode</cite></p></li>
+<li><p><cite>snapTolerance</cite></p></li>
+<li><p><cite>tolerance</cite> - Определяет минимальную степень перекрывания, при которой происходит событие over</p></li>
+<li><p><cite>touch</cite> - Означает любую степень перекрывания перетаскиваемого и принимающего элементов</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="effects.html" class="btn btn-neutral float-right" title="Effects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="draggable.html" class="btn btn-neutral float-left" title="draggable - перетаскиваемый объект" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

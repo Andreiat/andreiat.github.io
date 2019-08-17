@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Формы &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Наборы форм" href="formsets.html" />
+    <link rel="prev" title="Формы" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">DJANGO</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../settings.html">Конфигурирование проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/index.html">Модель</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views/index.html">Представления</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Формы</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Формы</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#form">Form</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modelform">ModelForm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="formsets.html">Наборы форм</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fields.html">Поля формы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="widgets.html">Виджеты</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../templates.html">Шаблоны</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../urls.html">Роутинг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signals.html">Сигналы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contrib/index.html">Батарейки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auth/index.html">Пользователи, права, авторизация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli.html">Консольные команды</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Другое</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">DJANGO</a> &raquo;</li>
+        
+          <li><a href="index.html">Формы</a> &raquo;</li>
+        
+      <li>Формы</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/django/forms/forms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Формы<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># forms.py</span>
+<span class="c1"># описание форм</span>
+
+<span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+
+<span class="k">class</span> <span class="nc">SomeForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">PasswordInput</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">DetailsForm2</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">upgrade</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;upgrade&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">upgrade</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s2">&quot;upgrade&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Upgrade&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># обработка форм в представлениях</span>
+
+<span class="kn">from</span> <span class="nn">.forms</span> <span class="kn">import</span> <span class="n">EmailPostForm</span>
+
+<span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">post_id</span><span class="p">):</span>
+
+    <span class="n">post</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Post</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">post_id</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">EmailPostForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">email</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">EmailPostForm</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span>
+        <span class="n">request</span><span class="p">,</span>
+        <span class="s1">&#39;index.html&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;post&#39;</span><span class="p">:</span> <span class="n">post</span><span class="p">,</span>
+            <span class="s1">&#39;form&#39;</span><span class="p">:</span> <span class="n">form</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- отображение форм в шаблонах --&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;.&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;.&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+    {% csrf_token %}
+    {% for field in form %}
+        {{ field }}
+        {{ field.errors }} - html-код, список ошибок поля
+        {{ field.help_text }} - дополнительный текст
+        {{ field.is_hidden }} - булево, поле скрыто
+        {{ field.label }} - текст надписи
+        {{ field.label_tag }} - html-код, записи
+        {{ field.name }} - имя поля
+    {% endfor %}
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="form">
+<h2>Form<a class="headerlink" href="#form" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.Form">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">Form</code><a class="headerlink" href="#django.forms.Form" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовая форма</p>
+<dl class="attribute">
+<dt id="django.forms.Form.cleaned_data">
+<code class="sig-name descname">cleaned_data</code><a class="headerlink" href="#django.forms.Form.cleaned_data" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Данные формы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.forms.Form.is_bound">
+<code class="sig-name descname">is_bound</code><a class="headerlink" href="#django.forms.Form.is_bound" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает булево, заполнена ли форма</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.forms.Form.required_css_class">
+<code class="sig-name descname">required_css_class</code><a class="headerlink" href="#django.forms.Form.required_css_class" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Строка, название класса стиля обязательного поля формы</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+
+    <span class="n">required_css_class</span> <span class="o">=</span> <span class="s1">&#39;required&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.forms.Form.error_css_class">
+<code class="sig-name descname">error_css_class</code><a class="headerlink" href="#django.forms.Form.error_css_class" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Строка, название класса стиля поля формы с ошибкой</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+
+    <span class="n">error_css_class</span> <span class="o">=</span> <span class="s1">&#39;error&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.forms.Form.as_p">
+<code class="sig-name descname">as_p</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.Form.as_p" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, HTML форма используя параграфы p</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">form</span><span class="o">.</span><span class="n">as_p</span><span class="p">()</span>
+<span class="c1"># &lt;p&gt;&lt;label ... /&gt;&lt;input ... /&gt;&lt;/p&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.forms.Form.as_table">
+<code class="sig-name descname">as_table</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.Form.as_table" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, HTML форма используя таблицы table</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">form</span><span class="o">.</span><span class="n">as_p</span><span class="p">()</span>
+<span class="c1"># &lt;tr&gt;&lt;th&gt;&lt;label ... /&gt;&lt;/th&gt;&lt;td&gt;&lt;input ... /&gt;&lt;/td&gt;&lt;/tr&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.forms.Form.as_ul">
+<code class="sig-name descname">as_ul</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.Form.as_ul" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, HTML форма используя списки ul</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">form</span><span class="o">.</span><span class="n">as_p</span><span class="p">()</span>
+<span class="c1"># &lt;li&gt;&lt;label ... /&gt;&lt;input ... /&gt;&lt;/li&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.forms.Form.clean">
+<code class="sig-name descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.Form.clean" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Валидирует всю форму.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeForm</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cd</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">cd</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">cd</span><span class="p">[</span><span class="s1">&#39;password2&#39;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">forms</span><span class="o">.</span><span class="n">ValidationError</span><span class="p">(</span><span class="s1">&#39;Passwords don</span><span class="se">\&#39;</span><span class="s1">t match.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cd</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.forms.Form.clean_some_field">
+<code class="sig-name descname">clean_some_field</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.Form.clean_some_field" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Валидирует конкретное поле формы.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeForm</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="nf">clean_password2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span>
+        <span class="k">if</span> <span class="n">cd</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">cd</span><span class="p">[</span><span class="s1">&#39;password2&#39;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">forms</span><span class="o">.</span><span class="n">ValidationError</span><span class="p">(</span><span class="s1">&#39;Passwords don</span><span class="se">\&#39;</span><span class="s1">t match.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cd</span><span class="p">[</span><span class="s1">&#39;password2&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.forms.Form.hidden_fields">
+<code class="sig-name descname">hidden_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.Form.hidden_fields" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список всех не видимых полей формы</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.forms.Form.is_valid">
+<code class="sig-name descname">is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.Form.is_valid" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает булево, валидные ли данным на форме</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.forms.Form.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">commit=True</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.Form.save" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сохраняет объект в БД и возвращает его</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.forms.Form.visible_fields">
+<code class="sig-name descname">visible_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.Form.visible_fields" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список всех видимых полей формы</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="modelform">
+<h2>ModelForm<a class="headerlink" href="#modelform" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.ModelForm">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">ModelForm</code><a class="headerlink" href="#django.forms.ModelForm" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Форма по модели, аналогичен форме <a class="reference internal" href="#django.forms.Form" title="django.forms.Form"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.Form</span></code></a>,
+но автоматический работает с указанной моделью.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+
+        <span class="c1"># модель, по которой будет строиться форма</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">SomeModel</span>
+
+        <span class="c1"># поля, которые должны быть в форме</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">()</span>
+
+        <span class="c1"># поля, которых не должно быть в форме</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">()</span>
+
+        <span class="c1"># словарь, надписи для элементов</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;field_name&#39;</span><span class="p">:</span> <span class="s1">&#39;label&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># словарь, вспомогательный текст для элементов</span>
+        <span class="n">help_texts</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;field_name&#39;</span><span class="p">:</span> <span class="s1">&#39;help_text&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># словарь, виджеты для элементов</span>
+        <span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;field_name&#39;</span><span class="p">:</span> <span class="n">forms</span><span class="o">.</span><span class="n">HiddenInput</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="c1"># словарь сообщений для кодов ошибок</span>
+        <span class="c1"># required, min_length, max_length, invalid_choice, invalid,</span>
+        <span class="c1"># min_value, max_value</span>
+        <span class="n">error_messages</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;field_name&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">UserRegistrationForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+    <span class="n">password</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Password&#39;</span><span class="p">,</span>
+        <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">PasswordInput</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">password2</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Repeat password&#39;</span><span class="p">,</span>
+        <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">PasswordInput</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;email)</span>
+
+    <span class="k">def</span> <span class="nf">clean_password2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span>
+        <span class="k">if</span> <span class="n">cd</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">cd</span><span class="p">[</span><span class="s1">&#39;password2&#39;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">forms</span><span class="o">.</span><span class="n">ValidationError</span><span class="p">(</span><span class="s1">&#39;Passwords don</span><span class="se">\&#39;</span><span class="s1">t match.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cd</span><span class="p">[</span><span class="s1">&#39;password2&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="formsets.html" class="btn btn-neutral float-right" title="Наборы форм" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Формы" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

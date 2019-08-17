@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Шаблоны &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="next" title="Роутинг" href="urls.html" />
+    <link rel="prev" title="Виджеты" href="forms/widgets.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">DJANGO</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="settings.html">Конфигурирование проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models/index.html">Модель</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/index.html">Представления</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms/index.html">Формы</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Шаблоны</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Циклы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Условия</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Фильтры</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Наследование и блоки шаблонов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Статика</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Свои теги и фильтры</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Локализация</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Кеширование</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="urls.html">Роутинг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signals.html">Сигналы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib/index.html">Батарейки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/index.html">Пользователи, права, авторизация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">Консольные команды</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Другое</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">DJANGO</a> &raquo;</li>
+        
+      <li>Шаблоны</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/django/templates.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Шаблоны<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ title }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>{{ cats.0.name }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- вывести текст без замены html символов, т.е. как есть --&gt;</span>
+{% autoescape on %}
+    {{ some_html }}
+{% endautoescape %}
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- выключить шаблонизацию для учатска --&gt;</span>
+{% verbatim %}
+    {{ some_html }}
+{% endverbatim %}
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- вывести первое непустое и не нулевое значение --&gt;</span>
+{% firstof val1 val2 val3 %}
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% with cat=good.category %}
+    {{ cat.id }}
+{% endwith %}
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{# коментарии #}
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kd">var</span> <span class="nx">csrftoken</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">cookie</span><span class="p">(</span><span class="s1">&#39;csrftoken&#39;</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajaxSetup</span><span class="p">({</span>
+        <span class="nx">beforeSend</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">settings</span><span class="p">){</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">&#39;X-CSRFToken&#39;</span><span class="p">,</span> <span class="nx">csrftoken</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>Циклы<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    {% for good in goods %}
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ good.name }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        {{ forloop.counter }} - номер теущей итерации начиная с 1
+        {{ forloop.counter0 }} - номер теущей итерации начиная с 0
+        {{ forloop.revcounter }} - номер теущей итерации с конца, начиная с 1
+        {{ forloop.revcounter0 }} - номер теущей итерации с конца, начиная с 0
+        {{ forloop.first }} - булево, первая итерация
+        {{ forloop.last }} - булево, последняя итерация
+        {{ forloop.parentloop }} - родительский цикл
+    {% empty %}
+        <span class="c">&lt;!-- блок исполнится если список пустой --&gt;</span>
+        ...
+    {% endfor %}
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- генератор, который возвращает новое значение при каждом обращении --&gt;</span>
+{% cycle &#39;normal&#39; &#39;alternate&#39; %}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Условия<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% if good.id == 1 %}
+    ...
+{% elif good.id == 2%}
+    ...
+{% else %}
+    ...
+{% endif %}
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- работает быстрее чем обычный if --&gt;</span>
+{% ifequal good.id 1 %}
+    ...
+{% endifequal %}
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- работает быстрее чем обычный if --&gt;</span>
+{% ifnotequal good.id 1%}
+    ...
+{% endifnotequal %}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Фильтры<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- сложение --&gt;</span>
+{{ good.some_attr|add:2 }}
+
+<span class="c">&lt;!-- первый символ в верхний регистр --&gt;</span>
+{{ good.some_attr|capfirst }}
+
+<span class="c">&lt;!-- удаляет из строка указанную подстроку --&gt;</span>
+{{ good.some_attr|cut:&quot;cut&quot; }}
+
+<span class="c">&lt;!-- дефолтное значение если значение пустое --&gt;</span>
+{{ good.some_attr|default:&quot;default&quot; }}
+
+<span class="c">&lt;!-- дефолтное значение если значение None --&gt;</span>
+{{ good.some_attr|default_if_none:&quot;0&quot; }}
+
+<span class="c">&lt;!-- проверяет, делится ли число на указанное без остатка --&gt;</span>
+{{ good.some_attr|devisibleby:&quot;0&quot; }}
+
+<span class="c">&lt;!-- заменяте недопустимые символы html --&gt;</span>
+{{ good.some_attr|escape }}
+
+<span class="c">&lt;!-- преобразует значение для javascript сценариев --&gt;</span>
+{{ good.some_attr|escapejs }}
+
+<span class="c">&lt;!-- первый элемент списка --&gt;</span>
+{{ good.some_attr|first }}
+</pre></div>
+</div>
+<p>Числа</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- округление --&gt;</span>
+{{ good.some_attr|floatformat:&quot;0&quot; }}
+<span class="c">&lt;!-- 35 --&gt;</span>
+{{ good.some_attr|floatformat:&quot;3&quot; }}
+<span class="c">&lt;!-- 35 --&gt;</span>
+{{ good.some_attr|floatformat:&quot;-3&quot; }}
+<span class="c">&lt;!-- 35.000 --&gt;</span>
+</pre></div>
+</div>
+<p>Дата и время</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- форматирует дату по формату --&gt;</span>
+{{ good.some_attr|date:&quot;j.d.y&quot; }}
+{{ good.some_attr|date:&quot;date_format&quot; }}
+
+{% if some_date|date:&quot;L&quot; %}
+    високосный год
+{% endif %}
+
+<span class="c">&lt;!-- форматирует время по формату --&gt;</span>
+{{ good.some_attr|time:&quot;time_format&quot; }}
+{{ good.some_attr|time:&quot;G:i&quot; }}
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- последний элемент списка --&gt;</span>
+{{ good.some_attr|last }}
+
+<span class="c">&lt;!-- размер списка --&gt;</span>
+{{ good.some_attr|length }}
+
+<span class="c">&lt;!-- помещает занчение в &lt;p&gt; и заменяет переводы каретки на &lt;br&gt; --&gt;</span>
+{{ good.some_attr|linebreaks }}
+
+<span class="c">&lt;!-- заменяем перевод каретки на &lt;br&gt; --&gt;</span>
+{{ good.some_attr|linebreaksbr }}
+
+<span class="c">&lt;!-- преобразует значение в нижний регистр --&gt;</span>
+{{ good.some_attr|lower }}
+
+<span class="c">&lt;!-- возвращает случайное значение из указанных --&gt;</span>
+{{ good.some_attr|random }}
+
+<span class="c">&lt;!-- отключает преобразование недопустимых символов html --&gt;</span>
+{{ good.some_attr|safe }}
+
+<span class="c">&lt;!-- удаляет все html теги --&gt;</span>
+{{ good.some_attr|striptags }}
+
+<span class="c">&lt;!-- срез списка --&gt;</span>
+{{ good.some_attr|slice:&quot;1:5&quot; }}
+
+<span class="c">&lt;!-- преобразует все первые буквы слов в значений в верхний регистр --&gt;</span>
+{{ good.some_attr|title }}
+
+<span class="c">&lt;!-- обрезает строку до указанных количеств символов --&gt;</span>
+{{ good.some_attr|truncatechars:&quot;100&quot; }}
+
+<span class="c">&lt;!-- обрезает строку до указанных количеств слов --&gt;</span>
+{{ good.some_attr|truncatewords:&quot;10&quot; }}
+
+<span class="c">&lt;!-- обрезает строку до указанных количеств слов с учетом html --&gt;</span>
+{{ good.some_attr|truncatewords_html:&quot;10&quot; }}
+
+<span class="c">&lt;!-- преобразует в верхний регистр --&gt;</span>
+{{ good.some_attr|upper }}
+
+<span class="c">&lt;!--  --&gt;</span>
+{{ good.some_attr|urlencode }}
+
+<span class="c">&lt;!-- количество слов в знгачении --&gt;</span>
+{{ good.some_attr|wordcount }}
+
+<span class="c">&lt;!-- если True - Yes, False - No, None - None --&gt;</span>
+{{ good.some_attr|yesno:&quot;Yes,No,None&quot; }}
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- примение группы фильтров для элементов --&gt;</span>
+{% filter linebreaksbr|striptags %}
+    {{ good.some_attr1 }}
+    {{ good.some_attr2 }}
+{% endfilter %}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Наследование и блоки шаблонов<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% extends &quot;base.html&quot; %}
+
+{% include &quot;_navbar.html&quot; with active_link = &quot;link2&quot; %}
+
+{% block content %}
+{% endblock %}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Статика<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% load staticfiles %}
+
+&lt;link href=&quot;{% static &quot;app.css&quot; %}&quot; rel=&quot;stylesheet&quot;&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>Свои теги и фильтры<a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># templatetags/blog_tags.py</span>
+
+<span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">template</span>
+<span class="kn">from</span> <span class="nn">django.utils.safestring</span> <span class="kn">import</span> <span class="n">mark_safe</span>
+
+<span class="kn">import</span> <span class="nn">markdown</span>
+
+<span class="n">register</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span>
+
+<span class="nd">@register.simple_tag</span>
+<span class="k">def</span> <span class="nf">total_posts</span><span class="p">():</span>
+    <span class="k">return</span> <span class="mi">5</span>
+
+<span class="nd">@register.filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;markdown&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">markdown_format</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">mark_safe</span><span class="p">(</span><span class="n">markdown</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% load blog_tags %}
+
+{% total_posts %}
+
+{{ post.text|markdown }}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>Локализация<a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% load i18n %}
+
+{% trans &quot;Text&quot; %}
+
+{% trans &quot;Text&quot; as text%}
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ text }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+{% blocktrans %}
+    Hello {{ name }}!
+{% endblocktrans %}
+
+{% blocktrans with name=user.name|capfirst %}
+    Hello {{ name }}!
+{% endblocktrans %}
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+&lt;div class=&quot;languages&quot;&gt;
+    &lt;p&gt;{% trans &quot;Language&quot; %}:&lt;/p&gt;
+    &lt;ul class=&quot;languages&quot;&gt;
+        {% for language in languages %}
+            &lt;li&gt;
+                &lt;a href=&quot;/{{ language.code }}/&quot;
+                    {% if language.code == LANGUAGE_CODE %}
+                        class=&quot;selected&quot;
+                    {% endif %}&gt;
+                    {{ language.name_local }}
+                &lt;/a&gt;
+            &lt;/li&gt;
+        {% endfor %}
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>Кеширование<a class="headerlink" href="#id9" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% load_cache %}
+
+{% cache 300 fragment_name %}
+{% endcache %}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="urls.html" class="btn btn-neutral float-right" title="Роутинг" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="forms/widgets.html" class="btn btn-neutral float-left" title="Виджеты" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

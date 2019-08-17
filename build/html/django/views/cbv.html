@@ -1,0 +1,1310 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Представления в виде классов &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Пагинация" href="pagination.html" />
+    <link rel="prev" title="Представления в виде функции" href="fbv.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">DJANGO</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../settings.html">Конфигурирование проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/index.html">Модель</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Представления</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="request.html">Запросы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="response.html">Ответы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fbv.html">Представления в виде функции</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Представления в виде классов</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#archiveindexview">ArchiveIndexView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#createview">CreateView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datedetailview">DateDetailView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dayarchiveview">DayArchiveView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deleteview">DeleteView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#detailview">DetailView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#formview">FormView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listview">ListView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#montharchiveview">MonthArchiveView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#redirectview">RedirectView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#templateview">TemplateView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#todayarchiveview">TodayArchiveView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updateview">UpdateView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#weekarchiveview">WeekArchiveView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#yeararchiveview">YearArchiveView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Базовые классы</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Миксины</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pagination.html">Пагинация</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../forms/index.html">Формы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../templates.html">Шаблоны</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../urls.html">Роутинг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signals.html">Сигналы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contrib/index.html">Батарейки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auth/index.html">Пользователи, права, авторизация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli.html">Консольные команды</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Другое</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">DJANGO</a> &raquo;</li>
+        
+          <li><a href="index.html">Представления</a> &raquo;</li>
+        
+      <li>Представления в виде классов</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/django/views/cbv.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Представления в виде классов<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.admin.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.utils.decorators</span> <span class="kn">import</span> <span class="n">method_decorator</span>
+<span class="kn">from</span> <span class="nn">django.view.generic</span> <span class="kn">import</span> <span class="n">View</span>
+
+<span class="k">class</span> <span class="nc">IndexView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+
+    <span class="nd">@method_decorator</span><span class="p">(</span><span class="n">login_required</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.view.generic</span> <span class="kn">import</span> <span class="n">View</span>
+
+<span class="k">class</span> <span class="nc">LoginRequiredMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">PermissionDenied</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">IndexView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">View</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="archiveindexview">
+<h2>ArchiveIndexView<a class="headerlink" href="#archiveindexview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.ArchiveIndexView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">ArchiveIndexView</code><a class="headerlink" href="#django.views.generic.ArchiveIndexView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Представление для вывода списка записей, отсортированных по убыванию значения даты.</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.list.MultipleObjectTemplateResponseMixin" title="django.views.generic.list.MultipleObjectTemplateResponseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.MultipleObjectTemplateResponseMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.BaseArchiveIndexView" title="django.views.generic.dates.BaseArchiveIndexView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.BaseArchiveIndexView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeArchiveView</span><span class="p">(</span><span class="n">ArchiveView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">SomeModel</span>
+    <span class="n">date_field</span> <span class="o">=</span> <span class="s1">&#39;created&#39;</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="django.views.generic.ArchiveIndexView.template_name_suffix">
+<code class="sig-name descname">template_name_suffix</code><a class="headerlink" href="#django.views.generic.ArchiveIndexView.template_name_suffix" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Суффикс для шаблона, по умолчанию <cite>„_archive“</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="createview">
+<h2>CreateView<a class="headerlink" href="#createview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.CreateView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">CreateView</code><a class="headerlink" href="#django.views.generic.CreateView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Представление для создания нового элемента модели</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.detail.SingleObjectTemplateResponseMixin" title="django.views.generic.detail.SingleObjectTemplateResponseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.detail.SingleObjectTemplateResponseMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.edit.BaseCreateView" title="django.views.generic.edit.BaseCreateView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.BaseCreateView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FeedView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Post</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;feed.html&quot;</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">)</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">Form</span>
+
+    <span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">form_valid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="django.views.generic.CreateView.template_name_suffix">
+<code class="sig-name descname">template_name_suffix</code><a class="headerlink" href="#django.views.generic.CreateView.template_name_suffix" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Суффикс для шаблона, по умолчанию <cite>„_form“</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="datedetailview">
+<h2>DateDetailView<a class="headerlink" href="#datedetailview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.DateDetailView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">DateDetailView</code><a class="headerlink" href="#django.views.generic.DateDetailView" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="dayarchiveview">
+<h2>DayArchiveView<a class="headerlink" href="#dayarchiveview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.DayArchiveView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">DayArchiveView</code><a class="headerlink" href="#django.views.generic.DayArchiveView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Представление для списка записей по дням</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.list.MultipleObjectTemplateResponseMixin" title="django.views.generic.list.MultipleObjectTemplateResponseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.MultipleObjectTemplateResponseMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.BaseDayArchiveView" title="django.views.generic.dates.BaseDayArchiveView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.BaseDayArchiveView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeDayArchiveView</span><span class="p">(</span><span class="n">DayArchiveView</span><span class="p">):</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">SomeModel</span>
+    <span class="n">date_field</span> <span class="o">=</span> <span class="s1">&#39;created&#39;</span>
+    <span class="n">make_object_list</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="django.views.generic.DayArchiveView.template_name_suffix">
+<code class="sig-name descname">template_name_suffix</code><a class="headerlink" href="#django.views.generic.DayArchiveView.template_name_suffix" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Суфикс для шаблона, по умолчанию <cite>«_archive_day»</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="deleteview">
+<h2>DeleteView<a class="headerlink" href="#deleteview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.DeleteView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">DeleteView</code><a class="headerlink" href="#django.views.generic.DeleteView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вьюха для удаления объекта из БД</p>
+</dd></dl>
+
+</div>
+<div class="section" id="detailview">
+<h2>DetailView<a class="headerlink" href="#detailview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.DetailView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">DetailView</code><a class="headerlink" href="#django.views.generic.DetailView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вьюха для отображения информации объекта из БД</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.detail.SingleObjectTemplateResponseMixin" title="django.views.generic.detail.SingleObjectTemplateResponseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.detail.SingleObjectTemplateResponseMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.detail.BaseDetailView" title="django.views.generic.detail.BaseDetailView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.detail.BaseDetailView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeDetailView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">SomeModel</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="formview">
+<h2>FormView<a class="headerlink" href="#formview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.FormView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">FormView</code><a class="headerlink" href="#django.views.generic.FormView" title="Ссылка на это определение">¶</a></dt>
+<dd><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse_lazy</span>
+
+<span class="k">class</span> <span class="nc">GenericFormView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">FormView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;form.html&#39;</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">DetailsForm</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s2">&quot;success&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_form_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_form_kwargs</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="listview">
+<h2>ListView<a class="headerlink" href="#listview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.ListView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">ListView</code><a class="headerlink" href="#django.views.generic.ListView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Представление отображает страницу списка объектов</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.list.MultipleObjectTemplateResponseMixin" title="django.views.generic.list.MultipleObjectTemplateResponseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.MultipleObjectTemplateResponseMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.list.BaseListView" title="django.views.generic.list.BaseListView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.BaseListView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>Контекст:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>object_list - список объектов указанной модели</p></li>
+<li><p>paginator - объект для пагинации</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PostListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s1">&#39;posts&#39;</span>
+    <span class="n">paginate_by</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;list.html&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PostListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;list.html&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">qs</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">qs</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="django.views.generic.ListView.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#django.views.generic.ListView.model" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Модель для представления</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.ListView.paginate_by">
+<code class="sig-name descname">paginate_by</code><a class="headerlink" href="#django.views.generic.ListView.paginate_by" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Количесвто записей на странице</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.ListView.template_name">
+<code class="sig-name descname">template_name</code><a class="headerlink" href="#django.views.generic.ListView.template_name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Путь к файлу шаблона, по умолчанию app_name/model_name_list.html</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.ListView.template_name_suffix">
+<code class="sig-name descname">template_name_suffix</code><a class="headerlink" href="#django.views.generic.ListView.template_name_suffix" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Суффикс для файла шаблона, по умолчанию _list</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.views.generic.ListView.get_queryset">
+<code class="sig-name descname">get_queryset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django.views.generic.ListView.get_queryset" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает объект запросы БД</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="montharchiveview">
+<h2>MonthArchiveView<a class="headerlink" href="#montharchiveview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.MonthArchiveView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">MonthArchiveView</code><a class="headerlink" href="#django.views.generic.MonthArchiveView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Представление списка записей за указанный год и месяц</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.list.MultipleObjectTemplateResponseMixin" title="django.views.generic.list.MultipleObjectTemplateResponseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.MultipleObjectTemplateResponseMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.BaseMonthArchiveView" title="django.views.generic.dates.BaseMonthArchiveView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.BaseMonthArchiveView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeMonthArchiveView</span><span class="p">(</span><span class="n">MonthArchiveView</span><span class="p">):</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">SomeModel</span>
+    <span class="n">date_field</span> <span class="o">=</span> <span class="s1">&#39;created&#39;</span>
+    <span class="n">make_object_list</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="django.views.generic.MonthArchiveView.template_name_suffix">
+<code class="sig-name descname">template_name_suffix</code><a class="headerlink" href="#django.views.generic.MonthArchiveView.template_name_suffix" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Суфикс для шаблона, по умолчанию <cite>„_archive_month“</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="redirectview">
+<h2>RedirectView<a class="headerlink" href="#redirectview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.RedirectView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">RedirectView</code><a class="headerlink" href="#django.views.generic.RedirectView" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="templateview">
+<h2>TemplateView<a class="headerlink" href="#templateview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.TemplateView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">TemplateView</code><a class="headerlink" href="#django.views.generic.TemplateView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Представление возвращащает ответ, в виде отрендеренного шаблона.</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.base.TemplateResponseMixin" title="django.views.generic.base.TemplateResponseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.TemplateResponseMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.base.ContextMixin" title="django.views.generic.base.ContextMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.ContextMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.View" title="django.views.generic.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.View</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AboutView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;about.html&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">()</span>
+
+        <span class="c1"># self.request</span>
+        <span class="c1"># self.args</span>
+        <span class="c1"># self.kwargs</span>
+
+        <span class="k">return</span> <span class="n">context</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="django.views.generic.TemplateView.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#django.views.generic.TemplateView.args" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Неименованные параметры обработки запроса</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.TemplateView.kwargs">
+<code class="sig-name descname">kwargs</code><a class="headerlink" href="#django.views.generic.TemplateView.kwargs" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Именованные параметры обработки запроса</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.TemplateView.request">
+<code class="sig-name descname">request</code><a class="headerlink" href="#django.views.generic.TemplateView.request" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Запрос</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.TemplateView.template_name">
+<code class="sig-name descname">template_name</code><a class="headerlink" href="#django.views.generic.TemplateView.template_name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Путь к шаблону</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="todayarchiveview">
+<h2>TodayArchiveView<a class="headerlink" href="#todayarchiveview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.TodayArchiveView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">TodayArchiveView</code><a class="headerlink" href="#django.views.generic.TodayArchiveView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Представление для списка записей для текущей даты</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.list.MultipleObjectTemplateResponseMixin" title="django.views.generic.list.MultipleObjectTemplateResponseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.MultipleObjectTemplateResponseMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.BaseTodayArchiveView" title="django.views.generic.dates.BaseTodayArchiveView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.BaseTodayArchiveView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="attribute">
+<dt id="django.views.generic.TodayArchiveView.template_name_suffix">
+<code class="sig-name descname">template_name_suffix</code><a class="headerlink" href="#django.views.generic.TodayArchiveView.template_name_suffix" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Суфикс для шаблона, по умолчанию <cite>«_archive_day»</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="updateview">
+<h2>UpdateView<a class="headerlink" href="#updateview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.UpdateView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">UpdateView</code><a class="headerlink" href="#django.views.generic.UpdateView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Представление для обновления объекта модели</p>
+<dl class="attribute">
+<dt id="django.views.generic.UpdateView.fields">
+<code class="sig-name descname">fields</code><a class="headerlink" href="#django.views.generic.UpdateView.fields" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Список полей модели, которые будут на форме</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.UpdateView.initial">
+<code class="sig-name descname">initial</code><a class="headerlink" href="#django.views.generic.UpdateView.initial" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Словарь начальных данных для формы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.UpdateView.success_url">
+<code class="sig-name descname">success_url</code><a class="headerlink" href="#django.views.generic.UpdateView.success_url" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Адрес, на который будет пепрезод после успешного обновления</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.UpdateView.template_name_suffix">
+<code class="sig-name descname">template_name_suffix</code><a class="headerlink" href="#django.views.generic.UpdateView.template_name_suffix" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Суффикс для шаблона, по умолчанию <cite>„_form“</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="weekarchiveview">
+<h2>WeekArchiveView<a class="headerlink" href="#weekarchiveview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.WeekArchiveView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">WeekArchiveView</code><a class="headerlink" href="#django.views.generic.WeekArchiveView" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="yeararchiveview">
+<h2>YearArchiveView<a class="headerlink" href="#yeararchiveview" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.views.generic.YearArchiveView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">YearArchiveView</code><a class="headerlink" href="#django.views.generic.YearArchiveView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Представление выводит список записей, относящихся к указанному году.</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.list.MultipleObjectTemplateResponseMixin" title="django.views.generic.list.MultipleObjectTemplateResponseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.MultipleObjectTemplateResponseMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.BaseYearArchiveView" title="django.views.generic.dates.BaseYearArchiveView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.BaseYearArchiveView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeYearArchiveView</span><span class="p">(</span><span class="n">YearArchiveView</span><span class="p">):</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">SomeModel</span>
+    <span class="n">date_field</span> <span class="o">=</span> <span class="s1">&#39;created&#39;</span>
+    <span class="n">make_object_list</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="django.views.generic.YearArchiveView.template_name_suffix">
+<code class="sig-name descname">template_name_suffix</code><a class="headerlink" href="#django.views.generic.YearArchiveView.template_name_suffix" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Суффикс для поиска шаблонов, по умолчанию <cite>„_archive_year“</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>Базовые классы<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="basearchiveindexview">
+<h3>BaseArchiveIndexView<a class="headerlink" href="#basearchiveindexview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.dates.BaseArchiveIndexView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.dates.</code><code class="sig-name descname">BaseArchiveIndexView</code><a class="headerlink" href="#django.views.generic.dates.BaseArchiveIndexView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс для архивных записей</p>
+<dl class="attribute">
+<dt id="django.views.generic.dates.BaseArchiveIndexView.context_object_name">
+<code class="sig-name descname">context_object_name</code><a class="headerlink" href="#django.views.generic.dates.BaseArchiveIndexView.context_object_name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Название переменной в контексте, в котором будут содержаться записи</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="basecreateview">
+<h3>BaseCreateView<a class="headerlink" href="#basecreateview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.edit.BaseCreateView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.edit.</code><code class="sig-name descname">BaseCreateView</code><a class="headerlink" href="#django.views.generic.edit.BaseCreateView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовое представление для создания элемента модели</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.edit.ModelFormMixin" title="django.views.generic.edit.ModelFormMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.ModelFormMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.edit.ProcessFormView" title="django.views.generic.edit.ProcessFormView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.ProcessFormView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="basedatelistview">
+<h3>BaseDateListView<a class="headerlink" href="#basedatelistview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.dates.BaseDateListView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.dates.</code><code class="sig-name descname">BaseDateListView</code><a class="headerlink" href="#django.views.generic.dates.BaseDateListView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс для списка записей с учетом дат</p>
+<p>В контекте положит:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>latest - список записей вывода</p></li>
+<li><p>date_list - список всех годов</p></li>
+<li><p>параметры пагинации из <a class="reference internal" href="#django.views.generic.list.MultipleObjectMixin" title="django.views.generic.list.MultipleObjectMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.MultipleObjectMixin</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.list.MultipleObjectMixin" title="django.views.generic.list.MultipleObjectMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.MultipleObjectMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.DateMixin" title="django.views.generic.dates.DateMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.DateMixin</span></code></a></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.View</span></code></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="basedayarchiveview">
+<h3>BaseDayArchiveView<a class="headerlink" href="#basedayarchiveview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.dates.BaseDayArchiveView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.dates.</code><code class="sig-name descname">BaseDayArchiveView</code><a class="headerlink" href="#django.views.generic.dates.BaseDayArchiveView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс для представлений по дням</p>
+<p>В контекст положит:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>day - текущая дата</p></li>
+<li><p>previous_day - предыдущая дата</p></li>
+<li><p>next_day - следующая дата</p></li>
+<li><p>previous_month - предыдущий месяц</p></li>
+<li><p>next_month - следующий месяц</p></li>
+</ul>
+</div></blockquote>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.dates.YearMixin" title="django.views.generic.dates.YearMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.YearMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.MonthMixin" title="django.views.generic.dates.MonthMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.MonthMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.DayMixin" title="django.views.generic.dates.DayMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.DayMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.BaseDateListView" title="django.views.generic.dates.BaseDateListView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.BaseDateListView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="basedetailview">
+<h3>BaseDetailView<a class="headerlink" href="#basedetailview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.detail.BaseDetailView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.detail.</code><code class="sig-name descname">BaseDetailView</code><a class="headerlink" href="#django.views.generic.detail.BaseDetailView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс для представления объекта</p>
+<p>В контекст положит:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>object - объект</p></li>
+</ul>
+</div></blockquote>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.detail.SingleObjectMixin" title="django.views.generic.detail.SingleObjectMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.detail.SingleObjectMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.View" title="django.views.generic.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.View</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="attribute">
+<dt id="django.views.generic.detail.BaseDetailView.object">
+<code class="sig-name descname">object</code><a class="headerlink" href="#django.views.generic.detail.BaseDetailView.object" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объект для представления</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="baselistview">
+<h3>BaseListView<a class="headerlink" href="#baselistview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.list.BaseListView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.list.</code><code class="sig-name descname">BaseListView</code><a class="headerlink" href="#django.views.generic.list.BaseListView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс для представления списка объектов</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.list.MultipleObjectMixin" title="django.views.generic.list.MultipleObjectMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.MultipleObjectMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.View" title="django.views.generic.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.View</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="basemontharchiveview">
+<h3>BaseMonthArchiveView<a class="headerlink" href="#basemontharchiveview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.dates.BaseMonthArchiveView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.dates.</code><code class="sig-name descname">BaseMonthArchiveView</code><a class="headerlink" href="#django.views.generic.dates.BaseMonthArchiveView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс для представления списка объектов за указанный месяц</p>
+<p>В контекст положит:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>month - текущий месяц</p></li>
+<li><p>next_month - следующий месяц</p></li>
+<li><p>previous_month - предыдущий месяц</p></li>
+</ul>
+</div></blockquote>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.dates.YearMixin" title="django.views.generic.dates.YearMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.YearMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.MonthMixin" title="django.views.generic.dates.MonthMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.MonthMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.BaseDateListView" title="django.views.generic.dates.BaseDateListView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.BaseDateListView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="basetodayarchiveview">
+<h3>BaseTodayArchiveView<a class="headerlink" href="#basetodayarchiveview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.dates.BaseTodayArchiveView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.dates.</code><code class="sig-name descname">BaseTodayArchiveView</code><a class="headerlink" href="#django.views.generic.dates.BaseTodayArchiveView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый клас для представления списка элементов за сегодня</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.dates.BaseDayArchiveView" title="django.views.generic.dates.BaseDayArchiveView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.BaseDayArchiveView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="baseyeararchiveview">
+<h3>BaseYearArchiveView<a class="headerlink" href="#baseyeararchiveview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.dates.BaseYearArchiveView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.dates.</code><code class="sig-name descname">BaseYearArchiveView</code><a class="headerlink" href="#django.views.generic.dates.BaseYearArchiveView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс для представлении списка элементов по годам</p>
+<p>В контекст положит:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>date_list - список дат</p></li>
+<li><p>year - указанный год</p></li>
+<li><p>next_year - следующий год</p></li>
+<li><p>previous_year - прошлый год</p></li>
+</ul>
+</div></blockquote>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.dates.YearMixin" title="django.views.generic.dates.YearMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.YearMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.dates.BaseDateListView" title="django.views.generic.dates.BaseDateListView"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.dates.BaseDateListView</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="attribute">
+<dt id="django.views.generic.dates.BaseYearArchiveView.date_list_period">
+<code class="sig-name descname">date_list_period</code><a class="headerlink" href="#django.views.generic.dates.BaseYearArchiveView.date_list_period" title="Ссылка на это определение">¶</a></dt>
+<dd><p>„month“</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.dates.BaseYearArchiveView.make_object_list">
+<code class="sig-name descname">make_object_list</code><a class="headerlink" href="#django.views.generic.dates.BaseYearArchiveView.make_object_list" title="Ссылка на это определение">¶</a></dt>
+<dd><p>False</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="view">
+<h3>View<a class="headerlink" href="#view" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.View">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.</code><code class="sig-name descname">View</code><a class="headerlink" href="#django.views.generic.View" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс для всех предсавлений</p>
+<p>Поддерживает методы запроса (get, post, put, patch, delete, head, options,
+trace) для обработки запроса, т.е. можно просто объявить метод класса
+по однойменному методу, который будет соответсвенно обрабатывать метод запроса.</p>
+<dl class="method">
+<dt id="django.views.generic.View.as_view">
+<code class="sig-name descname">as_view</code><span class="sig-paren">(</span><em class="sig-param">**initkwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.views.generic.View.as_view" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает экземпляр класса представления, обработчико запросов</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Миксины<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="contextmixin">
+<h3>ContextMixin<a class="headerlink" href="#contextmixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.base.ContextMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.base.</code><code class="sig-name descname">ContextMixin</code><a class="headerlink" href="#django.views.generic.base.ContextMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин, для поддержки контекста в представлениях</p>
+<dl class="method">
+<dt id="django.views.generic.base.ContextMixin.get_context_data">
+<code class="sig-name descname">get_context_data</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.views.generic.base.ContextMixin.get_context_data" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает контекст для представления</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="datemixin">
+<h3>DateMixin<a class="headerlink" href="#datemixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.dates.DateMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.dates.</code><code class="sig-name descname">DateMixin</code><a class="headerlink" href="#django.views.generic.dates.DateMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="django.views.generic.dates.DateMixin.allow_future">
+<code class="sig-name descname">allow_future</code><a class="headerlink" href="#django.views.generic.dates.DateMixin.allow_future" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Булево, использовать и будущие записи</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.dates.DateMixin.date_field">
+<code class="sig-name descname">date_field</code><a class="headerlink" href="#django.views.generic.dates.DateMixin.date_field" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Имя поля модели, на основе которого будет строиться сортировка</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.dates.DateMixin.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#django.views.generic.dates.DateMixin.model" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Модель, по которому будут фильтровать записи</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="daymixin">
+<h3>DayMixin<a class="headerlink" href="#daymixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.dates.DayMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.dates.</code><code class="sig-name descname">DayMixin</code><a class="headerlink" href="#django.views.generic.dates.DayMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин для поддержки дня</p>
+<dl class="attribute">
+<dt id="django.views.generic.dates.DayMixin.day_format">
+<code class="sig-name descname">day_format</code><a class="headerlink" href="#django.views.generic.dates.DayMixin.day_format" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Формат для даты, по умолчанию <cite>„%d“</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.dates.DayMixin.day">
+<code class="sig-name descname">day</code><a class="headerlink" href="#django.views.generic.dates.DayMixin.day" title="Ссылка на это определение">¶</a></dt>
+<dd><p>День</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="formmixin">
+<h3>FormMixin<a class="headerlink" href="#formmixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.edit.FormMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.edit.</code><code class="sig-name descname">FormMixin</code><a class="headerlink" href="#django.views.generic.edit.FormMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин для создания форм</p>
+<dl class="attribute">
+<dt id="django.views.generic.edit.FormMixin.initial">
+<code class="sig-name descname">initial</code><a class="headerlink" href="#django.views.generic.edit.FormMixin.initial" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Начальные данные формы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.edit.FormMixin.form_class">
+<code class="sig-name descname">form_class</code><a class="headerlink" href="#django.views.generic.edit.FormMixin.form_class" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс формы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.edit.FormMixin.success_url">
+<code class="sig-name descname">success_url</code><a class="headerlink" href="#django.views.generic.edit.FormMixin.success_url" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Урл, на которой переходим в результате успешного сохранения</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.edit.FormMixin.prefix">
+<code class="sig-name descname">prefix</code><a class="headerlink" href="#django.views.generic.edit.FormMixin.prefix" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="django.views.generic.edit.FormMixin.get_form_kwargs">
+<code class="sig-name descname">get_form_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#django.views.generic.edit.FormMixin.get_form_kwargs" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает параметры для формы</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="modelformmixin">
+<h3>ModelFormMixin<a class="headerlink" href="#modelformmixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.edit.ModelFormMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.edit.</code><code class="sig-name descname">ModelFormMixin</code><a class="headerlink" href="#django.views.generic.edit.ModelFormMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин создает форму по модели</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.edit.FormMixin" title="django.views.generic.edit.FormMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.FormMixin</span></code></a></p></li>
+<li><p><a class="reference internal" href="#django.views.generic.detail.SingleObjectMixin" title="django.views.generic.detail.SingleObjectMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.detail.SingleObjectMixin</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<dl class="attribute">
+<dt id="django.views.generic.edit.ModelFormMixin.fields">
+<code class="sig-name descname">fields</code><a class="headerlink" href="#django.views.generic.edit.ModelFormMixin.fields" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поля модели, которые будут на форме</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="monthmixin">
+<h3>MonthMixin<a class="headerlink" href="#monthmixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.dates.MonthMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.dates.</code><code class="sig-name descname">MonthMixin</code><a class="headerlink" href="#django.views.generic.dates.MonthMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин для поддержки фильтрации по месяцу</p>
+<dl class="attribute">
+<dt id="django.views.generic.dates.MonthMixin.month_format">
+<code class="sig-name descname">month_format</code><a class="headerlink" href="#django.views.generic.dates.MonthMixin.month_format" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Формат для месяца, по умолчанию <cite>„%b“</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.dates.MonthMixin.month">
+<code class="sig-name descname">month</code><a class="headerlink" href="#django.views.generic.dates.MonthMixin.month" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Месяц</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="multipleobjectmixin">
+<h3>MultipleObjectMixin<a class="headerlink" href="#multipleobjectmixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.list.MultipleObjectMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.list.</code><code class="sig-name descname">MultipleObjectMixin</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин для поддержки просмотра множества объектов, имеет пагинацию.</p>
+<p>В контексте положит:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>paginator - объект,пагинатор</p></li>
+<li><p>page_obj - объект, страница</p></li>
+<li><p>is_paginated - булево, имеется ли более 1 страницы</p></li>
+<li><p>object_list - queryset элементов представления</p></li>
+</ul>
+</div></blockquote>
+<dl class="attribute">
+<dt id="django.views.generic.list.MultipleObjectMixin.allow_empty">
+<code class="sig-name descname">allow_empty</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectMixin.allow_empty" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Булево, пустая страница</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.list.MultipleObjectMixin.queryset">
+<code class="sig-name descname">queryset</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectMixin.queryset" title="Ссылка на это определение">¶</a></dt>
+<dd><p>QuerySet для представления.</p>
+<p>Не обязательный параметр, можно просто задать модель.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.list.MultipleObjectMixin.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectMixin.model" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Модель, с объектами которого производится манипуляция.</p>
+<p>Не обязательный параметр, можно просто задать QuerySet.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.list.MultipleObjectMixin.paginate_by">
+<code class="sig-name descname">paginate_by</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectMixin.paginate_by" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Количесвто элементов на странице</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.list.MultipleObjectMixin.paginate_orphans">
+<code class="sig-name descname">paginate_orphans</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectMixin.paginate_orphans" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Количество элементов на последней странице</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.list.MultipleObjectMixin.context_object_name">
+<code class="sig-name descname">context_object_name</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectMixin.context_object_name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Название объекта в контексте, по умолчанию <cite>„object_list“</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.list.MultipleObjectMixin.paginator_class">
+<code class="sig-name descname">paginator_class</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectMixin.paginator_class" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс, реализующий пагинацию,
+по умолчанию <a class="reference internal" href="pagination.html#django.core.paginator.Paginator" title="django.core.paginator.Paginator"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.paginator.Paginator</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.list.MultipleObjectMixin.page_kwarg">
+<code class="sig-name descname">page_kwarg</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectMixin.page_kwarg" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Название переменной в контексте, для страницы, по умолчанию <cite>„page“</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.list.MultipleObjectMixin.ordering">
+<code class="sig-name descname">ordering</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectMixin.ordering" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сортировка элементов  представления</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="multipleobjecttemplateresponsemixin">
+<h3>MultipleObjectTemplateResponseMixin<a class="headerlink" href="#multipleobjecttemplateresponsemixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.list.MultipleObjectTemplateResponseMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.list.</code><code class="sig-name descname">MultipleObjectTemplateResponseMixin</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectTemplateResponseMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин позволяет брать в качестве шаблона шаблон,
+по пути <cite>app_name/model_name_list.html</cite></p>
+<p>Наследник <a class="reference internal" href="#django.views.generic.base.TemplateResponseMixin" title="django.views.generic.base.TemplateResponseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.TemplateResponseMixin</span></code></a></p>
+<dl class="attribute">
+<dt id="django.views.generic.list.MultipleObjectTemplateResponseMixin.template_name_suffix">
+<code class="sig-name descname">template_name_suffix</code><a class="headerlink" href="#django.views.generic.list.MultipleObjectTemplateResponseMixin.template_name_suffix" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Суффикс для шаблона списка, по умолчанию <cite>„_list“</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="processformview">
+<h3>ProcessFormView<a class="headerlink" href="#processformview" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.edit.ProcessFormView">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.edit.</code><code class="sig-name descname">ProcessFormView</code><a class="headerlink" href="#django.views.generic.edit.ProcessFormView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Помещает в контекст форму</p>
+<p>Наследник:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#django.views.generic.View" title="django.views.generic.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.View</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="singleobjectmixin">
+<h3>SingleObjectMixin<a class="headerlink" href="#singleobjectmixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.detail.SingleObjectMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.detail.</code><code class="sig-name descname">SingleObjectMixin</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин для представления одного объекта</p>
+<dl class="attribute">
+<dt id="django.views.generic.detail.SingleObjectMixin.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectMixin.model" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Модель, откуда будет браться объект, или можно задать просто кверисет</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.detail.SingleObjectMixin.queryset">
+<code class="sig-name descname">queryset</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectMixin.queryset" title="Ссылка на это определение">¶</a></dt>
+<dd><p>QuerySet для выборки объекта, можно просто задать модель</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.detail.SingleObjectMixin.slug_field">
+<code class="sig-name descname">slug_field</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectMixin.slug_field" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Название слаг поля, по которому можно получить объект из БД,
+по умолчанию <cite>„slug“</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.detail.SingleObjectMixin.context_object_name">
+<code class="sig-name descname">context_object_name</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectMixin.context_object_name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Название переменной в контексте, по умолчанию <cite>„object“</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.detail.SingleObjectMixin.slug_url_kwarg">
+<code class="sig-name descname">slug_url_kwarg</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectMixin.slug_url_kwarg" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Название переменной в запросе, которая содержит слаг поле,
+по умолчанию <cite>„slug“</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.detail.SingleObjectMixin.pk_url_kwarg">
+<code class="sig-name descname">pk_url_kwarg</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectMixin.pk_url_kwarg" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Название переменной в запросе, которая содержит первичный ключ объекта,
+по умолчанию <cite>„pk“</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.detail.SingleObjectMixin.query_pk_and_slug">
+<code class="sig-name descname">query_pk_and_slug</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectMixin.query_pk_and_slug" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Использовать слаг филд для получения объекта</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="singleobjecttemplateresponsemixin">
+<h3>SingleObjectTemplateResponseMixin<a class="headerlink" href="#singleobjecttemplateresponsemixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.detail.SingleObjectTemplateResponseMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.detail.</code><code class="sig-name descname">SingleObjectTemplateResponseMixin</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectTemplateResponseMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин позволяет брать в качестве шаблона шаблон,
+по пути <cite>app_name/model_name_detail.html</cite>, из самого объекта</p>
+<p>Наследник <a class="reference internal" href="#django.views.generic.base.TemplateResponseMixin" title="django.views.generic.base.TemplateResponseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.base.TemplateResponseMixin</span></code></a></p>
+<dl class="attribute">
+<dt id="django.views.generic.detail.SingleObjectTemplateResponseMixin.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectTemplateResponseMixin.model" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Модель, для которой обрабатывается представление,
+шаблон будет браться по пути <cite>app_name/model_name_detail.html</cite></p>
+<p>Не обязательный параметр</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.detail.SingleObjectTemplateResponseMixin.template_name_field">
+<code class="sig-name descname">template_name_field</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectTemplateResponseMixin.template_name_field" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Название атрибута в объекте, который отображает представление,
+в котором указан путь к шаблону</p>
+<p>Не обязательный параметр</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.detail.SingleObjectTemplateResponseMixin.template_name_suffix">
+<code class="sig-name descname">template_name_suffix</code><a class="headerlink" href="#django.views.generic.detail.SingleObjectTemplateResponseMixin.template_name_suffix" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Суффикс для шаблона списка, по умолчанию <cite>„_detail“</cite></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="templateresponsemixin">
+<h3>TemplateResponseMixin<a class="headerlink" href="#templateresponsemixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.base.TemplateResponseMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.base.</code><code class="sig-name descname">TemplateResponseMixin</code><a class="headerlink" href="#django.views.generic.base.TemplateResponseMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин, возвращает отрендеренный шаблон для запроса</p>
+<dl class="attribute">
+<dt id="django.views.generic.base.TemplateResponseMixin.template_name">
+<code class="sig-name descname">template_name</code><a class="headerlink" href="#django.views.generic.base.TemplateResponseMixin.template_name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Путь к шаблону</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.base.TemplateResponseMixin.template_engine">
+<code class="sig-name descname">template_engine</code><a class="headerlink" href="#django.views.generic.base.TemplateResponseMixin.template_engine" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Шаблонизатор, по умолчанию дефолтный</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.base.TemplateResponseMixin.response_class">
+<code class="sig-name descname">response_class</code><a class="headerlink" href="#django.views.generic.base.TemplateResponseMixin.response_class" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Класс ответа, по умолчанию <code class="xref py py-class docutils literal notranslate"><span class="pre">django.template.response.TemplateResponse</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.base.TemplateResponseMixin.content_type">
+<code class="sig-name descname">content_type</code><a class="headerlink" href="#django.views.generic.base.TemplateResponseMixin.content_type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="django.views.generic.base.TemplateResponseMixin.render_to_response">
+<code class="sig-name descname">render_to_response</code><span class="sig-paren">(</span><em class="sig-param">context</em>, <em class="sig-param">**response_kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.views.generic.base.TemplateResponseMixin.render_to_response" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает ответ на запрос</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="yearmixin">
+<h3>YearMixin<a class="headerlink" href="#yearmixin" title="Ссылка на этот заголовок">¶</a></h3>
+<dl class="class">
+<dt id="django.views.generic.dates.YearMixin">
+<em class="property">class </em><code class="sig-prename descclassname">django.views.generic.dates.</code><code class="sig-name descname">YearMixin</code><a class="headerlink" href="#django.views.generic.dates.YearMixin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Миксин для представлении списка по годам</p>
+<dl class="attribute">
+<dt id="django.views.generic.dates.YearMixin.year_format">
+<code class="sig-name descname">year_format</code><a class="headerlink" href="#django.views.generic.dates.YearMixin.year_format" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Строка, формат по которому будет распозноваться полученное значение года.</p>
+<p>По умолчанию <cite>„%Y“</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.views.generic.dates.YearMixin.year">
+<code class="sig-name descname">year</code><a class="headerlink" href="#django.views.generic.dates.YearMixin.year" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Год в виде строки</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pagination.html" class="btn btn-neutral float-right" title="Пагинация" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fbv.html" class="btn btn-neutral float-left" title="Представления в виде функции" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

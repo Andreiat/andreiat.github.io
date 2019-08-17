@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Виджеты &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Шаблоны" href="../templates.html" />
+    <link rel="prev" title="Поля формы" href="fields.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">DJANGO</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../settings.html">Конфигурирование проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/index.html">Модель</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views/index.html">Представления</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Формы</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="forms.html">Формы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="formsets.html">Наборы форм</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fields.html">Поля формы</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Виджеты</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#checkboxinput">CheckboxInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dateinput">DateInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datetimeinput">DateTimeInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#emailinput">EmailInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hiddeninput">HiddenInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#numberinput">NumberInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passwordinput">PasswordInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radioselect">RadioSelect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select">Select</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#textarea">Textarea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#textinput">TextInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#timeinput">TimeInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#urlinput">URLInput</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../templates.html">Шаблоны</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../urls.html">Роутинг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signals.html">Сигналы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contrib/index.html">Батарейки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auth/index.html">Пользователи, права, авторизация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli.html">Консольные команды</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Другое</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">DJANGO</a> &raquo;</li>
+        
+          <li><a href="index.html">Формы</a> &raquo;</li>
+        
+      <li>Виджеты</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/django/forms/widgets.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Виджеты<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="checkboxinput">
+<h2>CheckboxInput<a class="headerlink" href="#checkboxinput" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.CheckboxInput">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">CheckboxInput</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.CheckboxInput" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Флажок</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="dateinput">
+<h2>DateInput<a class="headerlink" href="#dateinput" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.DateInput">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">DateInput</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.DateInput" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле ввода даты</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+<li><p>format - формат для вывода изначального значения данного элемента управления</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="datetimeinput">
+<h2>DateTimeInput<a class="headerlink" href="#datetimeinput" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.DateTimeInput">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">DateTimeInput</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.DateTimeInput" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле ввода даты и времени</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+<li><p>format - формат для вывода изначального значения данного элемента управления</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="emailinput">
+<h2>EmailInput<a class="headerlink" href="#emailinput" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.EmailInput">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">EmailInput</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.EmailInput" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле ввода адреса электронной почты</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="hiddeninput">
+<h2>HiddenInput<a class="headerlink" href="#hiddeninput" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.HiddenInput">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">HiddenInput</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.HiddenInput" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Скрытое поле</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="numberinput">
+<h2>NumberInput<a class="headerlink" href="#numberinput" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.NumberInput">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">NumberInput</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.NumberInput" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле ввода чисел</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="passwordinput">
+<h2>PasswordInput<a class="headerlink" href="#passwordinput" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.PasswordInput">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">PasswordInput</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.PasswordInput" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле ввода пароля</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+<li><p>render_value - булево, введенное ранее значение должно присутсвовать
+в элементе управления</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="radioselect">
+<h2>RadioSelect<a class="headerlink" href="#radioselect" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.RadioSelect">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">RadioSelect</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.RadioSelect" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Переклчатели</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="select">
+<h2>Select<a class="headerlink" href="#select" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.Select">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">Select</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.Select" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Список</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="textarea">
+<h2>Textarea<a class="headerlink" href="#textarea" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.Textarea">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">Textarea</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.Textarea" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Многострочное текстовое поле</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="textinput">
+<h2>TextInput<a class="headerlink" href="#textinput" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.TextInput">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">TextInput</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.TextInput" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Обычное поле ввода</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="timeinput">
+<h2>TimeInput<a class="headerlink" href="#timeinput" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.TimeInput">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">TimeInput</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.TimeInput" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле ввода времени</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+<li><p>format - формат для вывода изначального значения данного элемента управления</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="urlinput">
+<h2>URLInput<a class="headerlink" href="#urlinput" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.URLInput">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">URLInput</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.URLInput" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле ввода интернет адреса</p>
+<ul class="simple">
+<li><p>attrs - словарь, атрибуты html-тега элемента</p></li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../templates.html" class="btn btn-neutral float-right" title="Шаблоны" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fields.html" class="btn btn-neutral float-left" title="Поля формы" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

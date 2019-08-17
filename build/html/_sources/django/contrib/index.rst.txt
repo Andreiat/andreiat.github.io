@@ -1,0 +1,12 @@
+Батарейки
+=========
+
+.. toctree::
+   :maxdepth: 2
+
+   contenttypes
+   messages
+   sessions
+   sitemap
+   staticfiles
+   syndication

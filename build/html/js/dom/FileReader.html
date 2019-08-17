@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FileReader &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="FileReaderSync" href="FileReaderSync.html" />
+    <link rel="prev" title="FileError - ошибка, возникшая во время чтения файла" href="FileError.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">JavaScript</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../base/index.html">Основные объекты</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">DOM - дерево html документа</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Navigator.html">Navigator - содержит информацию о браузере и операционной системе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Screen.html">Screen - информация об экране</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Location.html">Location - адрес текущей страницы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Document.html">Document(HTMLDocument) - корневой элемент дерева</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Node.html">Node - узел дом дерева документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NodeList.html">NodeList - коллекция, содержащая все виды узлов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Element.html">Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HTMLCollection.html">HTMLCollection - коллекия, содержащая елементы Elemnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CharacterData.html">CharacterData - узел с текстом внутри</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Text.html">Text - текстовая последовательность в документе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Comment.html">Comment - коментарии в доме</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ApplicationCache.html">ApplicationCache - прикладной интерфейс управления кэшем приложений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArrayBufferView.html">ArrayBufferView - общие свойства типов, основанных на ArrayBuffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Attr.html">Attr - атрибут элемента документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Audio.html">Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BeforeUnloadEvent.html">BeforeUnloadEvent - объект Event для событий выгрузки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Blob.html">Blob - блок двоичных данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BlobBuilder.html">BlobBuilder - используется для создания новых Blob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Button.html">Button - html элемент button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Canvas.html">Canvas - канвас</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Console.html">Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="History.html">History - журнал посещений объекта Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Image.html">Image - HTML img</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LocalStorage.html">LocalStorage - key-value хранилище</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SessionStorage.html">SessionStorage - key-value хранилище</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Window.html">Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSRule.html">CSSRule - правило в таблице стилей CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSStyleDeclaration.html">CSSStyleDeclaration - набор css-атрибутов и их значений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSStyleSheet.html">CSSStyleSheet - таблица стилей CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasGradient.html">CanvasGradient - цветной градиент для использования в канвасе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasPattern.html">CanvasPattern - шаблон заполнения холста на основе готового изображения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasRenderingContext2D.html">CanvasRenderingContext2D - объект, используемый для создания изображений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ClientRect.html">ClientRect - прямоугольник, описанный вокруг элемента</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CloseEvent.html">CloseEvent - определяет, был ли закрыт веб-сокет без ошибок</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConsoleCommandLine.html">ConsoleCommandLine - утилита для работы с окном консоли</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Context.html">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CustomEvent.html">CustomEvent - конструктор своих событий</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMException.html">DOMException - исключение, возбуждаемое web api</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMImplementation.html">DOMImplementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMSettableTokenList.html">DOMSettableTokenList</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMTokenList.html">DOMTokenList - множество лексем, разделенных пробелами</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataTransfer.html">DataTransfer - передача данных в операциях драгндроп мышью</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataView.html">DataView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DocumentFragment.html">DocumentFragment - смежные узлы и их поддеревья</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DocumentType.html">DocumentType - doctype документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ErrorEvent.html">ErrorEvent - необработанное исключение в фоновом потоке</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Event.html">Event - событие</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EventSource.html">EventTarget - comet-соединение с http-сервером</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EventTarget.html">EventTarget - объект, способный принимать события</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FieldSet.html">FieldSet - HTML fieldset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="File.html">File - файл в локальной файловой системе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileError.html">FileError - ошибка, возникшая во время чтения файла</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">FileReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileReaderSync.html">FileReaderSync</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Form.html">Form - HTML form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormControl.html">FormControl - общие особенности всех элементов форм</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormData.html">FormData - тело HTTP-запроса multipart/form-data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormValidity.html">FormValidity - реализует проверку элемента формы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geocoordinates.html">Geocoordinates - географическре местонахождение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geolocation.html">Geolocation - позволяет получить широту и долготу местоположения пользователя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GeolocationError.html">GeolocationError - ошибка возникающая в ходе определения местонахождения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geoposition.html">Geoposition - информация о местонахождении с указанием времени определения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HashChangeEvent.html">HashChangeEvent - объект события, поставляемый по событию hashchange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IFrame.html">IFrame - HTML iframe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageData.html">ImageData - массив пискелей канваса</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Input.html">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Link.html">Link - HTML гиперссылка</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MediaElement.html">MediaElement - элемент проигрывателя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MediaError.html">MediaError - ошибка в элементе audio, video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessageChannel.html">MessageChannel - пара соединенных объектов MessagePorts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessageEvent.html">MessageEvent - сообщение из другого контекста выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessagePort.html">MessagePort - передает асинхронные сообщения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Meter.html">Meter - графический индикатор, шкала</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MouseEvent.html">MouseEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NamedNodeMap.html">NamedNodeMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Option.html">Option - HTML option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Output.html">Output - HTML output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PageTransitionEvent.html">PageTransitionEvent - объект события для событий «pageshow» и «pagehide»</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PopStateEvent.html">PopStateEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProcessingInstruction.html">ProcessingInstruction - инструкция обработки в XML-документе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Progress.html">Progress - индикатор хода выполнения операции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProgressEvent.html">ProgressEvent - событие продолжения загрузки, выгрузки или чтения файла</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Script.html">Script - HTML-script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Select.html">Select - графический список для выбора</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Storage.html">Storage - хранилище пар имя/значение на стороне клиента</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StorageEvent.html">StorageEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Style.html">Style - HTML style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table - HTML table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableCell.html">TableCell - ячейка HTML таблицы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableRow.html">TableRow - HTML tr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableSection.html">TableSection - раздел верхнего или нижнего колонтитула либо тела таблицы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextArea.html">TextArea - многострочная область ввода текста</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextMetrics.html">TextMetrics - определяет размеры текстовой строки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TimeRanges.html">TimeRanges - множество фрагментов мультимедийных данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TypedArray.html">TypedArray - массивы с двоичными элементами фиксированного размера</a></li>
+<li class="toctree-l3"><a class="reference internal" href="URL.html">URL - методы для работы с URL-адресами, ссылающимися на объекты Blob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Video.html">Video - HTML video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WebSocket.html">WebSocket - двунаправленное сетевое соединение, подобное сокету</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Worker.html">Worker - фоновый поток выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerGlobalScope.html">WorkerGlobalScope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerLocation.html">WorkerLocation - URL-адрес главного сценария в фоновом потоке выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerNavigator.html">WorkerNavigator - информация о броузере для фонового потока выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequest.html">XMLHttpRequest(AJAX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequestProgressEvent.html">XMLHttpRequestProgressEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequestUpload.html">XMLHttpRequestUpload</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../frameworks/index.html">Библиотеки, фреймворки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">JavaScript</a> &raquo;</li>
+        
+          <li><a href="index.html">DOM - дерево html документа</a> &raquo;</li>
+        
+      <li>FileReader</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/js/dom/FileReader.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="filereader">
+<h1>FileReader<a class="headerlink" href="#filereader" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Асинхронный интерфейс чтения объекта File или Blob</p>
+<dl class="class">
+<dt id="FileReader">
+<em class="property">class </em><code class="sig-name descname">FileReader</code><a class="headerlink" href="#FileReader" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="FileReader.error">
+<code class="sig-name descname">error</code><a class="headerlink" href="#FileReader.error" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ес­ли ошиб­ка воз­ник­нет во вре­мя чте­ния,
+это свой­ст­во бу­дет ссы­лать­ся на объ­ект FileError, опи­сы­ваю­щий ошиб­ку.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FileReader.onabort">
+<code class="sig-name descname">onabort</code><a class="headerlink" href="#FileReader.onabort" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вы­зы­ва­ет­ся, ес­ли опе­ра­ция чте­ния бы­ла пре­рва­на ме­то­дом abort().</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FileReader.onerror">
+<code class="sig-name descname">onerror</code><a class="headerlink" href="#FileReader.onerror" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вы­зы­ва­ет­ся, ес­ли воз­ник­ла ка­кая-ли­бо ошиб­ка.</p>
+<p>Свой­ст­во error объ­ек­та FileReader бу­дет ссы­лать­ся на объ­ект FileError,
+ко­то­рый име­ет свой­ст­во code с ко­дом ошиб­ки.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FileReader.onload">
+<code class="sig-name descname">onload</code><a class="headerlink" href="#FileReader.onload" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вы­зы­ва­ет­ся в слу­чае ус­пеш­но­го за­вер­ше­ния опе­ра­ции чте­ния объ­ек­та
+File или Blob.</p>
+<p>Свой­ст­во result объ­ек­та FileReader хра­нит со­дер­жи­мое объ­ек­та
+File или Blob в ви­де,
+за­ви­ся­щем от ис­поль­зо­вав­ше­го­ся ме­то­да чте­ния.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FileReader.onloadend">
+<code class="sig-name descname">onloadend</code><a class="headerlink" href="#FileReader.onloadend" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ка­ж­дый вы­зов ме­то­да чте­ния объ­ек­та FileReader в ко­неч­ном ито­ге
+воз­бу­ж­да­ет со бы­тие «load», «error» или «abort».</p>
+<p>Кро­ме то­го,
+по­сле ка­ж­до­го из этих со­бы­тий объ­ект FileReader воз­бу­ж­да­ет со­бы­тие
+«loadend» для про­грамм,
+в ко­то­рых бы­ло бы же­ла­тель­но об­ра­ба­ты­вать един­ст­вен­ное со­бы­тие
+вме­сто трех.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FileReader.onloadstart">
+<code class="sig-name descname">onloadstart</code><a class="headerlink" href="#FileReader.onloadstart" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вы­зы­ва­ет­ся по­сле вы­зо­ва ме­то­да чте­ния,
+но пе­ред тем как бу­дут про­чи­та­ны ка­кие-ли­бо дан­ные.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FileReader.onprogress">
+<code class="sig-name descname">onprogress</code><a class="headerlink" href="#FileReader.onprogress" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Воз­бу­ж­да­ет­ся при­мер­но 20 раз в се­кун­ду,
+по­ка вы­пол­ня­ет­ся чте­ние дан­ных из объ­ек­та File или Blob.</p>
+<p>Объ­ект ProgressEvent по­зво­ля­ет уз­нать ко­ли­че­ст­во про­чи­тан­ных бай­тов,
+а свой­ст­во result объ­ек­та FileReader мо­жет со­дер­жать пред­став­ле­ние
+этих бай­тов.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FileReader.readyState">
+<code class="sig-name descname">readyState</code><a class="headerlink" href="#FileReader.readyState" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во опи­сы­ва­ет те­ку­щее со­стоя­ние объ­ек­та FileReader.</p>
+<p>Его зна­че­ни­ем бу­дет од­на из трех кон­стант:</p>
+<ul class="simple">
+<li><p><cite>EMPTY</cite> = 0, Ме­тод чте­ния еще не был вы­зван.</p></li>
+<li><p><cite>LOADING</cite> = 1, Вы­пол­ня­ет­ся опе­ра­ция чте­ния.</p></li>
+<li><p><cite>DONE</cite> = 2, Опе­ра­ция чте­ния за­вер­ши­лась, ус­пеш­но или с ошиб­кой.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FileReader.result">
+<code class="sig-name descname">result</code><a class="headerlink" href="#FileReader.result" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ес­ли опе­ра­ция чте­ния за­вер­шит­ся ус­пеш­но,
+это свой­ст­во бу­дет хра­нить со­дер­жи­мое объ­ек­та
+File или Blob в ви­де стро­ки или объ­ек­та ArrayBuffer
+(в за­ви­си­мо­сти от ис­поль­зо­вав­ше­го­ся ме­то­да чте­ния).</p>
+<p>Ко­гда свой­ст­во readyState име­ет зна­че­ние LOADING или
+ко­гда воз­бу­ж­да­ет­ся со­бы­тие «progress»,
+это свой­ст­во мо­жет хра­нить не­пол­ное со­дер­жи­мое объ­ек­та File или Blob.</p>
+<p>Ес­ли ме­тод чте­ния еще не был вы­зван или ес­ли воз­ник­ла ошиб­ка,
+это свой­ст­во бу­дет иметь зна­че­ние null.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="FileReader.abort">
+<code class="sig-name descname">abort</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FileReader.abort" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Пре­ры­ва­ет опе­ра­цию чте­ния.</p>
+<p>Он при­сваи­ва­ет свой­ст­ву readyState зна­че­ние DONE,
+свой­ст­ву result – зна­че­ние null и
+свой­ст­ву error – объ­ект FileError со свой­ст­вом code,
+ус­та­нов­лен­ным в зна­че­ние FileError.ABORT_ERR.</p>
+<p>По­сле это­го воз­бу­ж­да­ют­ся со­бы­тия «abort» и «loadend».</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="FileReader.readAsArrayBuffer">
+<code class="sig-name descname">readAsArrayBuffer</code><span class="sig-paren">(</span><em class="sig-param">Blob blob</em><span class="sig-paren">)</span><a class="headerlink" href="#FileReader.readAsArrayBuffer" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Асин­хрон­но чи­та­ет дан­ные из объ­ек­та blob и
+со­хра­ня­ет их в свой­ст­ве result в ви­де объ­ек­та ArrayBuffer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="FileReader.readAsBinaryString">
+<code class="sig-name descname">readAsBinaryString</code><span class="sig-paren">(</span><em class="sig-param">Blob blob</em><span class="sig-paren">)</span><a class="headerlink" href="#FileReader.readAsBinaryString" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Асин­хрон­но чи­та­ет бай­ты дан­ных из объ­ек­та blob,
+пре­об­ра­зу­ет их в  дво­ич­ную стро­ку и со­хра­ня­ет ее в свой­ст­ве result.</p>
+<p>Ка­ж­дый «сим­вол» в дво­ич­ной стро­ке пред­став­лен ко­дом сим­во­ла в
+диа­па­зо­не от 0 до 255.</p>
+<p>Из­вле­кать эти зна­че­ния бай­тов мож­но с по­мо­щью ме­то­да String.charCodeAt().</p>
+<p>Сле­ду­ет от­ме­тить, что дво­ич­ные стро­ки яв­ля­ют­ся
+не са­мым эф­фек­тив­ным пред­став­ле­ни­ем дво­ич­ных дан­ных:
+вме­сто них сле­ду­ет ис­поль­зо­вать объ­ек­ты ArrayBuffer, ко­гда это воз­мож­но.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="FileReader.readAsDataURL">
+<code class="sig-name descname">readAsDataURL</code><span class="sig-paren">(</span><em class="sig-param">Blob blob</em><span class="sig-paren">)</span><a class="headerlink" href="#FileReader.readAsDataURL" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Асин­хрон­но чи­та­ет бай­ты дан­ных из объ­ек­та blob,
+пре­об­ра­зу­ет их (учи­ты­вая тип объ­ек­та Blob) в URL-ад­рес <a class="reference external" href="data://">data://</a> и
+при­сваи­ва­ет по­лу­чен­ную стро­ку свой­ст­ву result.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="FileReader.readAsText">
+<code class="sig-name descname">readAsText</code><span class="sig-paren">(</span><em class="sig-param">Blob blob</em><span class="optional">[</span>, <em class="sig-param">string encoding</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#FileReader.readAsText" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Асин­хрон­но чи­та­ет бай­ты дан­ных из объ­ек­та blob,
+де­ко­ди­ру­ет их с ис­поль­зо­ва­ни­ем ко­ди­ров­ки encoding в тек­сто­вую стро­ку
+Юни­ко­да и за­тем при­сваи­ва­ет по­лу­чен­ную стро­ку свой­ст­ву result.</p>
+<p>Ес­ли ар­гу­мент encoding не ука­зан,
+ис­поль­зу­ет­ся ко­ди­ров­ка UTF-8
+(текст в ко­ди­ров­ке UTF-16 оп­ре­де­ля­ет­ся и де­ко­ди­ру­ет­ся ав­то­ма­ти­че­ски,
+ес­ли он на­чи­на­ет­ся с мар­ке­ра Byte Order Mark)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="FileReaderSync.html" class="btn btn-neutral float-right" title="FileReaderSync" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="FileError.html" class="btn btn-neutral float-left" title="FileError - ошибка, возникшая во время чтения файла" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

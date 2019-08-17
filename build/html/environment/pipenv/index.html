@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pipenv &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Basic Usage of Pipenv" href="base.html" />
+    <link rel="prev" title="Environment" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Environment</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pipenv</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="base.html">Basic Usage of Pipenv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced.html">Advanced Usage of Pipenv</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Environment</a> &raquo;</li>
+        
+      <li>Pipenv</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/environment/pipenv/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pipenv">
+<h1>Pipenv<a class="headerlink" href="#pipenv" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="base.html">Basic Usage of Pipenv</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="base.html#example-pipfile-pipfile-lock">Example Pipfile &amp; Pipfile.lock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#id1">Общие рекомендации &amp; Контроль версий</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#example-pipenv-workflow">Example Pipenv Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#example-pipenv-upgrade-workflow">Example Pipenv Upgrade Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#importing-from-requirements-txt">Importing from requirements.txt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#specifying-versions-of-a-package">Specifying Versions of a Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#specifying-versions-of-python">Specifying Versions of Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#editable-dependencies-e-g-e">Editable Dependencies (e.g. <code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">.</span></code> )</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#environment-management-with-pipenv">Environment Management with Pipenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#about-shell-configuration">About Shell Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#a-note-about-vcs-dependencies">A Note about VCS Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.html#pipfile-lock-security-features">Pipfile.lock Security Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Usage of Pipenv</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#id1">Предостережения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#specifying-package-indexes">Specifying Package Indexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#using-a-pypi-mirror">Using a PyPI Mirror</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#injecting-credentials-into-pipfiles-via-environment-variables">Injecting credentials into Pipfiles via environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#specifying-basically-anything">Specifying Basically Anything</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#using-pipenv-for-deployments">Using pipenv for Deployments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#pipenv-and-other-python-distributions">Pipenv and Other Python Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#generating-a-requirements-txt">Generating a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#detection-of-security-vulnerabilities">Detection of Security Vulnerabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#community-integrations">Community Integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#open-a-module-in-your-editor">Open a Module in Your Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#automatic-python-installation">Automatic Python Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#automatic-loading-of-env">Automatic Loading of <code class="docutils literal notranslate"><span class="pre">.env</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#custom-script-shortcuts">Custom Script Shortcuts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#support-for-environment-variables">Support for Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#configuration-with-environment-variables">Configuration With Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#custom-virtual-environment-location">Custom Virtual Environment Location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#testing-projects">Testing Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#shell-completion">Shell Completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#working-with-platform-provided-python-components">Working with Platform-Provided Python Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#pipfile-vs-setup-py">Pipfile vs setup.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#changing-pipenv-s-cache-location">Changing Pipenv’s Cache Location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html#changing-default-python-versions">Changing Default Python Versions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="base.html" class="btn btn-neutral float-right" title="Basic Usage of Pipenv" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

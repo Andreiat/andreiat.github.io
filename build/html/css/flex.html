@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>flex &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="next" title="JavaScript" href="../js/index.html" />
+    <link rel="prev" title="FAQ" href="faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html5/index.html">HTML5</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CSS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="selectors.html">Селекторы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html">Фон</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html">Границы, отступы и поля</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html">Текст</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">Списки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html">Разметка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">table - таблицы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html">Анимации, преобразования и переходы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html">Псевдоклассы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoelements.html">Псевдоэлементы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">flex</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#align-content">align-content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#align-items">align-items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#align-self">align-self</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flex-basis">flex-basis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flex-direction">flex-direction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flex-grow">flex-grow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flex-shrink">flex-shrink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flex-wrap">flex-wrap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#justify-content">justify-content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#order">order</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">Цвета</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">Единицы измерения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#content">content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#cursor">cursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#linear-gradient">linear-gradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#media">media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#opacity">opacity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#orphans">orphans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#page-break-after">page-break-after</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#page-break-before">page-break-before</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#page-break-inside">page-break-inside</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#widows">widows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">CSS</a> &raquo;</li>
+        
+      <li>flex</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/css/flex.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="flex">
+<h1>flex<a class="headerlink" href="#flex" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">some-class</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+    <span class="k">flex</span><span class="p">:</span> <span class="kc">flex</span><span class="o">-</span><span class="n">grow</span> <span class="kc">flex</span><span class="o">-</span><span class="n">shrink</span> <span class="kc">flex</span><span class="o">-</span><span class="n">basis</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="align-content">
+<h2>align-content<a class="headerlink" href="#align-content" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Распределение основных осей вродителе</p>
+<ul class="simple">
+<li><p>center</p></li>
+<li><p>space-between</p></li>
+<li><p>stretch</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">some-class</span> <span class="p">{</span>
+    <span class="k">align-content</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="align-items">
+<h2>align-items<a class="headerlink" href="#align-items" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Выравнивание дочерних элементов по второстепенной оси</p>
+<ul class="simple">
+<li><p>baseline</p></li>
+<li><p>flex-start - выравнивание по верхнему краю</p></li>
+<li><p>flex-end - выравнивание по нижнему краю</p></li>
+<li><p>center - по центру</p></li>
+<li><p>stretch - по максимальному, по умолчанию</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">some-class</span> <span class="p">{</span>
+    <span class="k">align-items</span><span class="p">:</span> <span class="kc">stretch</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="align-self">
+<h2>align-self<a class="headerlink" href="#align-self" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Выравнивание самого дочернего элемента</p>
+<ul class="simple">
+<li><p>auto - по умолчанию, как в родительском</p></li>
+<li><p>baseline</p></li>
+<li><p>flex-start - выравнивание по верхнему краю</p></li>
+<li><p>flex-end - выравнивание по нижнему краю</p></li>
+<li><p>center - по центру</p></li>
+<li><p>stretch - по максимальному</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">some-child-class</span> <span class="p">{</span>
+    <span class="k">align-self</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="flex-basis">
+<h2>flex-basis<a class="headerlink" href="#flex-basis" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Задает минимальную ширину дочернего элемента.</p>
+<p>Если дочерний элемент находится на основной оси с другими элементами,
+то его ширина не будет изменяться при уменьшении ширины родительского элемента,
+другие элементы или сам элемент будут переходить на другие оси.</p>
+<p>Если дочерний элемент находится на основной оси один,
+то его ширина будет уменьшаться при уменьшении ширины родительского элемента.</p>
+<ul class="simple">
+<li><p>auto</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">some-child-class</span> <span class="p">{</span>
+    <span class="k">flex-basis</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="flex-direction">
+<h2>flex-direction<a class="headerlink" href="#flex-direction" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Направление основной оси</p>
+<ul class="simple">
+<li><p>column - сверху вних</p></li>
+<li><p>column-reverse - снизу вверх</p></li>
+<li><p>row - по умолчанию, слева направо</p></li>
+<li><p>row-reverse - справа налево</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">some-class</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+    <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="flex-grow">
+<h2>flex-grow<a class="headerlink" href="#flex-grow" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Степень жадности элемента</p>
+<p>Если значение отличное от 0,
+то по ширине элемент займет все пустое пространство по главной оси.</p>
+<ul class="simple">
+<li><p>0 - по умолчанию, элемент не жадный</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">some-child-class</span> <span class="p">{</span>
+    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="flex-shrink">
+<h2>flex-shrink<a class="headerlink" href="#flex-shrink" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Степень/скорость сжимаемости элемента</p>
+<ul class="simple">
+<li><p>0 - элемент не сжимаемый</p></li>
+<li><p>1 - по умолчанию, элемент сжимаемый</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">some-class</span> <span class="p">{</span>
+    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="flex-wrap">
+<h2>flex-wrap<a class="headerlink" href="#flex-wrap" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Перенос элементов в элементе</p>
+<ul class="simple">
+<li><p>no-wrap - по умолчанию, не переносить</p></li>
+<li><p>wrap - переносить</p></li>
+<li><p>wrap-reverse</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">some-class</span> <span class="p">{</span>
+    <span class="k">flex-wrap</span><span class="p">:</span> <span class="kc">wrap</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="justify-content">
+<h2>justify-content<a class="headerlink" href="#justify-content" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Заполнение оси</p>
+<ul class="simple">
+<li><p>flex-end - относительно конца</p></li>
+<li><p>flex-start - относительно начала</p></li>
+<li><p>center - от центра</p></li>
+<li><p>space-around - растягивает по оси, оставляя равные промежутки между элементами</p></li>
+<li><p>space-between - растягивает по оси, оставляя равные промежутки между элементами</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">some-class</span> <span class="p">{</span>
+    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-start</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="order">
+<h2>order<a class="headerlink" href="#order" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Задает порядковый номер элементу по флекс контейнере</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>.some-child-class {
+    order: -1;
+}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../js/index.html" class="btn btn-neutral float-right" title="JavaScript" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="faq.html" class="btn btn-neutral float-left" title="FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

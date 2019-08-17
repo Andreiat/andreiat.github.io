@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>VUE.JS &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="next" title="Environment" href="../environment/index.html" />
+    <link rel="prev" title="jqueryvalidation" href="../jquery/jquery_validation/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">VUE.JS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Директивы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Фильтры</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Вычисляемые поля</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>VUE.JS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/vuejs/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vue-js">
+<h1>VUE.JS<a class="headerlink" href="#vue-js" title="Ссылка на этот заголовок">¶</a></h1>
+<p>отображаем данные в элементе</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;todos&#39;</span> <span class="na">data-title</span><span class="o">=</span><span class="s">&#39;{{title}}&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>отображаем элементы из списка</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-repeat</span><span class="o">=</span><span class="s">&#39;tasks&#39;</span><span class="p">&gt;</span>{{title}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    внутри цикла достцпны перменные $index, $key, $value
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-repeat</span><span class="o">=</span><span class="s">&#39;task: tasks&#39;</span><span class="p">&gt;</span>{{title}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    внутри цикла достцпны перменные $index, $key, $value
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">v-show</span><span class="o">=</span><span class="s">&#39;task != editTask&#39;</span> <span class="na">v-on</span><span class="o">=</span><span class="s">&#39;dblclick: editTask = task&#39;</span> <span class="na">v-class</span><span class="o">=</span><span class="s">&#39;text-primary : task.done&#39;</span><span class="p">&gt;</span>{{ task.title }}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-show</span><span class="o">=</span><span class="s">&#39;task == editTask&#39;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#39;editTask.title&#39;</span> <span class="na">v-on</span><span class="o">=</span><span class="s">&#39;keyup: editTask = null | key &quot;enter&quot;&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>обработка формы</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">v-on</span><span class="o">=</span><span class="s">&#39;submit: addTask&#39;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">lazy</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#39;newTask&#39;</span><span class="p">&gt;</span>
+    lazy - данные попадут в модель после события change
+
+    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">v-on</span><span class="o">=</span><span class="s">&#39;click: removeTask($index)&#39;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>фильтр, выводим значение переменной в json формате</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+    {{ $data | json }}
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>var Todos = Vue.extend({
+    name: &#39;todos&#39;
+});
+
+var vm = new Todos({
+    el: &#39;#todos&#39;, // элемент внутри которого работаем
+    data: {
+        title: &#39;todos&#39;
+    },
+    ready: function(){
+        console.log(&#39;viewmodel ready!&#39;);
+    }
+});
+
+var vm2 = new Todos({
+
+    // элемент внутри которого работаем, селектор или сам элемент
+    el: &#39;#todos&#39;,
+
+    // данные вьюхи
+    data: {
+        tasks: [
+            {
+                title: &#39;1&#39;,
+                done: true
+            }, {
+                title: &#39;2&#39;,
+                done: false
+            }
+        ],
+        newTask: &#39;&#39;,
+        editTask: &#39;&#39;
+    },
+    // фильтры
+    filters: {
+        openTasks: function(){
+            return this.tasks.filter(function(item){
+                return item.done;
+            });
+        }
+    },
+    // методы
+    methods: {
+        addTask: function(event){
+            // обработчик сабмита формы
+
+            e.preventDefault();
+            console.log(&#39;Task added&#39;);
+            this.tasks.push({title: this.newTask, done: false})
+            this.newTask = &#39;
+        },
+        removeTask: function(index){
+            this.tasks.$remove(index);
+        }
+    }
+    ready: function(){
+        console.log(&#39;viewmodel ready!&#39;);
+    }
+});
+
+// познеесвязывание представления с вьюмоделью
+vm.$mount(&#39;todos&#39;);
+
+// изменение данных в ВМ
+vm.$data.title = &#39;123&#39;
+
+// добавление данных в ВМ
+vm.$data.$add(&#39;title&#39;, &#39;NewTitle);
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h2>Директивы<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>v-text - текстовое содержимое элемента, textContent
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">v-text</span><span class="o">=</span><span class="s">&#39;variable&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+
+v-html - innerHTML
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">v-html</span><span class="o">=</span><span class="s">&#39;html&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+
+v-attr - attributes
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">v-attr</span><span class="o">=</span><span class="s">&quot;width: &#39;100px&#39;, height: &#39;100px&#39;&quot;</span><span class="p">/&gt;</span>
+
+v-class - добавляет классы
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">v-class</span><span class="o">=</span><span class="s">&quot;red: true&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+
+v-style - css-style
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">v-style</span><span class="o">=</span><span class="s">&quot;css.string, css.object&quot;</span><span class="p">&gt;</span>
+
+v-show, v-if - display
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">v-show</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;false&quot;</span><span class="p">&gt;</span>
+
+v-on - добавляет обработчик событий
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">v-on</span><span class="o">=</span><span class="s">&quot;click: callback, blur: red = !red&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">v-on</span><span class="o">=</span><span class="s">&quot;submit: callback($event)&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">v-on</span><span class="o">=</span><span class="s">&quot;keyup: callback($event) | key 13&quot;</span><span class="p">&gt;</span> // enter
+<span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">v-on</span><span class="o">=</span><span class="s">&quot;keyup: callback($event) | key &#39;enter&#39;&quot;</span><span class="p">&gt;</span> // enter
+
+v-el - задает идентификатор элементу
+<span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">v-el</span><span class="o">=</span><span class="s">&quot;comment&quot;</span> <span class="na">v-on</span><span class="o">=</span><span class="s">&quot;submit: callback($event)&quot;</span><span class="p">&gt;</span>
+
+callback: function(event){
+    this.$$.comment.value;
+}
+
+v-pre - элемент не используется для дата биндинга
+
+v-repeat - цикл, track-by - ключ, идентификатор, для того чтобы не перерисовывать объект
+
+v-model- lazy, debounce - таймер для синхронизации, number - преобразовать к числу если возможно
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>Vue.directive(&#39;test&#39;, {
+    bind: function(){
+        // привязываем элемент к директиве
+
+    },
+    unbind: function(){
+        // удаляем директиву из элемента
+    },
+    update: function(newValue, oldValue){
+        // значение будет изменено
+    }
+})
+Vue.directive(&#39;test&#39;, function(){
+        // удаляем директиву из элемента
+    }
+})
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">v-test</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">/&gt;</span>
+
+
+Vue.elementDirective(&#39;like&#39;, {
+    bind: function(){
+    },
+
+});
+<span class="p">&lt;</span><span class="nt">like</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Фильтры<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>Vue.filter(&#39;filter-name&#39;, {
+    read: function(value){
+    },
+    write: function(newValue, oldValue){
+    }
+})
+Vue.filter(&#39;filter-name&#39;, function(value, ends){
+    },
+})
+
+- json
+- capitalize
+- uppercase
+- lowercase
+- currence &#39;RUB&#39;
+- pluralize &#39;item&#39;
+- pluralize &#39;ый&#39; &#39;ой&#39;
+- filterBy &#39;t&#39; - поиск во всех свойствах
+- filterBy &#39;t&#39; in &#39;title&#39; - поиск в указанных свойствах
+- orderBy &#39;id&#39; true
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Вычисляемые поля<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>var vm = new Vue({
+    el: &#39;#container&#39;,
+    data: {},
+    computed: {
+        full_name: {
+            get: function(){},
+            set: function(value){},
+        },
+        initials: function(){
+            // сеттер нам не нужен
+        },
+
+    }
+});
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../environment/index.html" class="btn btn-neutral float-right" title="Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../jquery/jquery_validation/index.html" class="btn btn-neutral float-left" title="jqueryvalidation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

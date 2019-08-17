@@ -1,0 +1,650 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CSS &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="next" title="Селекторы" href="selectors.html" />
+    <link rel="prev" title="video" href="../html5/video.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html5/index.html">HTML5</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CSS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selectors.html">Селекторы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html">Фон</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html">Границы, отступы и поля</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html">Текст</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">Списки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html">Разметка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">table - таблицы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html">Анимации, преобразования и переходы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html">Псевдоклассы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoelements.html">Псевдоэлементы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html">flex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Цвета</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Единицы измерения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#content">content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cursor">cursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linear-gradient">linear-gradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#media">media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opacity">opacity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#orphans">orphans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#page-break-after">page-break-after</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#page-break-before">page-break-before</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#page-break-inside">page-break-inside</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#widows">widows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>CSS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/css/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="css">
+<h1>CSS<a class="headerlink" href="#css" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#39;stylesheet&#39;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;main.css&#39;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="selectors.html">Селекторы</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selectors.html#id2">Атрибутов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selectors.html#id3">Дочерние</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selectors.html#id4">Идентификатора</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selectors.html#id5">Класса</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selectors.html#id6">Потомки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selectors.html#id7">Сборные</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selectors.html#id8">Смежные</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selectors.html#id9">Типа</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="background.html">Фон</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="background.html#background">background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#background-attachment">background-attachment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#background-clip">background-clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#background-color">background-color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#background-image">background-image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#background-origin">background-origin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#background-position">background-position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#background-repeat">background-repeat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#background-size">background-size</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="border.html">Границы, отступы и поля</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="border.html#box-shadow">box-shadow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#border">border</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#border-bottom">border-bottom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#border-color">border-color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#border-left">border-left</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#border-radius">border-radius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#border-right">border-right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#border-spacing">border-spacing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#border-style">border-style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#border-top">border-top</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#border-width">border-width</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#box-sizing">box-sizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#margin">margin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#outline">outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html#padding">padding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="font.html">Текст</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="font.html#color">color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#font">font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#font-family">font-family</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#font-size">font-size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#font-style">font-style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#font-variant">font-variant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#font-weight">font-weight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#letter-spacing">letter-spacing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#line-height">line-height</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#text-align">text-align</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#text-align-last">text-align-last</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#text-decoration">text-decoration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#text-indent">text-indent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#text-overflow">text-overflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#text-shadow">text-shadow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#text-transform">text-transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#vertical-align">vertical-align</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#white-space">white-space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#word-spacing">word-spacing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html#word-wrap">word-wrap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="list.html">Списки</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="list.html#list-style">list-style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html#list-style-image">list-style-image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html#list-style-position">list-style-position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html#list-style-type">list-style-type</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="marking.html">Разметка</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#bottom">bottom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#clear">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#clip">clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#display">display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#float">float</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#height">height</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#left">left</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#max-height">max-height</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#max-width">max-width</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#min-height">min-height</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#min-width">min-width</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#overflow">overflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#position">position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#right">right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#top">top</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#visibility">visibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#width">width</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html#z-index">z-index</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="table.html">table - таблицы</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="table.html#border-collapse">border-collapse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html#border-spacing">border-spacing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html#caption-side">caption-side</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html#empty-cells">empty-cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html#table-layout">table-layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="animation.html">Анимации, преобразования и переходы</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#animation">animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#animation-name">animation-name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#animation-duration">animation-duration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#animation-timing-function">animation-timing-function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#animation-delay">animation-delay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#animation-iteration-count">animation-iteration-count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#animation-direction">animation-direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#animation-fill-mode">animation-fill-mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#animation-play-state">animation-play-state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#keyframes">keyframes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#transform">transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#transform-origin">transform-origin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html#transition">transition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psevdoclass.html">Псевдоклассы</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#active">active</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#after">after</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#checked">checked</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#default">default</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#disabled">disabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#empty">empty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#enabled">enabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#first-child">first-child</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#first-of-type">first-of-type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#focus">focus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#hover">hover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#in-range">in-range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#indeterminate">indeterminate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#invalid">invalid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#last-child">last-child</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#last-of-type">last-of-type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#lang">lang</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#link">link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#not">not</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#nth-child">nth-child</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#nth-last-child">nth-last-child</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#nth-last-of-type">nth-last-of-type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#nth-of-type">nth-of-type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#only-child">only-child</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#only-of-type">only-of-type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#out-range">out-range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#read-only">read-only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#read-write">read-write</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#required">required</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#root">root</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#target">target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#valid">valid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html#visited">visited</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="psevdoelements.html">Псевдоэлементы</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="psevdoelements.html#after">after</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoelements.html#before">before</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoelements.html#first-letter">first-letter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoelements.html#first-line">first-line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#id1">Треуголник</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flex.html">flex</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="flex.html#align-content">align-content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html#align-items">align-items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html#align-self">align-self</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html#flex-basis">flex-basis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html#flex-direction">flex-direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html#flex-grow">flex-grow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html#flex-shrink">flex-shrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html#flex-wrap">flex-wrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html#justify-content">justify-content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html#order">order</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>Цвета<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">,</span>
+    <span class="kc">color</span><span class="o">:</span> <span class="mh">#ff00ff</span><span class="p">,</span>
+    <span class="kc">color</span><span class="o">:</span> <span class="mh">#f0f</span><span class="p">,</span>
+    <span class="kc">color</span><span class="o">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span>
+    <span class="kc">color</span><span class="o">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">100</span><span class="kt">%</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="kt">%</span><span class="p">),</span>
+    <span class="kc">color</span><span class="o">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="kc">color</span><span class="o">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">100</span><span class="kt">%</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="kt">%</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+
+    <span class="c">/* тон, насыщенность, яркость */</span>
+    <span class="kc">color</span><span class="o">:</span> <span class="nb">hsl</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="kt">%</span><span class="p">,</span> <span class="mi">50</span><span class="kt">%</span><span class="p">),</span>
+    <span class="kc">color</span><span class="o">:</span> <span class="nb">hsla</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="kt">%</span><span class="p">,</span> <span class="mi">50</span><span class="kt">%</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+
+    <span class="c">/* голубой, пурпурный, желтый, черный */</span>
+    <span class="kc">color</span><span class="o">:</span> <span class="nf">cmyk</span><span class="p">(</span><span class="mi">29</span><span class="kt">%</span><span class="p">,</span> <span class="mi">55</span><span class="kt">%</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Единицы измерения<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li><p>em - относительный, размера шрифта родительского элемента</p></li>
+<li><p>ex - относительный, высоты символа х в нижнем регистре</p></li>
+<li><p>ch - относительный, размера символа нуль</p></li>
+<li><p>rem - относительный, размера шрифта корневого элемента</p></li>
+<li><p>vw - относительный, ширины окна просмотра</p></li>
+<li><p>vh - относительный, высоты экрана просмотра</p></li>
+<li><p>vmin - наименьшее значение между vw и vh</p></li>
+<li><p>vmax - наибольшее значение между vw и vh</p></li>
+<li><p>px - относительный, разрешения экрана, 1/72 дюйма</p></li>
+<li><p>in - дюйм</p></li>
+<li><p>cm - сантиметры</p></li>
+<li><p>mm - милиметры</p></li>
+<li><p>pt - пункты, 1/72 дюйма</p></li>
+<li><p>pc - пика, 1/12 пункта</p></li>
+<li><p>% - относительный, родительского элемента</p></li>
+<li><p>dpi - разрешение точек на дюйм</p></li>
+<li><p>dpc - разрешение точек на сантиметр</p></li>
+<li><p>dppx - разрешение точек на пиксель</p></li>
+</ul>
+<p>Угловые, временные и частоты</p>
+<ul class="simple">
+<li><p>deg - градусы</p></li>
+<li><p>grad - градиан, 1/400 окружности</p></li>
+<li><p>rad - радиан, 180/pi, ~57.3</p></li>
+<li><p>turn - оборот</p></li>
+<li><p>ms - миллисекунда</p></li>
+<li><p>s - секунда</p></li>
+<li><p>Hz - герц</p></li>
+<li><p>kHz - килогерц</p></li>
+</ul>
+</div>
+<div class="section" id="content">
+<h2>content<a class="headerlink" href="#content" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Текст, который появляется либо до, либо после элемента.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span><span class="p">:</span><span class="nd">before</span> <span class="p">{</span>
+    <span class="k">content</span><span class="p">:</span> <span class="s2">&quot;Before&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem</span><span class="p">:</span><span class="nd">after</span> <span class="p">{</span>
+    <span class="k">content</span><span class="p">:</span> <span class="s2">&quot;After&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cursor">
+<h2>cursor<a class="headerlink" href="#cursor" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Определаяет форму указателя мышки</p>
+<ul class="simple">
+<li><p>auto - по умолчанию</p></li>
+<li><p>default</p></li>
+<li><p>crosshair</p></li>
+<li><p>pointer</p></li>
+<li><p>move</p></li>
+<li><p>e-resize</p></li>
+<li><p>ne-resize</p></li>
+<li><p>nw-resize</p></li>
+<li><p>resize</p></li>
+<li><p>se-resize</p></li>
+<li><p>sw-resize</p></li>
+<li><p>s-resize</p></li>
+<li><p>w-resize</p></li>
+<li><p>text</p></li>
+<li><p>wait</p></li>
+<li><p>help</p></li>
+<li><p>progress</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">cursor</span><span class="p">:</span> <span class="kc">help</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem1</span> <span class="p">{</span>
+    <span class="k">cursor</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="sx">images/cursor.cur</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="linear-gradient">
+<h2>linear-gradient<a class="headerlink" href="#linear-gradient" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Градиентная заливка</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span>elem {
+    linear-gradient(top, #fff, #efefef);
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="media">
+<h2>media<a class="headerlink" href="#media" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Медиазапросы</p>
+<p>Типы устройств:</p>
+<ul class="simple">
+<li><p>all - все устройства</p></li>
+<li><p>braille - устройства с тактильной обратной связью</p></li>
+<li><p>embossed - брайлевсике принтеры</p></li>
+<li><p>handled - портативные устройства</p></li>
+<li><p>print - принтеры</p></li>
+<li><p>projection - проекторы</p></li>
+<li><p>screen - цветные экраны</p></li>
+<li><p>speech - речевые синтезаторы</p></li>
+<li><p>tty - моноширинная символьная среда</p></li>
+<li><p>tv - телевизоры</p></li>
+</ul>
+<p>Другие:</p>
+<ul class="simple">
+<li><p>color - количество бит на цвет</p></li>
+<li><p>color-index - количесвто записей в таблице подстановки цветов</p></li>
+<li><p>grid - устройство с фиксированным размером символов</p></li>
+<li><p>monochrome - сколько бит на каждый пиксель</p></li>
+<li><p>orientation - ориентация экрана</p></li>
+<li><p>resolution - разрешение экрана или печати</p></li>
+<li><p>scan - тип развертки</p></li>
+<li><p>width - ширина области просмотра</p></li>
+<li><p>height - высота области просмотра</p></li>
+<li><p>min-width</p></li>
+<li><p>max-width</p></li>
+<li><p>min-height</p></li>
+<li><p>max-height</p></li>
+<li><p>device-width - ширина экрана</p></li>
+<li><p>device-height - высота экрана</p></li>
+<li><p>min-device-width</p></li>
+<li><p>max-device-width</p></li>
+<li><p>min-device-height</p></li>
+<li><p>max-device-height</p></li>
+<li><p>aspect-ratio - соотношение сторон области просмотра</p></li>
+<li><p>min-aspect-ratio</p></li>
+<li><p>max-aspect-ratio</p></li>
+<li><p>device-aspect-ratio - соотношение сторон экрана</p></li>
+<li><p>min-device-aspect-ratio</p></li>
+<li><p>max-device-aspect-ratio</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span>@media screen and (max-width: 960px){
+    body {
+        ...
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="opacity">
+<h2>opacity<a class="headerlink" href="#opacity" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Прозрачность элемента</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">opacity</span><span class="p">:</span> <span class="mf">.5</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="orphans">
+<span id="id3"></span><h2>orphans<a class="headerlink" href="#orphans" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Минимальное количество строк текста, которые можно оставить внизу распечатанной страницы</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">orphans</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="page-break-after">
+<h2>page-break-after<a class="headerlink" href="#page-break-after" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Происходит ли разрыв страницы при печати после определенного элемента</p>
+<ul class="simple">
+<li><p>auto - по умолчанию</p></li>
+<li><p>always - элемент, который следует далее, появится вверху отдельной печатной страницы</p></li>
+<li><p>avoid - предотвращает обрыв страницы после элмента</p></li>
+<li><p>left</p></li>
+<li><p>right</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">page-break-after</span><span class="p">:</span> <span class="kc">always</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="page-break-before">
+<h2>page-break-before<a class="headerlink" href="#page-break-before" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Происходит ли разрыв страницы при печати перед определенным элементом</p>
+<ul class="simple">
+<li><p>auto - по умолчанию</p></li>
+<li><p>always - элемент, который следует перед, появится вверху отдельной печатной страницы</p></li>
+<li><p>avoid - предотвращает обрыв страницы перед элментом</p></li>
+<li><p>left</p></li>
+<li><p>right</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">page-break-before</span><span class="p">:</span> <span class="kc">always</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="page-break-inside">
+<h2>page-break-inside<a class="headerlink" href="#page-break-inside" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Препятствует тому, что элмент будет разбит на две печатные страницы</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">page-break-inside</span><span class="p">:</span> <span class="kc">avoid</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="widows">
+<h2>widows<a class="headerlink" href="#widows" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Противоположное <a class="reference internal" href="#orphans"><span class="std std-ref">orphans</span></a>, минимальное количество строк, которое должно появиться наверху печатной страницы</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">widows</span><span class="p">:</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="selectors.html" class="btn btn-neutral float-right" title="Селекторы" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../html5/video.html" class="btn btn-neutral float-left" title="video" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
