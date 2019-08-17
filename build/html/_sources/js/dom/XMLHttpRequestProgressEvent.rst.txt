@@ -1,4 +1,0 @@
-XMLHttpRequestProgressEvent
-===========================
-
-.. py:class:: XMLHttpRequestProgressEvent()
