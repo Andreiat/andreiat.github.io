@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bab11e46-a169-46f7-87d7-933781c3e2b4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.buildinfo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nojekyll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_images/bar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_images/doughnut.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_images/line.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_images/pie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_images/polar_area.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_images/radar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/bootstrap/blocks.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/bootstrap/forms.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/bootstrap/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/bootstrap/start.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/bootstrap/tabels.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/animation.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/background.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/border.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/faq.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/flex.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/font.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/list.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/marking.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/psevdoclass.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/psevdoelements.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/selectors.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/css/table.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django-extentions/django-precise-bbcode.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django-extentions/django-rest-framework/generics.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django-extentions/django-rest-framework/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django-extentions/django-rest-framework/permissions.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django-extentions/django-rest-framework/serializers.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django-extentions/django-rest-framework/viewsets.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django-extentions/django-taggit.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django-extentions/easy-thumbnails.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django-extentions/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/auth/admin.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/auth/decorators.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/auth/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/auth/models.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/auth/views.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/cli.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/contrib/contenttypes.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/contrib/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/contrib/messages.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/contrib/sessions.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/contrib/sitemap.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/contrib/staticfiles.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/contrib/syndication.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/faq.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/forms/fields.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/forms/forms.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/forms/formsets.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/forms/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/forms/widgets.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/models/fields.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/models/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/models/meta.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/models/migrations.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/models/query.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/models/relations.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/settings.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/signals.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/templates.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/urls.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/views/cbv.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/views/fbv.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/views/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/views/pagination.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/views/request.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/django/views/response.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/environment/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/environment/pipenv/advanced.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/environment/pipenv/base.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/environment/pipenv/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/a.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/blockquote.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/body.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/div.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/doc.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/doctype.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/form.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/head.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/html.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/img.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/link.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/list.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/mnemonic.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/ol.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/p.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/section.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/table.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/text.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html/ul.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/article.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/aside.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/audio.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/canvas.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/datalist.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/details.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/figure.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/footer.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/globals_attr.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/header.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/hgroup.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/input.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/main.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/mark.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/meter.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/nav.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/progress.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/time.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/html5/video.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/Deffered.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/ajax.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/animation.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/base.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/events.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/getters.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquery.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquery_validation/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquerymobile/cssstyles.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquerymobile/datadirection.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquerymobile/dataprefetch.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquerymobile/datarel.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquerymobile/datarole.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquerymobile/datatheme.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquerymobile/datatransition.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquerymobile/events.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquerymobile/images.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquerymobile/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jquerymobile/mobile.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/accordion.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/autocomplete.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/button.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/buttonset.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/datepicker.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/dialog.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/draggable.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/dropable.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/effects.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/progressbar.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/resizable.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/selectable.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/slider.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/sortable.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/jqueryui/tabs.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/methods.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/selectors.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/jquery/setter.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/ArrayBuffer.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/ArrayTyped.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Boolean.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Date.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Error.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Function.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Infinity.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/JSON.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Map.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Math.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/NaN.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Number.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Promise.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Reflect.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/RegExp.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Set.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/String.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/Symbol.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/array.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/class.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/data_structure/Array.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/data_structure/Object.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/data_structure/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/modules.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/null.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/object.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/oper.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/base/undefined.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/ApplicationCache.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/ArrayBufferView.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Attr.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Audio.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/AudioContext.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/BeforeUnloadEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Blob.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/BlobBuilder.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Button.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/CSSRule.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/CSSStyleDeclaration.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/CSSStyleSheet.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Canvas.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/CanvasGradient.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/CanvasPattern.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/CanvasRenderingContext2D.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/CharacterData.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/ClientRect.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/CloseEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Comment.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Console.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/ConsoleCommandLine.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Context.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/CustomEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/DOMException.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/DOMImplementation.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/DOMSettableTokenList.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/DOMTokenList.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/DataTransfer.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/DataView.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Document.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/DocumentFragment.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/DocumentType.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Element.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/ErrorEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Event.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/EventSource.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/EventTarget.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/FieldSet.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/File.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/FileError.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/FileReader.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/FileReaderSync.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Form.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/FormControl.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/FormData.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/FormValidity.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Geocoordinates.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Geolocation.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/GeolocationError.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Geoposition.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/HTMLCollection.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/HashChangeEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/History.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/IFrame.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Image.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/ImageData.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Input.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Link.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/LocalStorage.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Location.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/MediaElement.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/MediaError.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/MessageChannel.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/MessageEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/MessagePort.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Meter.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/MouseEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/NamedNodeMap.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Navigator.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Node.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/NodeList.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Option.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Output.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/PageTransitionEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/PopStateEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/ProcessingInstruction.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Progress.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/ProgressEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Screen.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Script.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Select.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/SessionStorage.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Storage.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/StorageEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Style.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Table.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/TableCell.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/TableRow.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/TableSection.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Text.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/TextArea.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/TextMetrics.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/TimeRanges.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/TypedArray.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/URL.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Video.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/WebSocket.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Window.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/Worker.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/WorkerGlobalScope.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/WorkerLocation.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/WorkerNavigator.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/XMLHttpRequest.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/XMLHttpRequestProgressEvent.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/XMLHttpRequestUpload.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/dom/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/frameworks/chart_js.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/frameworks/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/js/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sources/vuejs/index.rst.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/_stemmer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/css/badge_only.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/css/theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/doctools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/documentation_options.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Inconsolata-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Inconsolata-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Inconsolata.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-bolditalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-bolditalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-bolditalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-bolditalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-italic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-italic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-italic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/Lato/lato-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/RobotoSlab-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/RobotoSlab-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/jquery-3.2.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/js/modernizr.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/js/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/language_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/minus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/pygments.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/searchtools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/translations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/underscore-1.3.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_static/underscore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/blocks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/forms.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/start.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/tabels.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/animation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/background.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/border.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/faq.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/flex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/font.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/marking.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/psevdoclass.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/psevdoelements.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/selectors.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-extentions/django-precise-bbcode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-extentions/django-rest-framework/generics.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-extentions/django-rest-framework/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-extentions/django-rest-framework/permissions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-extentions/django-rest-framework/serializers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-extentions/django-rest-framework/viewsets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-extentions/django-taggit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-extentions/easy-thumbnails.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-extentions/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/auth/admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/auth/decorators.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/auth/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/auth/models.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/auth/views.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/cli.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/contrib/contenttypes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/contrib/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/contrib/messages.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/contrib/sessions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/contrib/sitemap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/contrib/staticfiles.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/contrib/syndication.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/faq.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/forms/fields.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/forms/forms.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/forms/formsets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/forms/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/forms/widgets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/models/fields.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/models/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/models/meta.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/models/migrations.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/models/query.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/models/relations.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/settings.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/signals.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/templates.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/urls.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/views/cbv.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/views/fbv.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/views/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/views/pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/views/request.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django/views/response.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment/pipenv/advanced.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment/pipenv/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment/pipenv/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/genindex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/a.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/blockquote.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/body.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/div.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/doctype.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/img.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/link.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/mnemonic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/ol.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/p.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/section.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/text.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/ul.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/article.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/aside.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/audio.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/canvas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/datalist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/figure.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/globals_attr.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/hgroup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/input.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/mark.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/meter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/nav.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/progress.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/time.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5/video.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/Deffered.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/ajax.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/animation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/events.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/getters.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquery.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquery_validation/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquerymobile/cssstyles.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquerymobile/datadirection.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquerymobile/dataprefetch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquerymobile/datarel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquerymobile/datarole.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquerymobile/datatheme.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquerymobile/datatransition.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquerymobile/events.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquerymobile/images.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquerymobile/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jquerymobile/mobile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/accordion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/autocomplete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/button.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/buttonset.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/datepicker.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/dialog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/draggable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/dropable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/effects.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/progressbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/resizable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/selectable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/slider.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/sortable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/jqueryui/tabs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/methods.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/selectors.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jquery/setter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/ArrayBuffer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/ArrayTyped.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Boolean.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Date.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Function.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Infinity.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/JSON.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Map.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Math.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/NaN.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Number.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Promise.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Reflect.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/RegExp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Set.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/String.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/Symbol.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/array.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/class.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/data_structure/Array.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/data_structure/Object.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/data_structure/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/modules.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/null.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/object.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/oper.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/base/undefined.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/ApplicationCache.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/ArrayBufferView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Attr.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Audio.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/AudioContext.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/BeforeUnloadEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Blob.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/BlobBuilder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Button.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/CSSRule.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/CSSStyleDeclaration.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/CSSStyleSheet.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Canvas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/CanvasGradient.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/CanvasPattern.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/CanvasRenderingContext2D.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/CharacterData.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/ClientRect.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/CloseEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Comment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Console.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/ConsoleCommandLine.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Context.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/CustomEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/DOMException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/DOMImplementation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/DOMSettableTokenList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/DOMTokenList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/DataTransfer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/DataView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Document.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/DocumentFragment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/DocumentType.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Element.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/ErrorEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Event.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/EventSource.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/EventTarget.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/FieldSet.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/File.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/FileError.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/FileReader.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/FileReaderSync.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/FormControl.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/FormData.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/FormValidity.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Geocoordinates.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Geolocation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/GeolocationError.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Geoposition.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/HTMLCollection.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/HashChangeEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/History.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/IFrame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Image.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/ImageData.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Input.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Link.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/LocalStorage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Location.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/MediaElement.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/MediaError.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/MessageChannel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/MessageEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/MessagePort.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Meter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/MouseEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/NamedNodeMap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Navigator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Node.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/NodeList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Option.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Output.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/PageTransitionEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/PopStateEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/ProcessingInstruction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Progress.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/ProgressEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Screen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Script.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Select.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/SessionStorage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Storage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/StorageEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Style.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/TableCell.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/TableRow.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/TableSection.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Text.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/TextArea.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/TextMetrics.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/TimeRanges.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/TypedArray.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/URL.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Video.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/WebSocket.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Window.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/Worker.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/WorkerGlobalScope.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/WorkerLocation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/WorkerNavigator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/XMLHttpRequest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/XMLHttpRequestProgressEvent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/XMLHttpRequestUpload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dom/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/frameworks/chart_js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/frameworks/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects.inv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/css/modern-business.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/modern-business.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/js/contact_me.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/contact_me.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/js/jqBootstrapValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jqBootstrapValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/static/img/700x300.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/700x300.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/static/img/750x450.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/750x450.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/static/img/Cables-in-data-center.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/Cables-in-data-center.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/static/img/chema8105f61c.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/chema8105f61c.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/static/img/it_photo_114592.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/it_photo_114592.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/static/img/test.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/test.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/static/img/test69181_26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/test69181_26.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/static/img/thumb_l_0788.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/thumb_l_0788.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/bootstrap/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/jquery/jquery.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.slim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/jquery/jquery.slim.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.slim.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_html/vendor/jquery/jquery.slim.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/jquery/jquery.slim.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py-modindex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchindex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vuejs/index.html" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/faq.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="903">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/404.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1092">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret column="20" selection-start-column="20" selection-end-column="20" />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/faq.html" />
+        <option value="$PROJECT_DIR$/404.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/andreiat.github.io.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/dbnavigator.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/markdown-navigator.xml" />
+        <option value="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
+        <option value="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
+        <option value="$PROJECT_DIR$/.idea/dictionaries/trunin.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1677" />
+    <option name="height" value="940" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="NBKnowledgePane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="andreiat.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="andreiat.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/projects_Pycharm_my" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/old_html" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bab11e46-a169-46f7-87d7-933781c3e2b4" name="Default Changelist" comment="" />
+      <created>1566077231442</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566077231442</updated>
+    </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1566077438795</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566077438795</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test">
+      <created>1566077690842</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566077690842</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test">
+      <created>1566078363257</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566078363257</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test">
+      <created>1566078650064</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566078650064</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test">
+      <created>1566078855267</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1566078855267</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-2" width="1920" height="1050" extended-state="6" />
+    <layout>
+      <window_info id="Unicode Browser" />
+      <window_info id="DB Browser" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16915688" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="DB Execution Console" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Statistic" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Regex Tester" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="JSON Viewer" />
+      <window_info anchor="right" id="Quick Notes" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="20" selection-start-column="20" selection-end-column="20" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/faq.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.39553753" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
