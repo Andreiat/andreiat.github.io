@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Конфигурирование проекта &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="next" title="Модель" href="models/index.html" />
+    <link rel="prev" title="DJANGO" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">DJANGO</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Конфигурирование проекта</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#allowed-hosts">ALLOWED_HOSTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#databases">DATABASES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debug">DEBUG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email-backend">EMAIL_BACKEND</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email-host">EMAIL_HOST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email-port">EMAIL_PORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email-host-user">EMAIL_HOST_USER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email-host-password">EMAIL_HOST_PASSWORD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email-use-tls">EMAIL_USE_TLS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email-use-ssl">EMAIL_USE_SSL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installed-apps">INSTALLED_APPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#language-code">LANGUAGE_CODE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#languages">LANGUAGES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#locale-paths">LOCALE_PATHS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#login-redirect-url">LOGIN_REDIRECT_URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#login-url">LOGIN_URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logout-url">LOGOUT_URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#media-root">MEDIA_ROOT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#media-url">MEDIA_URL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#middleware-classes">MIDDLEWARE_CLASSES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#root-urlconf">ROOT_URLCONF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-i18n">USE_I18N</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-l10n">USE_L10N</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-tz">USE_TZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-zone">TIME_ZONE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models/index.html">Модель</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views/index.html">Представления</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms/index.html">Формы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">Шаблоны</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urls.html">Роутинг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signals.html">Сигналы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib/index.html">Батарейки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/index.html">Пользователи, права, авторизация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">Консольные команды</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Другое</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../css/index.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">DJANGO</a> &raquo;</li>
+        
+      <li>Конфигурирование проекта</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/django/settings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Конфигурирование проекта<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="allowed-hosts">
+<h2>ALLOWED_HOSTS<a class="headerlink" href="#allowed-hosts" title="Ссылка на этот заголовок">¶</a></h2>
+<p>На каких хостах доступно приложение.</p>
+<p>Не учитывается при отладке.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="databases">
+<h2>DATABASES<a class="headerlink" href="#databases" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Словарь с конфигурациями баз данных</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="debug">
+<h2>DEBUG<a class="headerlink" href="#debug" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Включает или отключает режим отладки</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="email-backend">
+<h2>EMAIL_BACKEND<a class="headerlink" href="#email-backend" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Обработчик почтовых писем</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># для отладки, почта вываливается в консоль</span>
+<span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django.core.mail.backends.console.EmailBackend&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="email-host">
+<h2>EMAIL_HOST<a class="headerlink" href="#email-host" title="Ссылка на этот заголовок">¶</a></h2>
+<p>SMTP сервер, по умолчанию localhost.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="s1">&#39;smtp.gmail.com&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="email-port">
+<h2>EMAIL_PORT<a class="headerlink" href="#email-port" title="Ссылка на этот заголовок">¶</a></h2>
+<p>SMTP порт, по умолчанию 25.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">587</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="email-host-user">
+<h2>EMAIL_HOST_USER<a class="headerlink" href="#email-host-user" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Пользователь SMTP сервера.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="s1">&#39;your_account@gmail.com&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="email-host-password">
+<h2>EMAIL_HOST_PASSWORD<a class="headerlink" href="#email-host-password" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Пароль пользователя SMTP сервера.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;your_password&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="email-use-tls">
+<h2>EMAIL_USE_TLS<a class="headerlink" href="#email-use-tls" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Использовать TLS защищенное соединение.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="email-use-ssl">
+<h2>EMAIL_USE_SSL<a class="headerlink" href="#email-use-ssl" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Использовать неявное TLS защищенное соединение.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">EMAIL_USE_SSL</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installed-apps">
+<h2>INSTALLED_APPS<a class="headerlink" href="#installed-apps" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Список используемых приложений в проекте</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="language-code">
+<h2>LANGUAGE_CODE<a class="headerlink" href="#language-code" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Код языка, используемого в проекте</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># http://www.i18nguy.com/unicode/language-identifiers.html</span>
+<span class="c1"># LANGUAGE_CODE = &#39;en-us&#39;</span>
+<span class="c1"># LANGUAGE_CODE = &#39;en&#39;</span>
+<span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s1">&#39;ru-ru&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="languages">
+<h2>LANGUAGES<a class="headerlink" href="#languages" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Список поддерживаемых языков</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">LANGUAGES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;English&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="s1">&#39;Spanish&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="locale-paths">
+<h2>LOCALE_PATHS<a class="headerlink" href="#locale-paths" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Список директории, где искать переводы</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">LOCALE_PATHS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;locale&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="login-redirect-url">
+<span id="settings-login-redirect-url"></span><h2>LOGIN_REDIRECT_URL<a class="headerlink" href="#login-redirect-url" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Адрес страницы куда будет перенаправлено после авторизации</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># урл</span>
+<span class="n">LOGIN_URL</span> <span class="o">=</span> <span class="s2">&quot;/login/&quot;</span>
+
+<span class="c1"># это не урл, а название урла привязки</span>
+<span class="c1"># LOGIN_URL = &quot;login&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="login-url">
+<span id="settings-login-url"></span><h2>LOGIN_URL<a class="headerlink" href="#login-url" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Адрес страницы авторизации</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># урл</span>
+<span class="n">LOGIN_URL</span> <span class="o">=</span> <span class="s2">&quot;/login/&quot;</span>
+
+<span class="c1"># это не урл, а название урла привязки</span>
+<span class="c1"># LOGIN_URL = &quot;login&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="logout-url">
+<span id="settings-logout-url"></span><h2>LOGOUT_URL<a class="headerlink" href="#logout-url" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Адрес страницы выхода</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># урл</span>
+<span class="n">LOGIN_URL</span> <span class="o">=</span> <span class="s2">&quot;/login/&quot;</span>
+
+<span class="c1"># это не урл, а название урла привязки</span>
+<span class="c1"># LOGIN_URL = &quot;login&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="media-root">
+<h2>MEDIA_ROOT<a class="headerlink" href="#media-root" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Папка для хранения всех медиа файлов, загруженных пользователями</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;media&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="media-url">
+<h2>MEDIA_URL<a class="headerlink" href="#media-url" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Путь до папки с медии, для шаблонов</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s1">&#39;/media/&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="middleware-classes">
+<h2>MIDDLEWARE_CLASSES<a class="headerlink" href="#middleware-classes" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Список мидлвар</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">MIDDLEWARE_CLASSES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="root-urlconf">
+<h2>ROOT_URLCONF<a class="headerlink" href="#root-urlconf" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Модуль корневого конфигуратора урла</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">ROOT_URLCONF</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-i18n">
+<h2>USE_I18N<a class="headerlink" href="#use-i18n" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Включить систему локализации</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">USE_I18N</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-l10n">
+<h2>USE_L10N<a class="headerlink" href="#use-l10n" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Включить локализацию форматирования: даты, числа</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">USE_L10N</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-tz">
+<h2>USE_TZ<a class="headerlink" href="#use-tz" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Дата и время с тайм зоной</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">USE_TZ</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="time-zone">
+<h2>TIME_ZONE<a class="headerlink" href="#time-zone" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Тайм зона по умолчанию</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;Europe/Moscow&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="models/index.html" class="btn btn-neutral float-right" title="Модель" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="DJANGO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

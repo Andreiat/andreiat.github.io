@@ -1,0 +1,826 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Array &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../../search.html" />
+    <link rel="next" title="Object" href="Object.html" />
+    <link rel="prev" title="Типы данных" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../css/index.html">CSS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">JavaScript</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Основные объекты</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Типы данных</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Object.html">Object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Number.html">Числа (Number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../array.html">Массивы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../object.html">Ассоциативный массив (object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Infinity.html">Infinity - бесконечность</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../NaN.html">NaN - нечисло</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../String.html">String - строки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Boolean.html">Boolean - логический тип данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../null.html">null - ссылка на несуществующий объект</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../undefined.html">undefined - неопределнное значение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Function.html">Функции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules.html">Модули</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../oper.html">Операторы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../class.html">Классы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ArrayBuffer.html">ArrayBuffer - буферный массив</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ArrayTyped.html">Типизированные массивы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Set.html">Set, WeakSet - коллекция уникальных типов любого типа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Map.html">Map, WeakMap - коллекция пар ключ-значение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Date.html">Date - объект дата</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../JSON.html">JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Math.html">Math - математические операции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../RegExp.html">RegExp - Регулярные выражения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Symbol.html">Symbol - символ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Error.html">Исключения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Promise.html">Promise - асинхронная операция</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Reflect.html">Reflect - исследование и обаботка свойств объектов</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dom/index.html">DOM - дерево html документа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../frameworks/index.html">Библиотеки, фреймворки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">JavaScript</a> &raquo;</li>
+        
+          <li><a href="../index.html">Основные объекты</a> &raquo;</li>
+        
+          <li><a href="index.html">Типы данных</a> &raquo;</li>
+        
+      <li>Array</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/js/base/data_structure/Array.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="array">
+<h1>Array<a class="headerlink" href="#array" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt id="Array">
+<em class="property">class </em><code class="sig-name descname">Array</code><a class="headerlink" href="#Array" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="sig-name descname">Array</code><span class="sig-paren">(</span><em class="sig-param">размер</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="sig-name descname">Array</code><span class="sig-paren">(</span><em class="sig-param">элемент0</em>, <em class="sig-param">элемент1</em>, <em class="sig-param">...</em><span class="sig-paren">)</span></dt>
+<dd><p>Массив</p>
+<p>Наследник <a class="reference internal" href="Object.html#Object" title="Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="kd">var</span> <span class="nx">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;moscow&#39;</span><span class="p">,</span> <span class="s1">&#39;kazan&#39;</span><span class="p">];</span>
+<span class="nx">cities</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="c1">// 2</span>
+
+<span class="nx">cities</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="c1">// &#39;moscow&#39;</span>
+
+<span class="nx">cities</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;abakan&#39;</span><span class="p">;</span>
+<span class="nx">cities</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="c1">// 4</span>
+
+<span class="nx">cities</span><span class="p">;</span>
+<span class="c1">//[&#39;moscow&#39;, &#39;kazan&#39;, &#39;&#39;, &#39;abakan&#39;]</span>
+
+<span class="nx">cities</span><span class="p">.</span><span class="nx">length</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">cities</span><span class="p">;</span>
+<span class="c1">// [&#39;moscow&#39;, &#39;kazan&#39;]</span>
+
+<span class="nx">cities</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">45</span><span class="p">;</span>
+<span class="nx">cities</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="c1">// 2</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="s1">&#39;hey&#39;</span><span class="p">,</span> <span class="s1">&#39;you&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">x</span> <span class="k">in</span> <span class="nx">a</span><span class="p">){</span>
+    <span class="c1">// выведет только 5</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">// выведет все 5 элементов</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmsScript6</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="kd">let</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="p">,</span> <span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<span class="c1">// 1, 3</span>
+
+<span class="kd">let</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="p">...</span><span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+<span class="c1">// [2, 3, 4]</span>
+
+<span class="kd">let</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="p">,</span> <span class="p">,</span> <span class="p">...</span><span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+<span class="c1">// [4, 5, 6]</span>
+</pre></div>
+</div>
+</div>
+<dl class="attribute">
+<dt id="Array.length">
+<code class="sig-name descname">length</code><a class="headerlink" href="#Array.length" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, количество элементов в массиве</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;moscow&#39;</span><span class="p">,</span> <span class="s1">&#39;kazan&#39;</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span>
+<span class="c1">// 2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.concat">
+<code class="sig-name descname">concat</code><span class="sig-paren">(</span><em class="sig-param">item...</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.concat" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает новый массив, расширенный значениями из аргумента</p>
+<p>Ели аргументом является массив, то добавляются только те элменты
+которых нет в исходном массиве</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="s1">&#39;end&#39;</span><span class="p">);</span>
+<span class="c1">// [1, 2, 3, 4, 5, &#39;end&#39;]</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]);</span>
+<span class="c1">// [1, 2, 3, 4, 5]</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]);</span>
+<span class="c1">// [1, 2, 3, 4, 5, 6, 7]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.copyWithin">
+<code class="sig-name descname">copyWithin</code><span class="sig-paren">(</span><em class="sig-param">targetIndex</em>, <em class="sig-param">startIndex</em>, <em class="sig-param">endIndex</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.copyWithin" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Копирует последовательность значений массива в другое место этого массива</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии EcmaScript6.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="nx">arr1</span><span class="p">.</span><span class="nx">copyWithin</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="nx">arr1</span><span class="p">;</span>
+<span class="c1">// 1, 3, 4, 4, 5</span>
+
+<span class="kd">let</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="nx">arr2</span><span class="p">.</span><span class="nx">copyWithin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">arr2</span><span class="p">;</span>
+<span class="c1">// 2, 3, 4, 5, 5</span>
+
+<span class="kd">let</span> <span class="nx">arr3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="nx">arr3</span><span class="p">.</span><span class="nx">copyWithin</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<span class="nx">arr3</span><span class="p">;</span>
+<span class="c1">// 1, 4, 5, 4, 5</span>
+
+<span class="kd">let</span> <span class="nx">arr4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="nx">arr4</span><span class="p">.</span><span class="nx">copyWithin</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">arr4</span><span class="p">;</span>
+<span class="c1">// 1, 4, 3, 4, 5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.entries">
+<code class="sig-name descname">entries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.entries" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает итерируемый объект, содержащий массив пары ключ/значение, для каждого индекса массива.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии EcmaScript6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.every">
+<code class="sig-name descname">every</code><span class="sig-paren">(</span><em class="sig-param">callback</em><span class="optional">[</span>, <em class="sig-param">this</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.every" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает булево, соответсвие всех элементов массива условию обработчика.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">every</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">5</span>
+<span class="p">});</span>
+<span class="c1">// true</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">every</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">3</span>
+<span class="p">});</span>
+<span class="c1">// false</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.fill">
+<code class="sig-name descname">fill</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">startIndex</em>, <em class="sig-param">endIndex</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.fill" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Заменяет все элементы массива в казанном промежутке указанным значением.</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nx">fill</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="c1">// [5, 5, 5, 5]</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nx">fill</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="c1">// [1, 5, 3, 4]</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nx">fill</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="c1">// [1, 5, 5, 4]</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nx">fill</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="c1">// [1, 5, 3, 4]</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nx">fill</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// [5, 5, 3, 4]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.filter">
+<code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param">callback</em><span class="optional">[</span>, <em class="sig-param">filter</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.filter" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает массив элементов, удовлетворяющих требованиям обработчика</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">item</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="c1">// [2, 3]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.find">
+<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param">testingFunc</em>, <em class="sig-param">this</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.find" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает элемент массива, который удовлетворяет условиям функции проверки</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">].</span><span class="nx">find</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">==</span> <span class="k">this</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">},</span> <span class="mi">12</span><span class="p">);</span>
+<span class="c1">// 12</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.findIndex">
+<code class="sig-name descname">findIndex</code><span class="sig-paren">(</span><em class="sig-param">testingFunc</em>, <em class="sig-param">this</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.findIndex" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает индекс элемента массива удовлетворяющего условию</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии EcmaScript6.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">].</span><span class="nx">find</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">==</span> <span class="k">this</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">},</span> <span class="mi">12</span><span class="p">);</span>
+<span class="c1">// 1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.forEach">
+<code class="sig-name descname">forEach</code><span class="sig-paren">(</span><em class="sig-param">callback</em><span class="optional">[</span>, <em class="sig-param">this</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.forEach" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вызывает функцию-обработчик для каждого элемента массива</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">){</span>
+    <span class="p">...</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.from">
+<code class="sig-name descname">from</code><span class="sig-paren">(</span><em class="sig-param">iterable</em>, <em class="sig-param">function</em>, <em class="sig-param">this</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.from" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Позволяет получить массив из какого то объекта,
+например из живого массива элементов дом дерева.</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>ECMAScript6</p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="s2">&quot;1, 2, 3&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">){</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">number</span> <span class="o">*</span> <span class="nx">item</span><span class="p">;</span>
+<span class="p">},</span> <span class="p">{</span><span class="nx">number</span><span class="o">:</span> <span class="mi">10</span><span class="p">});</span>
+<span class="c1">// [10, 20, 30]</span>
+
+<span class="kr">const</span> <span class="nx">liveArraySections</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;section&#39;</span><span class="p">);</span>
+<span class="c1">// liveArraySections.forEach не будет работать, т.к. живая коллекция</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">liveArraySections</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.join">
+<code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param">separator='</em>, <em class="sig-param">'</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.join" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку,
+полученную преобразованием всех элементов массива в строки и
+объединенные через разделитель</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="c1">// &#39;123&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.indexOf">
+<code class="sig-name descname">indexOf</code><span class="sig-paren">(</span><em class="sig-param">значение</em><span class="optional">[</span>, <em class="sig-param">int pos=0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.indexOf" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, позиция элемента в массиве</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">);</span>
+<span class="c1">// 1</span>
+
+<span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">);</span>
+<span class="c1">// -1</span>
+
+<span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="c1">// -1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.keys">
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.keys" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает итерируемый объект, содержащий ключи для всех идексов массива.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии EcmaScript6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.lastIndexOf">
+<code class="sig-name descname">lastIndexOf</code><span class="sig-paren">(</span><em class="sig-param">значение</em><span class="optional">[</span>, <em class="sig-param">int pos=array.length</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.lastIndexOf" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, позиция элемента в массиве в обратном порядке</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.map">
+<code class="sig-name descname">map</code><span class="sig-paren">(</span><em class="sig-param">callback</em><span class="optional">[</span>, <em class="sig-param">this</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.map" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает массив, вычисленный по функции-обработчику</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">item</span> <span class="o">*</span> <span class="nx">item</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="c1">// [1, 4, 9]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.of">
+<code class="sig-name descname">of</code><span class="sig-paren">(</span><em class="sig-param">values...</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.of" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает массив из 1 значения</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">Array</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// []</span>
+
+<span class="nb">Array</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// [2]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.pop">
+<code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.pop" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает последний элемент и удаляет его из массива</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span>
+<span class="c1">// 3</span>
+
+<span class="nx">c</span><span class="p">;</span>
+<span class="c1">// [1,2]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param">item...</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.push" title="Ссылка на это определение">¶</a></dt>
+<dd><blockquote>
+<div><p>Добавляет объект в конец массива и возвращает количесвто элементов в массиве</p>
+</div></blockquote>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">;</span>
+<span class="c1">// [1, 2, 3, 4]</span>
+
+<span class="nx">c</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+<span class="nx">c</span><span class="p">;</span>
+<span class="c1">// [1, 2, 3, 4, 5, 6, 7]</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// копирование значений из одного массива в другой</span>
+<span class="kd">var</span> <span class="nx">array1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">array2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">push</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">array2</span><span class="p">,</span> <span class="nx">array1</span><span class="p">);</span>
+<span class="c1">// [1, 2, 3, 4]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="c1">// копирование значений из одного массива в другой</span>
+<span class="kd">var</span> <span class="nx">array1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">array2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="nx">array2</span><span class="p">.</span><span class="nx">push</span><span class="p">(...</span><span class="nx">array1</span><span class="p">)</span>
+<span class="c1">// [1, 2, 3, 4]</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.reduce">
+<code class="sig-name descname">reduce</code><span class="sig-paren">(</span><em class="sig-param">callback</em><span class="optional">[</span>, <em class="sig-param">int start=0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.reduce" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вычисляет значение на основе элементов данного массива, свертка массива</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">].</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="c1">// 6</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.reduceRight">
+<code class="sig-name descname">reduceRight</code><span class="sig-paren">(</span><em class="sig-param">callback</em><span class="optional">[</span>, <em class="sig-param">int start=0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.reduceRight" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вычисляет значение на основе элементов данного массива,
+спарва налево, свертка массива</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.reverse">
+<code class="sig-name descname">reverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.reverse" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает развернутый в обратныом порядке массив</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span>
+<span class="c1">// [3, 2, 1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.shift">
+<code class="sig-name descname">shift</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.shift" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает первый элемент массива, и удалеят его из массива</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+<span class="c1">// 1</span>
+
+<span class="nx">a</span><span class="p">;</span>
+<span class="c1">// [[2, 3], 4]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.slice">
+<code class="sig-name descname">slice</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">end</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.slice" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает фрагмент массива</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="c1">// [1, 2, 3]</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="c1">// [4, 5]</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1">// [2, 3, 4]</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// [3]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.some">
+<code class="sig-name descname">some</code><span class="sig-paren">(</span><em class="sig-param">callback</em><span class="optional">[</span>, <em class="sig-param">this</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.some" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Проверяет, возвращает ли предикат значение true хотя бы для одного элемента массива</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии ECMAScript5.</span></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">].</span><span class="nx">some</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">})</span>
+<span class="c1">// =&gt; false: нет эле­мен­тов &gt; 5</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">].</span><span class="nx">some</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">})</span>
+<span class="c1">// =&gt; true: не­ко­то­рые &gt; 3</span>
+
+<span class="p">[].</span><span class="nx">some</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="c1">// =&gt; false: все­гда false для []</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.sort">
+<code class="sig-name descname">sort</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">comparator</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.sort" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сортирует массив, принимает функцию сравнения,
+которая может вернуть -1, 0, 1</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">];</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+<span class="nx">a</span><span class="p">;</span>
+<span class="c1">// [1, 15, 2]</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="nx">func</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.splice">
+<code class="sig-name descname">splice</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">deleteCount</em>, <em class="sig-param">item...</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.splice" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Удаляет указанный срез и возвращает их,
+вставляя в исходный массив указанные элементы массива</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+
+<span class="nx">c</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// [2, 3]</span>
+
+<span class="nx">c</span><span class="p">;</span>
+<span class="c1">// [1, 4, 5];</span>
+
+<span class="nx">c</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">);</span>
+<span class="c1">// [4, 5]</span>
+
+<span class="nx">c</span><span class="p">;</span>
+<span class="c1">// [1, 33, 44]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.unshift">
+<code class="sig-name descname">unshift</code><span class="sig-paren">(</span><em class="sig-param">item...</em><span class="sig-paren">)</span><a class="headerlink" href="#Array.unshift" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Добавляет в начало массива элементы и возвращает длину массива</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">a</span><span class="p">;</span>
+<span class="c1">// [1]</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">a</span><span class="p">;</span>
+<span class="c1">// [-1, 0, 1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Array.values">
+<code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Array.values" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает итерируемый объект, содержащий значения элементов массива.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Добавлено в версии EcmaScript6.</span></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Object.html" class="btn btn-neutral float-right" title="Object" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Типы данных" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

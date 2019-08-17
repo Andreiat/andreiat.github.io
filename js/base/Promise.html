@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Promise - асинхронная операция &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Reflect - исследование и обаботка свойств объектов" href="Reflect.html" />
+    <link rel="prev" title="Исключения" href="Error.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">JavaScript</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Основные объекты</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure/index.html">Типы данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Number.html">Числа (Number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array.html">Массивы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html">Ассоциативный массив (object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Infinity.html">Infinity - бесконечность</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NaN.html">NaN - нечисло</a></li>
+<li class="toctree-l3"><a class="reference internal" href="String.html">String - строки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Boolean.html">Boolean - логический тип данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="null.html">null - ссылка на несуществующий объект</a></li>
+<li class="toctree-l3"><a class="reference internal" href="undefined.html">undefined - неопределнное значение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Function.html">Функции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Модули</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oper.html">Операторы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class.html">Классы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArrayBuffer.html">ArrayBuffer - буферный массив</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArrayTyped.html">Типизированные массивы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set.html">Set, WeakSet - коллекция уникальных типов любого типа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Map.html">Map, WeakMap - коллекция пар ключ-значение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Date.html">Date - объект дата</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JSON.html">JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Math.html">Math - математические операции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RegExp.html">RegExp - Регулярные выражения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Symbol.html">Symbol - символ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Error.html">Исключения</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Promise - асинхронная операция</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflect.html">Reflect - исследование и обаботка свойств объектов</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dom/index.html">DOM - дерево html документа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frameworks/index.html">Библиотеки, фреймворки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">JavaScript</a> &raquo;</li>
+        
+          <li><a href="index.html">Основные объекты</a> &raquo;</li>
+        
+      <li>Promise - асинхронная операция</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/js/base/Promise.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="promise">
+<h1>Promise - асинхронная операция<a class="headerlink" href="#promise" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+</div>
+<dl class="class">
+<dt id="Promise">
+<em class="property">class </em><code class="sig-name descname">Promise</code><a class="headerlink" href="#Promise" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Асинхронная операция.</p>
+<p>Состояния операции:</p>
+<ul class="simple">
+<li><p>fulfilled - выполнено - вызвана функция <cite>resolve</cite> с аргументом, не являющимся объектом <a class="reference internal" href="#Promise" title="Promise"><code class="xref py py-class docutils literal notranslate"><span class="pre">Promise</span></code></a> или без аргументов</p></li>
+<li><p>rejected - отклонено - вызвана функция <cite>reject</cite> или возникло исключение внутри исполнителя</p></li>
+<li><p>pending - ожидание - <cite>resolve</cite> или <cite>reject</cite> не вызваны</p></li>
+<li><p>settled - завершено - выполнена или отклонена и не находится в режиме ожидания</p></li>
+</ul>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">promise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+        <span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;data.json&quot;</span><span class="p">);</span>
+        <span class="nx">request</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">){</span>
+                <span class="nx">resolve</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">reject</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+        <span class="nx">request</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">reject</span><span class="p">(</span><span class="s2">&quot;Error&quot;</span><span class="p">);</span>
+        <span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+        <span class="nx">request</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="Promise.all">
+<code class="sig-name descname">all</code><span class="sig-paren">(</span><em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#Promise.all" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает объект Promiseб когда все объекты в итерируемом объекте будут выполнены.</p>
+<p>Если один из объектов будет отклонен, он немедленно вернется.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(...);</span>
+<span class="kd">var</span> <span class="nx">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(...);</span>
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">p1</span><span class="p">,</span> <span class="nx">p2</span><span class="p">]).</span><span class="nx">then</span><span class="p">(...);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Promise.catch">
+<code class="sig-name descname">catch</code><span class="sig-paren">(</span><em class="sig-param">onRejected</em><span class="sig-paren">)</span><a class="headerlink" href="#Promise.catch" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Используется для обработки ошибок и исключений</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">promise</span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">reason</span><span class="p">){</span>
+    <span class="p">...</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Promise.race">
+<code class="sig-name descname">race</code><span class="sig-paren">(</span><em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#Promise.race" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает объект Promise сразу, как только один из объектов будет выполнен или отклонен</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Promise.reject">
+<code class="sig-name descname">reject</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#Promise.reject" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Преобразует значение в отклоненный объект Promise.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">p1</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="nx">p1</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// 5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Promise.resolve">
+<code class="sig-name descname">resolve</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#Promise.resolve" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Преобразует значение в возвращаемый объект Promise.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">p1</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="nx">p1</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// 5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Promise.then">
+<code class="sig-name descname">then</code><span class="sig-paren">(</span><em class="sig-param">onFulfilled</em>, <em class="sig-param">onRejected</em><span class="sig-paren">)</span><a class="headerlink" href="#Promise.then" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Позволяет выполнить некоторые действия после того, как асинхронная операция будет выполнена или отклонена.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
+        <span class="p">...</span>
+    <span class="p">},</span>
+    <span class="kd">function</span><span class="p">(</span><span class="nx">reason</span><span class="p">){</span>
+        <span class="p">...</span>
+    <span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Reflect.html" class="btn btn-neutral float-right" title="Reflect - исследование и обаботка свойств объектов" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Error.html" class="btn btn-neutral float-left" title="Исключения" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

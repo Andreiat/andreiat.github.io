@@ -1,0 +1,796 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Поля формы &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Виджеты" href="widgets.html" />
+    <link rel="prev" title="Наборы форм" href="formsets.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">DJANGO</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../settings.html">Конфигурирование проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../models/index.html">Модель</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views/index.html">Представления</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Формы</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="forms.html">Формы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="formsets.html">Наборы форм</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Поля формы</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#booleanfield">BooleanField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#charfield">CharField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#choicefield">ChoiceField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datefield">DateField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datetimefield">DateTimeField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#emailfield">EmailField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filefield">FileField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filepathfield">FilePathField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#floatfield">FloatField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#genericipaddressfield">GenericIPAddressField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integerfield">IntegerField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#imagefield">ImageField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ipaddressfield">IPAddressField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modelchoicefield">ModelChoiceField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slugfield">SlugField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#timefield">TimeField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#typedchoicefield">TypedChoiceField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#urlfield">URLField</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets.html">Виджеты</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../templates.html">Шаблоны</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../urls.html">Роутинг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signals.html">Сигналы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contrib/index.html">Батарейки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auth/index.html">Пользователи, права, авторизация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli.html">Консольные команды</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Другое</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">DJANGO</a> &raquo;</li>
+        
+          <li><a href="index.html">Формы</a> &raquo;</li>
+        
+      <li>Поля формы</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/django/forms/fields.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Поля формы<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="booleanfield">
+<h2>BooleanField<a class="headerlink" href="#booleanfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.BooleanField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">BooleanField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.BooleanField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">update</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span>
+    <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">initial</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">HiddenInput</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="charfield">
+<h2>CharField<a class="headerlink" href="#charfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.CharField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">CharField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.CharField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Текстовое поле ввода</p>
+<ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>max_length - число, максимальная длина значения элемента</p></li>
+<li><p>mix_length - число, минимальная длина значения элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="n">comments</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">Textarea</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="choicefield">
+<h2>ChoiceField<a class="headerlink" href="#choicefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.ChoiceField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">ChoiceField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.ChoiceField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>choices - список доступных значений</p></li>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="datefield">
+<h2>DateField<a class="headerlink" href="#datefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.DateField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">DateField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.DateField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>input_formats - список форматов значений</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="datetimefield">
+<h2>DateTimeField<a class="headerlink" href="#datetimefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.DateTimeField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">DateTimeField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.DateTimeField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>input_formats - список форматов значений</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="emailfield">
+<h2>EmailField<a class="headerlink" href="#emailfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.EmailField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">EmailField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.EmailField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле ввода для email</p>
+<ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>max_length - число, максимальная длина значения элемента</p></li>
+<li><p>mix_length - число, минимальная длина значения элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">email</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">EmailField</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="filefield">
+<h2>FileField<a class="headerlink" href="#filefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.FileField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">FileField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.FileField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="filepathfield">
+<h2>FilePathField<a class="headerlink" href="#filepathfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.FilePathField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">FilePathField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.FilePathField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="floatfield">
+<h2>FloatField<a class="headerlink" href="#floatfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.FloatField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">FloatField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.FloatField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>max_value - максимальное значение</p></li>
+<li><p>min_value - максимальное значение</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="genericipaddressfield">
+<h2>GenericIPAddressField<a class="headerlink" href="#genericipaddressfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.GenericIPAddressField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">GenericIPAddressField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.GenericIPAddressField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="integerfield">
+<h2>IntegerField<a class="headerlink" href="#integerfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.IntegerField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">IntegerField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.IntegerField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>max_value - максимальное значение</p></li>
+<li><p>min_value - максимальное значение</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="imagefield">
+<h2>ImageField<a class="headerlink" href="#imagefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.ImageField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">ImageField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.ImageField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="ipaddressfield">
+<h2>IPAddressField<a class="headerlink" href="#ipaddressfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.IPAddressField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">IPAddressField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.IPAddressField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="modelchoicefield">
+<h2>ModelChoiceField<a class="headerlink" href="#modelchoicefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.ModelChoice">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">ModelChoice</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.ModelChoice" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>empty_label - текст, пустого поля</p></li>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>queryset - набор записей, из которой будут взяты записи для выбора</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="slugfield">
+<h2>SlugField<a class="headerlink" href="#slugfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.SlugField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">SlugField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.SlugField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="timefield">
+<h2>TimeField<a class="headerlink" href="#timefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.TimeField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">TimeField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.TimeField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>input_formats - список форматов значений</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="typedchoicefield">
+<h2>TypedChoiceField<a class="headerlink" href="#typedchoicefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.TypedChoiceField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">TypedChoiceField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.TypedChoiceField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">quantity</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">TypedChoiceField</span><span class="p">(</span>
+    <span class="n">choices</span><span class="o">=</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)],</span>
+    <span class="nb">coerce</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="urlfield">
+<h2>URLField<a class="headerlink" href="#urlfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.forms.URLField">
+<em class="property">class </em><code class="sig-prename descclassname">django.forms.</code><code class="sig-name descname">URLField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.forms.URLField" title="Ссылка на это определение">¶</a></dt>
+<dd><ul>
+<li><p>error_messages - словарь сообщений для кодов ошибок (required, min_length,
+max_length, invalid_choice, invalid, min_value, max_value)</p>
+<blockquote>
+<div><div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span><span class="p">(</span>
+    <span class="n">error_messages</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>help_text - строка, дополнительный текст для элемента</p></li>
+<li><p>initial - начальное значение поля</p></li>
+<li><p>label - строка, текст надписи для элемента</p></li>
+<li><p>max_length - число, максимальная длина значения элемента</p></li>
+<li><p>mix_length - число, минимальная длина значения элемента</p></li>
+<li><p>required - булево, поле обязательное</p></li>
+<li><p>validators - список функции, валидаторы значения</p></li>
+<li><p>widget - ссылка на виджет поля</p></li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="widgets.html" class="btn btn-neutral float-right" title="Виджеты" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="formsets.html" class="btn btn-neutral float-left" title="Наборы форм" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

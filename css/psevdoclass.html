@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Псевдоклассы &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="next" title="Псевдоэлементы" href="psevdoelements.html" />
+    <link rel="prev" title="Анимации, преобразования и переходы" href="animation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html5/index.html">HTML5</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CSS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="selectors.html">Селекторы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html">Фон</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html">Границы, отступы и поля</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html">Текст</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">Списки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html">Разметка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">table - таблицы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html">Анимации, преобразования и переходы</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Псевдоклассы</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#active">active</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#after">after</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#checked">checked</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#default">default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disabled">disabled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#empty">empty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enabled">enabled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#first-child">first-child</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#first-of-type">first-of-type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#focus">focus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hover">hover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#in-range">in-range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indeterminate">indeterminate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#invalid">invalid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#last-child">last-child</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#last-of-type">last-of-type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lang">lang</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#link">link</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#not">not</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nth-child">nth-child</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nth-last-child">nth-last-child</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nth-last-of-type">nth-last-of-type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nth-of-type">nth-of-type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#only-child">only-child</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#only-of-type">only-of-type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#out-range">out-range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read-only">read-only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read-write">read-write</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required">required</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#root">root</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#target">target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valid">valid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visited">visited</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoelements.html">Псевдоэлементы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html">flex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">Цвета</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">Единицы измерения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#content">content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#cursor">cursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#linear-gradient">linear-gradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#media">media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#opacity">opacity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#orphans">orphans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#page-break-after">page-break-after</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#page-break-before">page-break-before</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#page-break-inside">page-break-inside</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#widows">widows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">CSS</a> &raquo;</li>
+        
+      <li>Псевдоклассы</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/css/psevdoclass.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Псевдоклассы<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="active">
+<h2>active<a class="headerlink" href="#active" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Текущий активный элемент</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="p">:</span><span class="nd">active</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="after">
+<h2>after<a class="headerlink" href="#after" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Вставка контента после элемента</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">:</span><span class="nd">after</span> <span class="p">{</span>
+    <span class="k">content</span><span class="p">:</span> <span class="s2">&quot;...&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="checked">
+<h2>checked<a class="headerlink" href="#checked" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Выбранный флажок</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">checkbox</span><span class="o">]</span><span class="p">:</span><span class="nd">checked</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="default">
+<h2>default<a class="headerlink" href="#default" title="Ссылка на этот заголовок">¶</a></h2>
+</div>
+<div class="section" id="disabled">
+<h2>disabled<a class="headerlink" href="#disabled" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент формы - отключенный</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">disabled</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="empty">
+<h2>empty<a class="headerlink" href="#empty" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент не имеющий дочерних элементов</p>
+</div>
+<div class="section" id="enabled">
+<h2>enabled<a class="headerlink" href="#enabled" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Доступный элемент</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">enabled</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="first-child">
+<h2>first-child<a class="headerlink" href="#first-child" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Поиск первого дочернего элемента</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">:</span><span class="nd">first-child</span><span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="first-of-type">
+<h2>first-of-type<a class="headerlink" href="#first-of-type" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Поиск первого элемента заданного типа на том же уровне</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">:</span><span class="nd">first-of-type</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="focus">
+<h2>focus<a class="headerlink" href="#focus" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент в фокусе</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">focus</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hover">
+<h2>hover<a class="headerlink" href="#hover" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент над которым находится мышка</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="in-range">
+<h2>in-range<a class="headerlink" href="#in-range" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элементы имеющие ограничения диапазона значений, значения которых не выходят за рамки</p>
+</div>
+<div class="section" id="indeterminate">
+<h2>indeterminate<a class="headerlink" href="#indeterminate" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент формы в неопределенном состоянии</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">indeterminate</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="invalid">
+<h2>invalid<a class="headerlink" href="#invalid" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент формы не валидный</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">invalid</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="last-child">
+<h2>last-child<a class="headerlink" href="#last-child" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Поиск последнего дочернего элемента</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">:</span><span class="nd">last-child</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="last-of-type">
+<h2>last-of-type<a class="headerlink" href="#last-of-type" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Поиск последнего элемента заданного типа на том же уровне</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">:</span><span class="nd">last-of-type</span><span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lang">
+<h2>lang<a class="headerlink" href="#lang" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент указанного языка</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">:</span><span class="nd">lang</span><span class="o">(</span><span class="nt">en</span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="link">
+<h2>link<a class="headerlink" href="#link" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Не посещенная ссылка</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="p">:</span><span class="nd">link</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="not">
+<h2>not<a class="headerlink" href="#not" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Отрицание</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span><span class="o">]</span><span class="p">:</span><span class="nd">not</span><span class="o">(</span><span class="p">:</span><span class="nd">checked</span><span class="o">)</span>
+</pre></div>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="nt">submit</span><span class="o">])</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nth-child">
+<h2>nth-child<a class="headerlink" href="#nth-child" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Поиск заданного дочернего элемента в прямом направлении</p>
+<ul class="simple">
+<li><p>even - все четные элементы</p></li>
+<li><p>odd - все нечетные элементы</p></li>
+<li><p>число - порядковый номер элемента, от 1</p></li>
+<li><p>выражение - вида an + b</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2n</span><span class="o">+</span><span class="nt">1</span><span class="o">)</span><span class="p">{}</span>
+<span class="nt">p</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span><span class="p">{}</span>
+<span class="nt">p</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span><span class="p">{}</span>
+<span class="nt">p</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nth-last-child">
+<h2>nth-last-child<a class="headerlink" href="#nth-last-child" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Поиск заданного дочернего элемента в обратном напрвлении</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">:</span><span class="nd">nth-last-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nth-last-of-type">
+<h2>nth-last-of-type<a class="headerlink" href="#nth-last-of-type" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Поиск элементов типа на том же уровне в обратном направлений</p>
+</div>
+<div class="section" id="nth-of-type">
+<h2>nth-of-type<a class="headerlink" href="#nth-of-type" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Поиск элементов типа на том же уровне</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">p</span><span class="p">:</span><span class="nd">nth-of-type</span><span class="o">(</span><span class="nt">2n</span><span class="o">+</span><span class="nt">1</span><span class="o">)</span> <span class="p">{}</span>
+<span class="nt">p</span><span class="p">:</span><span class="nd">nth-of-type</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span> <span class="p">{}</span>
+<span class="nt">p</span><span class="p">:</span><span class="nd">nth-of-type</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="only-child">
+<h2>only-child<a class="headerlink" href="#only-child" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Единственный дочерний элемент</p>
+</div>
+<div class="section" id="only-of-type">
+<h2>only-of-type<a class="headerlink" href="#only-of-type" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Единственный элемент этого типа на одном уровне</p>
+</div>
+<div class="section" id="out-range">
+<h2>out-range<a class="headerlink" href="#out-range" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элементы имеющие ограничения диапазона значений, значения которых выходят за рамки</p>
+</div>
+<div class="section" id="read-only">
+<h2>read-only<a class="headerlink" href="#read-only" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элементы только для чтения</p>
+</div>
+<div class="section" id="read-write">
+<h2>read-write<a class="headerlink" href="#read-write" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элементы которые пользователь может редактировать</p>
+</div>
+<div class="section" id="required">
+<h2>required<a class="headerlink" href="#required" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элементы форм с обязательным атрибутом</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">required</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="root">
+<h2>root<a class="headerlink" href="#root" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Корневой элемент, html</p>
+</div>
+<div class="section" id="target">
+<h2>target<a class="headerlink" href="#target" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент является текущей целью документа</p>
+</div>
+<div class="section" id="valid">
+<h2>valid<a class="headerlink" href="#valid" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Валидный элемент формы</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="p">:</span><span class="nd">valid</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="visited">
+<h2>visited<a class="headerlink" href="#visited" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Посещенная ссылка</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="p">:</span><span class="nd">visited</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="psevdoelements.html" class="btn btn-neutral float-right" title="Псевдоэлементы" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="animation.html" class="btn btn-neutral float-left" title="Анимации, преобразования и переходы" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

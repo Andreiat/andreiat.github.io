@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RegExp - Регулярные выражения &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Symbol - символ" href="Symbol.html" />
+    <link rel="prev" title="Math - математические операции" href="Math.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">JavaScript</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Основные объекты</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure/index.html">Типы данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Number.html">Числа (Number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array.html">Массивы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html">Ассоциативный массив (object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Infinity.html">Infinity - бесконечность</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NaN.html">NaN - нечисло</a></li>
+<li class="toctree-l3"><a class="reference internal" href="String.html">String - строки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Boolean.html">Boolean - логический тип данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="null.html">null - ссылка на несуществующий объект</a></li>
+<li class="toctree-l3"><a class="reference internal" href="undefined.html">undefined - неопределнное значение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Function.html">Функции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Модули</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oper.html">Операторы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class.html">Классы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArrayBuffer.html">ArrayBuffer - буферный массив</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArrayTyped.html">Типизированные массивы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set.html">Set, WeakSet - коллекция уникальных типов любого типа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Map.html">Map, WeakMap - коллекция пар ключ-значение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Date.html">Date - объект дата</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JSON.html">JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Math.html">Math - математические операции</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">RegExp - Регулярные выражения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Symbol.html">Symbol - символ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Error.html">Исключения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Promise.html">Promise - асинхронная операция</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflect.html">Reflect - исследование и обаботка свойств объектов</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dom/index.html">DOM - дерево html документа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frameworks/index.html">Библиотеки, фреймворки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">JavaScript</a> &raquo;</li>
+        
+          <li><a href="index.html">Основные объекты</a> &raquo;</li>
+        
+      <li>RegExp - Регулярные выражения</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/js/base/RegExp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="regexp">
+<h1>RegExp - Регулярные выражения<a class="headerlink" href="#regexp" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="sr">/x[eaoy]n/</span>
+<span class="c1">//xen, xan, xon, xyn</span>
+
+<span class="sr">/[^b]log/</span>
+<span class="c1">//dlog, flog</span>
+
+<span class="sr">/[A-Z]/</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>символ</p></th>
+<th class="head"><p>обозначение</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p>экранирование</p></td>
+</tr>
+<tr class="row-odd"><td><p>.</p></td>
+<td><p>любой символ</p></td>
+</tr>
+<tr class="row-even"><td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0 и более</p></td>
+</tr>
+<tr class="row-odd"><td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>1 и более</p></td>
+</tr>
+<tr class="row-even"><td><p>?</p></td>
+<td><p>0 или 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>b</p></td>
+<td><p>разделитель между словами</p></td>
+</tr>
+<tr class="row-even"><td><p>d</p></td>
+<td><p>цифра</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>не цифра</p></td>
+</tr>
+<tr class="row-even"><td><p>s</p></td>
+<td><p>пробел</p></td>
+</tr>
+<tr class="row-odd"><td><p>w</p></td>
+<td><p>буквы, цифры и _</p></td>
+</tr>
+<tr class="row-even"><td><p>W</p></td>
+<td><p>НЕ буквы, цифры и _</p></td>
+</tr>
+<tr class="row-odd"><td><p>[A-Z]</p></td>
+<td><p>символ из указанных</p></td>
+</tr>
+<tr class="row-even"><td><p>$</p></td>
+<td><p>конец данных</p></td>
+</tr>
+<tr class="row-odd"><td><p>^</p></td>
+<td><p>начало данных</p></td>
+</tr>
+<tr class="row-even"><td><p>[^]</p></td>
+<td><p>НЕ</p></td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>ИЛИ</p></td>
+</tr>
+<tr class="row-even"><td><p>{m, n}</p></td>
+<td><p>от m до n повторений</p></td>
+</tr>
+<tr class="row-odd"><td><p>()</p></td>
+<td><p>запоминающие скобки</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>g - глобальный поиск</p></li>
+<li><p>i - не различать строчные и прописные</p></li>
+<li><p>m - многострочный поиск</p></li>
+</ul>
+<dl class="class">
+<dt id="RegExp">
+<em class="property">class </em><code class="sig-name descname">RegExp</code><span class="sig-paren">(</span><em class="sig-param">template</em>, <em class="sig-param">flags</em><span class="sig-paren">)</span><a class="headerlink" href="#RegExp" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Конструктор регулярных выражений</p>
+<p>Наследник <a class="reference internal" href="data_structure/Object.html#Object" title="Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s1">&#39;\\w+c&#39;</span><span class="p">,</span> <span class="s1">&#39;igm&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">re</span> <span class="o">=</span> <span class="sr">/\w+c/igm</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="RegExp.global">
+<code class="sig-name descname">global</code><a class="headerlink" href="#RegExp.global" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Глобальный поиск</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="RegExp.ignoreCase">
+<code class="sig-name descname">ignoreCase</code><a class="headerlink" href="#RegExp.ignoreCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Не учитывать регистр</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="RegExp.lastIndex">
+<code class="sig-name descname">lastIndex</code><a class="headerlink" href="#RegExp.lastIndex" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Позиция символа при последнем обнаружении соответсвия</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="RegExp.multiline">
+<code class="sig-name descname">multiline</code><a class="headerlink" href="#RegExp.multiline" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Многострочный поиск</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="RegExp.source">
+<code class="sig-name descname">source</code><a class="headerlink" href="#RegExp.source" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Исходный текст регулярки</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="RegExp.exec">
+<code class="sig-name descname">exec</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">string</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#RegExp.exec" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает массив найденных элементов в строке</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="sr">/\d/g</span><span class="p">;</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s1">&#39;kj5k3&#39;</span><span class="p">);</span>
+<span class="c1">// [&#39;5&#39;]</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s1">&#39;kj5k3&#39;</span><span class="p">);</span>
+<span class="c1">// [&#39;3&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="RegExp.test">
+<code class="sig-name descname">test</code><span class="sig-paren">(</span><em class="sig-param">string</em><span class="sig-paren">)</span><a class="headerlink" href="#RegExp.test" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает булево, есть ли совпадение</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="sr">/\d/</span><span class="p">;</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;qw&#39;</span><span class="p">);</span>
+<span class="c1">// false</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">);</span>
+<span class="c1">// true</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Symbol.html" class="btn btn-neutral float-right" title="Symbol - символ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Math.html" class="btn btn-neutral float-left" title="Math - математические операции" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

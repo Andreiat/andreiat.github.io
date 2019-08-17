@@ -1,0 +1,2644 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Element &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="HTMLCollection - коллекия, содержащая елементы Elemnet" href="HTMLCollection.html" />
+    <link rel="prev" title="NodeList - коллекция, содержащая все виды узлов" href="NodeList.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">JavaScript</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../base/index.html">Основные объекты</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">DOM - дерево html документа</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Navigator.html">Navigator - содержит информацию о браузере и операционной системе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Screen.html">Screen - информация об экране</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Location.html">Location - адрес текущей страницы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Document.html">Document(HTMLDocument) - корневой элемент дерева</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Node.html">Node - узел дом дерева документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NodeList.html">NodeList - коллекция, содержащая все виды узлов</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#htmlanchorelement">HTMLAnchorElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlappletelement">HTMLAppletElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlareaelement">HTMLAreaElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlbaseelement">HTMLBaseElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlbasefontelement">HTMLBaseFontElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlbodyelement">HTMLBodyElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlbuttonelement">HTMLButtonElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlbrelement">HTMLBRElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmldlistelement">HTMLDListElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmldirectoryelement">HTMLDirectoryElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmldivelement">HTMLDivElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlfieldsetelement">HTMLFieldSetElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlfontelement">HTMLFontElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlformelement">HTMLFormElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlframeelement">HTMLFrameElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlframesetelement">HTMLFrameSetElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlheadelement">HTMLHeadElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlheadingelement">HTMLHeadingElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlhtmlelement">HTMLHtmlElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlhrelement">HTMLHRElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlimageelement">HTMLImageElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlinputelement">HTMLInputElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlisindexelement">HTMLIsIndexElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmliframeelement">HTMLIFrameElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmllabelelement">HTMLLabelElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmllegendelement">HTMLLegendElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmllinkelement">HTMLLinkElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmllielement">HTMLLIElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlmapelement">HTMLMapElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlmenuelement">HTMLMenuElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlmetaelement">HTMLMetaElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlmodelement">HTMLModElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlobjectelement">HTMLObjectElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmloptgroupelement">HTMLOptGroupElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmloptionelement">HTMLOptionElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlolistelement">HTMLOListElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlparagraphelement">HTMLParagraphElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlparamelement">HTMLParamElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlpreelement">HTMLPreElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlquoteelement">HTMLQuoteElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlscriptelement">HTMLScriptElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlselectelement">HTMLSelectElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlstyleelement">HTMLStyleElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmltablecaptionelement">HTMLTableCaptionElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmltablecellelement">HTMLTableCellElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmltablecolelement">HTMLTableColElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmltableelement">HTMLTableElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmltablerowelement">HTMLTableRowElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmltablesectionelement">HTMLTableSectionElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmltextareaelement">HTMLTextAreaElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmltitleelement">HTMLTitleElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#htmlulistelement">HTMLUListElement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="HTMLCollection.html">HTMLCollection - коллекия, содержащая елементы Elemnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CharacterData.html">CharacterData - узел с текстом внутри</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Text.html">Text - текстовая последовательность в документе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Comment.html">Comment - коментарии в доме</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ApplicationCache.html">ApplicationCache - прикладной интерфейс управления кэшем приложений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArrayBufferView.html">ArrayBufferView - общие свойства типов, основанных на ArrayBuffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Attr.html">Attr - атрибут элемента документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Audio.html">Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BeforeUnloadEvent.html">BeforeUnloadEvent - объект Event для событий выгрузки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Blob.html">Blob - блок двоичных данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BlobBuilder.html">BlobBuilder - используется для создания новых Blob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Button.html">Button - html элемент button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Canvas.html">Canvas - канвас</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Console.html">Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="History.html">History - журнал посещений объекта Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Image.html">Image - HTML img</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LocalStorage.html">LocalStorage - key-value хранилище</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SessionStorage.html">SessionStorage - key-value хранилище</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Window.html">Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSRule.html">CSSRule - правило в таблице стилей CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSStyleDeclaration.html">CSSStyleDeclaration - набор css-атрибутов и их значений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSStyleSheet.html">CSSStyleSheet - таблица стилей CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasGradient.html">CanvasGradient - цветной градиент для использования в канвасе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasPattern.html">CanvasPattern - шаблон заполнения холста на основе готового изображения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasRenderingContext2D.html">CanvasRenderingContext2D - объект, используемый для создания изображений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ClientRect.html">ClientRect - прямоугольник, описанный вокруг элемента</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CloseEvent.html">CloseEvent - определяет, был ли закрыт веб-сокет без ошибок</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConsoleCommandLine.html">ConsoleCommandLine - утилита для работы с окном консоли</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Context.html">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CustomEvent.html">CustomEvent - конструктор своих событий</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMException.html">DOMException - исключение, возбуждаемое web api</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMImplementation.html">DOMImplementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMSettableTokenList.html">DOMSettableTokenList</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMTokenList.html">DOMTokenList - множество лексем, разделенных пробелами</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataTransfer.html">DataTransfer - передача данных в операциях драгндроп мышью</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataView.html">DataView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DocumentFragment.html">DocumentFragment - смежные узлы и их поддеревья</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DocumentType.html">DocumentType - doctype документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ErrorEvent.html">ErrorEvent - необработанное исключение в фоновом потоке</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Event.html">Event - событие</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EventSource.html">EventTarget - comet-соединение с http-сервером</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EventTarget.html">EventTarget - объект, способный принимать события</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FieldSet.html">FieldSet - HTML fieldset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="File.html">File - файл в локальной файловой системе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileError.html">FileError - ошибка, возникшая во время чтения файла</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileReader.html">FileReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileReaderSync.html">FileReaderSync</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Form.html">Form - HTML form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormControl.html">FormControl - общие особенности всех элементов форм</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormData.html">FormData - тело HTTP-запроса multipart/form-data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormValidity.html">FormValidity - реализует проверку элемента формы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geocoordinates.html">Geocoordinates - географическре местонахождение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geolocation.html">Geolocation - позволяет получить широту и долготу местоположения пользователя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GeolocationError.html">GeolocationError - ошибка возникающая в ходе определения местонахождения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geoposition.html">Geoposition - информация о местонахождении с указанием времени определения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HashChangeEvent.html">HashChangeEvent - объект события, поставляемый по событию hashchange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IFrame.html">IFrame - HTML iframe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageData.html">ImageData - массив пискелей канваса</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Input.html">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Link.html">Link - HTML гиперссылка</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MediaElement.html">MediaElement - элемент проигрывателя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MediaError.html">MediaError - ошибка в элементе audio, video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessageChannel.html">MessageChannel - пара соединенных объектов MessagePorts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessageEvent.html">MessageEvent - сообщение из другого контекста выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessagePort.html">MessagePort - передает асинхронные сообщения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Meter.html">Meter - графический индикатор, шкала</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MouseEvent.html">MouseEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NamedNodeMap.html">NamedNodeMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Option.html">Option - HTML option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Output.html">Output - HTML output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PageTransitionEvent.html">PageTransitionEvent - объект события для событий «pageshow» и «pagehide»</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PopStateEvent.html">PopStateEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProcessingInstruction.html">ProcessingInstruction - инструкция обработки в XML-документе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Progress.html">Progress - индикатор хода выполнения операции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProgressEvent.html">ProgressEvent - событие продолжения загрузки, выгрузки или чтения файла</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Script.html">Script - HTML-script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Select.html">Select - графический список для выбора</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Storage.html">Storage - хранилище пар имя/значение на стороне клиента</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StorageEvent.html">StorageEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Style.html">Style - HTML style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table - HTML table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableCell.html">TableCell - ячейка HTML таблицы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableRow.html">TableRow - HTML tr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableSection.html">TableSection - раздел верхнего или нижнего колонтитула либо тела таблицы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextArea.html">TextArea - многострочная область ввода текста</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextMetrics.html">TextMetrics - определяет размеры текстовой строки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TimeRanges.html">TimeRanges - множество фрагментов мультимедийных данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TypedArray.html">TypedArray - массивы с двоичными элементами фиксированного размера</a></li>
+<li class="toctree-l3"><a class="reference internal" href="URL.html">URL - методы для работы с URL-адресами, ссылающимися на объекты Blob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Video.html">Video - HTML video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WebSocket.html">WebSocket - двунаправленное сетевое соединение, подобное сокету</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Worker.html">Worker - фоновый поток выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerGlobalScope.html">WorkerGlobalScope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerLocation.html">WorkerLocation - URL-адрес главного сценария в фоновом потоке выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerNavigator.html">WorkerNavigator - информация о броузере для фонового потока выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequest.html">XMLHttpRequest(AJAX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequestProgressEvent.html">XMLHttpRequestProgressEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequestUpload.html">XMLHttpRequestUpload</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../frameworks/index.html">Библиотеки, фреймворки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">JavaScript</a> &raquo;</li>
+        
+          <li><a href="index.html">DOM - дерево html документа</a> &raquo;</li>
+        
+      <li>Element</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/js/dom/Element.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="element">
+<h1>Element<a class="headerlink" href="#element" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Элемент узла дом дерева</p>
+<dl class="class">
+<dt id="Element">
+<em class="property">class </em><code class="sig-name descname">Element</code><a class="headerlink" href="#Element" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="HTMLElement">
+<em class="property">class </em><code class="sig-name descname">HTMLElement</code><a class="headerlink" href="#HTMLElement" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Наследник <a class="reference internal" href="Node.html#Node" title="Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a>, <a class="reference internal" href="EventTarget.html#EventTarget" title="EventTarget"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventTarget</span></code></a></p>
+<p><cite>&lt;abbr&gt;</cite>, <cite>&lt;acronym&gt;</cite>, <cite>&lt;address&gt;</cite>, <cite>&lt;b&gt;</cite>, <cite>&lt;bdo&gt;</cite>, <cite>&lt;big&gt;</cite>, <cite>&lt;center&gt;</cite>,
+<cite>&lt;cite&gt;</cite>, <cite>&lt;code&gt;</cite>, <cite>&lt;dd&gt;</cite>, <cite>&lt;dfn&gt;</cite>, <cite>&lt;dt&gt;</cite>, <cite>&lt;em&gt;</cite>, <cite>&lt;i&gt;</cite>, <cite>&lt;kbd&gt;</cite>,
+<cite>&lt;noframes&gt;</cite>, <cite>&lt;noscript&gt;</cite>, <cite>&lt;s&gt;</cite>, <cite>&lt;samp&gt;</cite>, <cite>&lt;small&gt;</cite>, <cite>&lt;span&gt;</cite>,
+<cite>&lt;strike&gt;</cite>, <cite>&lt;strong&gt;</cite>, <cite>&lt;sub&gt;</cite>, <cite>&lt;sup&gt;</cite>, <cite>&lt;tt&gt;</cite>, <cite>&lt;u&gt;</cite>, <cite>&lt;var&gt;</cite></p>
+<dl class="attribute">
+<dt id="HTMLElement.Attributes">
+<code class="sig-name descname">Attributes</code><a class="headerlink" href="#HTMLElement.Attributes" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="NamedNodeMap.html#NamedNodeMap" title="NamedNodeMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">NamedNodeMap</span></code></a> список атрибутов элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.attributes">
+<code class="sig-name descname">attributes</code><a class="headerlink" href="#HTMLElement.attributes" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает массив атрибутов <a class="reference internal" href="Attr.html#Attr" title="Attr"><code class="xref py py-class docutils literal notranslate"><span class="pre">Attr</span></code></a> элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.childElementCount">
+<code class="sig-name descname">childElementCount</code><a class="headerlink" href="#HTMLElement.childElementCount" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­ли­че­ст­во до­чер­них эле­мен­тов (не до­чер­них уз­лов), ко­то­рые име­ет дан­ный эле­мент.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.children">
+<code class="sig-name descname">children</code><a class="headerlink" href="#HTMLElement.children" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий до­чер­ние эле­мен­ты (ис­клю­чая до­чер­ние уз­лы, не яв­ляю­щие­ся эле­мен­та­ми Element, та­кие как Text и Comment).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.classList">
+<code class="sig-name descname">classList</code><a class="headerlink" href="#HTMLElement.classList" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на <a class="reference internal" href="DOMTokenList.html#DOMTokenList" title="DOMTokenList"><code class="xref py py-class docutils literal notranslate"><span class="pre">DOMTokenList</span></code></a>, объект для работы с классами объекта</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;show&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.className">
+<code class="sig-name descname">className</code><a class="headerlink" href="#HTMLElement.className" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во пред­став­ля­ет ат­ри­бут class эле­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.clientHeight">
+<code class="sig-name descname">clientHeight</code><a class="headerlink" href="#HTMLElement.clientHeight" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Внутренняя высота элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.clientLeft">
+<code class="sig-name descname">clientLeft</code><a class="headerlink" href="#HTMLElement.clientLeft" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ширина левой границы элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.clientTop">
+<code class="sig-name descname">clientTop</code><a class="headerlink" href="#HTMLElement.clientTop" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ширина верхней границы элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.clientWidth">
+<code class="sig-name descname">clientWidth</code><a class="headerlink" href="#HTMLElement.clientWidth" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Внутреннняя ширина элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.currentStyle">
+<code class="sig-name descname">currentStyle</code><a class="headerlink" href="#HTMLElement.currentStyle" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во <a class="reference internal" href="CSSStyleDeclaration.html#CSSStyleDeclaration" title="CSSStyleDeclaration"><code class="xref py py-class docutils literal notranslate"><span class="pre">CSSStyleDeclaration</span></code></a>,
+реа­ли­зо­ван­ное толь­ко в IE,
+яв­ля­ет­ся пред­став­ле­ни­ем кас­кад­но­го на­бо­ра всех CSS-свойств,
+при­ме­няе­мых к эле­мен­ту.</p>
+<dl class="simple">
+<dt>В IE вер­сии 8 и ни­же его мож­но ис­поль­зо­вать как за­ме­ну стан­дарт­но­му</dt><dd><p>ме­то­ду <a class="reference internal" href="Window.html#Window.getComputedStyle" title="Window.getComputedStyle"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Window.getComputedStyle()</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.dataset">
+<code class="sig-name descname">dataset</code><a class="headerlink" href="#HTMLElement.dataset" title="Ссылка на это определение">¶</a></dt>
+<dd><p>С лю­бым HTML-эле­мен­том мож­но свя­зать лю­бые зна­че­ния,
+при­сваи­вая их ат­ри­бу­там, име­на ко­то­рых на­чи­на­ют­ся с  пре­фик­са «data-».</p>
+<p>Дан­ное свой­ст­во dataset пред­став­ля­ет мно­же­ст­во ат­ри­бу­тов с дан­ны­ми и
+уп­ро­ща­ет ра­бо­ту с ни­ми.</p>
+<p>Зна­че­ние это­го свой­ст­ва ве­дет се­бя как обыч­ный объ­ект.</p>
+<p>Ка­ж­дое свой­ст­во объ­ек­та со­от­вет­ст­ву­ет од­но­му ат­ри­бу­ту с дан­ны­ми.</p>
+<p>Ес­ли эле­мент име­ет ат­ри­бут с име­нем data-x,
+объ­ект dataset по­лу­чит свой­ст­во с име­нем x, и
+dataset.x бу­дет воз­вра­щать то же зна­че­ние,
+что и вы­зов getAttribute(«data-x»).</p>
+<p>Опе­ра­ции чте­ния и при­сваи­ва­ния зна­че­ний свой­ст­вам объ­ек­та dataset
+бу­дут чи­тать и при­сваи­вать зна­че­ния со­от­вет­ст­вую­щим ат­ри­бу­там с
+дан­ны­ми это­го эле­мен­та.</p>
+<p>Опе­ра­тор delete мож­но ис­поль­зо­вать для уда­ле­ния ат­ри­бу­тов с дан­ны­ми,
+а цикл for/in – для их пе­ре­чис­ле­ния.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.firstElementChild">
+<code class="sig-name descname">firstElementChild</code><a class="headerlink" href="#HTMLElement.firstElementChild" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во по­доб­но свой­ст­ву <a class="reference internal" href="Node.html#Node.firstChild" title="Node.firstChild"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Node.firstChild</span></code></a>,
+но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па
+<a class="reference internal" href="#Element" title="Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#HTMLElement.id" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Идентификатор элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.innerHTML">
+<code class="sig-name descname">innerHTML</code><a class="headerlink" href="#HTMLElement.innerHTML" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Содержимое элемента</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">Element</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;&lt;div&gt;Потомок&lt;/div&gt;&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.isContentEditable">
+<code class="sig-name descname">isContentEditable</code><a class="headerlink" href="#HTMLElement.isContentEditable" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во име­ет зна­че­ние true,
+ес­ли эле­мент дос­ту­пен для ре­дак­ти­ро­ва­ния,
+и false – в про­тив­ном слу­чае.</p>
+<p>Эле­мент мо­жет быть дос­ту­пен для ре­дак­ти­ро­ва­ния
+вслед­ст­вие ус­та­нов­ки свой­ст­ва contenteditable в нем или в его ро­ди­те­ле,
+или вслед­ст­вие ус­та­нов­ки свой­ст­ва designMode вме­щаю­ще­го объ­ек­та Document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.lang">
+<code class="sig-name descname">lang</code><a class="headerlink" href="#HTMLElement.lang" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Зна­че­ние ат­ри­бу­та lang, оп­ре­де­ляю­щее код язы­ка для со­дер­жи­мо­го эле­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.lastElementChild">
+<code class="sig-name descname">lastElementChild</code><a class="headerlink" href="#HTMLElement.lastElementChild" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во по­доб­но свой­ст­ву <a class="reference internal" href="Node.html#Node.lastChild" title="Node.lastChild"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Node.lastChild</span></code></a>,
+но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па
+<a class="reference internal" href="#Element" title="Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.localName">
+<code class="sig-name descname">localName</code><a class="headerlink" href="#HTMLElement.localName" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ло­каль­ное имя дан­но­го эле­мен­та без пре­фик­са.</p>
+<p>Зна­че­ние это­го свой­ст­ва от­ли­ча­ет­ ся от зна­че­ния ат­ри­бу­та tagName,
+ко­то­рое мо­жет вклю­чать пре­фикс про­стран­ст­ва имен,
+ес­ли та­ко­вой име­ет­ся
+(и все сим­во­лы ко­то­ро­го для HTML-эле­мен­тов пре­об­ра­зу­ют­ся в
+верх­ний ре­гистр).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#HTMLElement.name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Значение атрибута <cite>name</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">readonly string namespaceURI</code></dt>
+<dd><p>URL-ад­рес, фор­маль­но оп­ре­де­ляю­щий про­стран­ст­во имен дан­но­го эле­мен­та.</p>
+<p>Мо­жет иметь зна­че­ние null или со­дер­жать стро­ку,
+та­кую как «<a class="reference external" href="http://www.w3.org/1999/xhtml">http://www.w3.org/1999/xhtml</a>».</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.nextElementSibling">
+<code class="sig-name descname">nextElementSibling</code><a class="headerlink" href="#HTMLElement.nextElementSibling" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во по­доб­но свой­ст­ву <a class="reference internal" href="Node.html#Node.nextSibling" title="Node.nextSibling"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Node.nextSibling</span></code></a>,
+но оно иг­но­ри­ру­ет уз­лы Text и Comment и воз­вра­ща­ет толь­ко эле­мен­ты ти­па <a class="reference internal" href="#Element" title="Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.offsetHeight">
+<code class="sig-name descname">offsetHeight</code><a class="headerlink" href="#HTMLElement.offsetHeight" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Высота элемента в скомпонованной странице</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.offsetLeft">
+<code class="sig-name descname">offsetLeft</code><a class="headerlink" href="#HTMLElement.offsetLeft" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Расстояние от левой границы элемента до левой границы элемента offsetParent</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.offsetParent">
+<code class="sig-name descname">offsetParent</code><a class="headerlink" href="#HTMLElement.offsetParent" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Элемент , от которого ведутся расчеты сдвига текущего элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.offsetTop">
+<code class="sig-name descname">offsetTop</code><a class="headerlink" href="#HTMLElement.offsetTop" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Расстояние от верхней границы элемента до верхней границы элемента offsetParent</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.offsetWidth">
+<code class="sig-name descname">offsetWidth</code><a class="headerlink" href="#HTMLElement.offsetWidth" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ширина элемента в скомпонованной странице</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.outerHTML">
+<code class="sig-name descname">outerHTML</code><a class="headerlink" href="#HTMLElement.outerHTML" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Раз­мет­ка HTML или XML, оп­ре­де­ляю­щая дан­ный эле­мент и его со­дер­жи­мое. Ес­ли при­сво­ить это­му свой­ст­ву стро­ку, она за­ме­нит дан­ный эле­мент (и все его со­дер­жи­мое) ре­зуль­та­том син­так­си­че­ско­го раз­бо­ра но­во­го зна­че­ния как фраг­мен­та HTML- или XML-до­ку­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.prefix">
+<code class="sig-name descname">prefix</code><a class="headerlink" href="#HTMLElement.prefix" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Пре­фикс про­стран­ст­ва имен для дан­но­го эле­мен­та. Обыч­но это свой­ст­во со­дер­жит зна­че­ние null. Ис­клю­че­ние со­став­ля­ют XML-до­ку­мен­ты, в ко­то­рых ис­поль­зу­ют­ся про­стран­ст­ва имен.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.previousElementSibling">
+<code class="sig-name descname">previousElementSibling</code><a class="headerlink" href="#HTMLElement.previousElementSibling" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во по­доб­но свой­ст­ву <code class="xref py py-attr docutils literal notranslate"><span class="pre">Node.previousSibling,</span> <span class="pre">но</span> <span class="pre">оно</span> <span class="pre">иг­но­ри­ру­ет</span> <span class="pre">уз­лы</span> <span class="pre">Text</span> <span class="pre">и</span> <span class="pre">Comment</span> <span class="pre">и</span> <span class="pre">воз­вра­ща­ет</span> <span class="pre">толь­ко</span> <span class="pre">эле­мен­ты</span> <span class="pre">ти­па</span> <span class="pre">:py:class:`Element</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.scrollHeight">
+<code class="sig-name descname">scrollHeight</code><a class="headerlink" href="#HTMLElement.scrollHeight" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Видимая высота прокручиваемого элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.scrollLeft">
+<code class="sig-name descname">scrollLeft</code><a class="headerlink" href="#HTMLElement.scrollLeft" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает или устанавливает размер прокрутки в окне влево для элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.scrollTop">
+<code class="sig-name descname">scrollTop</code><a class="headerlink" href="#HTMLElement.scrollTop" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает или устанавливает размер прокрутки в окне вниз для элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.scrollWidth">
+<code class="sig-name descname">scrollWidth</code><a class="headerlink" href="#HTMLElement.scrollWidth" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Видимая ширина прокручиваемого элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.style">
+<code class="sig-name descname">style</code><a class="headerlink" href="#HTMLElement.style" title="Ссылка на это определение">¶</a></dt>
+<dd><p><a class="reference internal" href="CSSStyleDeclaration.html#CSSStyleDeclaration" title="CSSStyleDeclaration"><code class="xref py py-class docutils literal notranslate"><span class="pre">CSSStyleDeclaration</span></code></a> CSS-сти­ли для эле­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.tagName">
+<code class="sig-name descname">tagName</code><a class="headerlink" href="#HTMLElement.tagName" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает имя элемента</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLElement.title">
+<code class="sig-name descname">title</code><a class="headerlink" href="#HTMLElement.title" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Зна­че­ние ат­ри­бу­та title эле­мен­та. Мно­гие бро­узе­ры ото­бра­жа­ют зна­че­ние это­го ат­ри­бу­та в ви­де всплы­ваю­щей под­сказ­ки при на­ве­де­нии ука­за­те­ля мы­ши на эле­мент.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.addEventListener">
+<code class="sig-name descname">addEventListener</code><span class="sig-paren">(</span><em class="sig-param">event</em>, <em class="sig-param">handler</em>, <em class="sig-param">phase</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.addEventListener" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Задает обработчик некоторого события для элемента</p>
+<ul class="simple">
+<li><p>phase - булево, перехват события по дороге вниз</p></li>
+</ul>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">){});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.Blur">
+<code class="sig-name descname">Blur</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.Blur" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.blur">
+<code class="sig-name descname">blur</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.blur" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Переносит фокус с текущего элемента</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.click">
+<code class="sig-name descname">click</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.click" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Симулирует щелчок по текущему элементу</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.dispatchEvent">
+<code class="sig-name descname">dispatchEvent</code><span class="sig-paren">(</span><em class="sig-param">event</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.dispatchEvent" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Передает событие, связанное с этим элементом, в DOM</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.focus">
+<code class="sig-name descname">focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.focus" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Переносит фокус на текущий элемент</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">login</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;[name=login]&quot;</span><span class="p">);</span>
+<span class="nx">login</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.getAttribute">
+<code class="sig-name descname">getAttribute</code><span class="sig-paren">(</span><em class="sig-param">attrName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.getAttribute" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает значение атрибута</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.getAttributeNS">
+<code class="sig-name descname">getAttributeNS</code><span class="sig-paren">(</span><em class="sig-param">namespace</em>, <em class="sig-param">localName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.getAttributeNS" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Этот ме­тод дей­ст­ву­ет так же, как ме­тод <a class="reference internal" href="#HTMLElement.getAttribute" title="HTMLElement.getAttribute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">getAttribute()</span></code></a>,
+кро­ме то­го, что ат­ри­бут зада­ет­ся ком­би­на­ци­ей URI про­стран­ст­ва имен и
+ло­каль­но­го име­ни, оп­ре­де­лен­но­го в дан­ном про­стран­ст­ве имен.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.getBoundingClientRect">
+<code class="sig-name descname">getBoundingClientRect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.getBoundingClientRect" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="ClientRect.html#ClientRect" title="ClientRect"><code class="xref py py-class docutils literal notranslate"><span class="pre">ClientRect</span></code></a>, опи­сы­ваю­щий пря­мо­уголь­ник, ог­ра­ни­чи­ваю­щий дан­ный эле­мент.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.getClientRects">
+<code class="sig-name descname">getClientRects</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.getClientRects" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Воз­вра­ща­ет объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий объ­ек­ты <code class="xref py py-class docutils literal notranslate"><span class="pre">ClientRects</span></code>, ко­то­рые опи­сы­ва­ют один или бо­лее пря­мо­уголь­ни­ков, ог­ра­ни­чи­ваю­щих дан­ный эле­мент.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.getElementsByClassName">
+<code class="sig-name descname">getElementsByClassName</code><span class="sig-paren">(</span><em class="sig-param">elementClassName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.getElementsByClassName" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref py py-class docutils literal notranslate"><span class="pre">NodeList</span></code></a> элементов с указанным классом</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.getElementsByTagName">
+<code class="sig-name descname">getElementsByTagName</code><span class="sig-paren">(</span><em class="sig-param">tagName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.getElementsByTagName" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref py py-class docutils literal notranslate"><span class="pre">NodeList</span></code></a> элементов с указанным тегом</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.getElementsByTagNameNS">
+<code class="sig-name descname">getElementsByTagNameNS</code><span class="sig-paren">(</span><em class="sig-param">namespace</em>, <em class="sig-param">localName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.getElementsByTagNameNS" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Этот ме­тод дей­ст­ву­ет по­доб­но ме­то­ду <code class="xref js js-func docutils literal notranslate"><span class="pre">getElementsByTagName()</span></code>, за ис­клю­че­ни­ем то­го, что имя те­га тре­буе­мых эле­мен­тов ука­зы­ва­ет­ся как ком­би­на­ция URI про­стран­ст­ва имен и ло­каль­но­го име­ни в этом про­стран­ст­ве имен.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.hasAttribute">
+<code class="sig-name descname">hasAttribute</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.hasAttribute" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Проверяет, есть ли у элемента атрибут</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.hasAttributeNS">
+<code class="sig-name descname">hasAttributeNS</code><span class="sig-paren">(</span><em class="sig-param">namespace</em>, <em class="sig-param">localName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.hasAttributeNS" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Этот ме­тод дей­ст­ву­ет так же, как ме­тод <code class="xref js js-func docutils literal notranslate"><span class="pre">hasAttribute()</span></code>, за ис­клю­че­ни­ем то­го, что ат­ри­бут за­да­ет­ся ком­би­на­ци­ей URI про­стран­ст­ва имен и ло­каль­но­го име­ни в этом про­стран­ст­ве имен.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.hasAttributes">
+<code class="sig-name descname">hasAttributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.hasAttributes" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Проверяет, есть ли у элемента атрибуты</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.insertAdjacentHTML">
+<code class="sig-name descname">insertAdjacentHTML</code><span class="sig-paren">(</span><em class="sig-param">string position</em>, <em class="sig-param">string text</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.insertAdjacentHTML" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Встав­ля­ет раз­мет­ку HTML text в по­зи­цию position от­но­си­тель­но дан­но­го эле­мен­ та.</p>
+<ul>
+<li><p><cite>position</cite> -</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>beforebegin</cite> - Встав­ля­ет текст пе­ред от­кры­ваю­щим те­гом эле­мен­та</p></li>
+<li><p><cite>afterend</cite> - Встав­ля­ет текст по­сле за­кры­ваю­ще­го те­га эле­мен­та</p></li>
+<li><p><cite>afterbegin</cite> - Встав­ля­ет текст сра­зу по­сле от­кры­ваю­ще­го те­га эле­мен­та</p></li>
+<li><p><cite>beforeend</cite> - Встав­ля­ет текст не­по­сред­ст­вен­но пе­ред за­кры­ваю­щим те­гом эле­мен­та</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.querySelector">
+<code class="sig-name descname">querySelector</code><span class="sig-paren">(</span><em class="sig-param">string selectors</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.querySelector" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод поиска элементов.</p>
+<p>Возвращает элемент DOM дерева <a class="reference internal" href="#Element" title="Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a>,
+соответствующий CSS-селекторам selectors
+(это может быть единственный CSS-селектор или
+группа селекторов, разделенных запятыми).</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;.user-block&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.querySelectorAll">
+<code class="sig-name descname">querySelectorAll</code><span class="sig-paren">(</span><em class="sig-param">string selectors</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.querySelectorAll" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Метод поиска элементов.</p>
+<p>Возвращает объект <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref py py-class docutils literal notranslate"><span class="pre">NodeList</span></code></a>,
+содержащий все элементы, вложенные в  данный элемент,
+которые соответствуют селекторам selectors
+(это может быть единственный CSS-селектор
+или группа селекторов, разделенных запятыми).</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">&quot;nav li&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.removeAttribute">
+<code class="sig-name descname">removeAttribute</code><span class="sig-paren">(</span><em class="sig-param">attrName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.removeAttribute" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Удаляет указанный атрибут</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.removeAttributeNS">
+<code class="sig-name descname">removeAttributeNS</code><span class="sig-paren">(</span><em class="sig-param">string namespace</em>, <em class="sig-param">string localName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.removeAttributeNS" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ме­тод дей­ст­ву­ет так же, как ме­тод <code class="xref js js-func docutils literal notranslate"><span class="pre">removeAttribute()</span></code>, за ис­клю­че­ни­ем то­го, что уда­ляе­мый ат­ри­бут за­да­ет­ся URI про­стран­ст­ва имен и ло­каль­но­го име­ни.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.removeAttributeNode">
+<code class="sig-name descname">removeAttributeNode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.removeAttributeNode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Удаляет указанный атрибутный узел</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.removeEventListener">
+<code class="sig-name descname">removeEventListener</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.removeEventListener" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Удаляет обработчик события для данного элемента</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">button</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">my_function</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.scrollIntoView">
+<code class="sig-name descname">scrollIntoView</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">boolean top</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.scrollIntoView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ес­ли HTML-эле­мент в на­стоя­щий мо­мент на­хо­дит­ся за пре­де­ла­ми ок­на, этот ме­тод про­кру­тит до­ку­мент так, что эле­мент ока­жет­ся в пре­де­лах ок­на. Ар­гу­мент top яв­ ля­ет­ся не­обя­за­тель­ным и под­ска­зы­ва­ет ме­то­ду, дол­жен ли эле­мент ока­зать­ся бли­ же к верх­не­му или к ниж­не­му краю ок­на. Ес­ли он ра­вен true или от­сут­ст­ву­ет, бро­узер ста­ра­ет­ся вы­пол­нить про­крут­ку так, что­бы эле­мент ока­зал­ся бли­же к верх­не­му краю ок­на. Ес­ли он ра­вен false, бро­узер ста­ра­ет­ся вы­пол­нить про­крут­ку так, что­бы эле­мент ока­зал­ся бли­же к ниж­не­му краю ок­на. Для эле­мен­тов, при­ни­маю­щих фо­кус вво­да, та­ких как эле­мен­ты Input, ме­тод focus() не­яв­но вы­пол­ня­ет точ­но та­кую же опе­ра­цию про­крут­ки.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.setAttribute">
+<code class="sig-name descname">setAttribute</code><span class="sig-paren">(</span><em class="sig-param">string qualifiedName</em>, <em class="sig-param">string value</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.setAttribute" title="Ссылка на это определение">¶</a></dt>
+<dd><p>При­сваи­ва­ет ука­зан­ное зна­че­ние ат­ри­бу­ту с  ука­зан­ным име­нем. Ес­ли ат­ри­бут с та­ким име­нем еще не су­ще­ст­ву­ет, в эле­мент до­бав­ля­ет­ся но­вый ат­ри­бут. В HTML-до­ку­мен­тах пе­ред при­сваи­ва­ни­ем зна­че­ния сим­во­лы в име­ни ат­ри­бу­та пре­об­ра­зу­ют­ся в ниж­ний ре­гистр. Об­ра­ти­те вни­ма­ние: в HTML-до­ку­мен­те Ja­va­Script-свой­ст­ва, со­от­вет­ст­вую­щие всем стан­дарт­ным HTML-ат­ри­бу­там, оп­ре­де­ля­ют­ся объ­ек­та­ми HTMLElement. По­это­му дан­ный ме­тод обыч­но ис­поль­зу­ет­ся лишь для дос­ту­па к не­стан­дарт­ным ат­ри­бу­там.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HTMLElement.setAttributeNS">
+<code class="sig-name descname">setAttributeNS</code><span class="sig-paren">(</span><em class="sig-param">string namespace</em>, <em class="sig-param">string qualifiedName</em>, <em class="sig-param">string value</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLElement.setAttributeNS" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Этот ме­тод дей­ст­ву­ет так же, как ме­тод <code class="xref js js-func docutils literal notranslate"><span class="pre">setAttribute()</span></code>, за ис­клю­че­ни­ем то­го, что имя ат­ри­бу­та ука­зы­ва­ет­ся как ком­би­на­ция URI про­стран­ст­ва имен и ква­ли­фи­ци­ро­ван­но­го име­ни, со­стоя­ще­го из пре­фик­са про­стран­ст­ва имен, двое­то­чия и  ло­каль­но­го име­ни в этом про­стран­ст­ве имен.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="htmlanchorelement">
+<h2>HTMLAnchorElement<a class="headerlink" href="#htmlanchorelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;a&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLAnchorElement">
+<em class="property">class </em><code class="sig-name descname">HTMLAnchorElement</code><a class="headerlink" href="#HTMLAnchorElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLAnchorElement.href">
+<code class="sig-name descname">href</code><a class="headerlink" href="#HTMLAnchorElement.href" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAnchorElement.target">
+<code class="sig-name descname">target</code><a class="headerlink" href="#HTMLAnchorElement.target" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAnchorElement.ping">
+<code class="sig-name descname">ping</code><a class="headerlink" href="#HTMLAnchorElement.ping" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAnchorElement.rel">
+<code class="sig-name descname">rel</code><a class="headerlink" href="#HTMLAnchorElement.rel" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAnchorElement.media">
+<code class="sig-name descname">media</code><a class="headerlink" href="#HTMLAnchorElement.media" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAnchorElement.hreflang">
+<code class="sig-name descname">hreflang</code><a class="headerlink" href="#HTMLAnchorElement.hreflang" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAnchorElement.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#HTMLAnchorElement.type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlappletelement">
+<h2>HTMLAppletElement<a class="headerlink" href="#htmlappletelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;applet&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLAppletElement">
+<em class="property">class </em><code class="sig-name descname">HTMLAppletElement</code><a class="headerlink" href="#HTMLAppletElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlareaelement">
+<h2>HTMLAreaElement<a class="headerlink" href="#htmlareaelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;area&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLAreaElement">
+<em class="property">class </em><code class="sig-name descname">HTMLAreaElement</code><a class="headerlink" href="#HTMLAreaElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLAreaElement.alt">
+<code class="sig-name descname">alt</code><a class="headerlink" href="#HTMLAreaElement.alt" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAreaElement.coords">
+<code class="sig-name descname">coords</code><a class="headerlink" href="#HTMLAreaElement.coords" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAreaElement.shape">
+<code class="sig-name descname">shape</code><a class="headerlink" href="#HTMLAreaElement.shape" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAreaElement.href">
+<code class="sig-name descname">href</code><a class="headerlink" href="#HTMLAreaElement.href" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAreaElement.target">
+<code class="sig-name descname">target</code><a class="headerlink" href="#HTMLAreaElement.target" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAreaElement.ping">
+<code class="sig-name descname">ping</code><a class="headerlink" href="#HTMLAreaElement.ping" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAreaElement.rel">
+<code class="sig-name descname">rel</code><a class="headerlink" href="#HTMLAreaElement.rel" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAreaElement.media">
+<code class="sig-name descname">media</code><a class="headerlink" href="#HTMLAreaElement.media" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAreaElement.hreflang">
+<code class="sig-name descname">hreflang</code><a class="headerlink" href="#HTMLAreaElement.hreflang" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLAreaElement.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#HTMLAreaElement.type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlbaseelement">
+<h2>HTMLBaseElement<a class="headerlink" href="#htmlbaseelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;base&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLBaseElement">
+<em class="property">class </em><code class="sig-name descname">HTMLBaseElement</code><a class="headerlink" href="#HTMLBaseElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlbasefontelement">
+<h2>HTMLBaseFontElement<a class="headerlink" href="#htmlbasefontelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;basefont&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLBaseFontElement">
+<em class="property">class </em><code class="sig-name descname">HTMLBaseFontElement</code><a class="headerlink" href="#HTMLBaseFontElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlbodyelement">
+<h2>HTMLBodyElement<a class="headerlink" href="#htmlbodyelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;blockquote&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLBodyElement">
+<em class="property">class </em><code class="sig-name descname">HTMLBodyElement</code><a class="headerlink" href="#HTMLBodyElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLBodyElement.onafterprint">
+<code class="sig-name descname">onafterprint</code><a class="headerlink" href="#HTMLBodyElement.onafterprint" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onbeforeprint">
+<code class="sig-name descname">onbeforeprint</code><a class="headerlink" href="#HTMLBodyElement.onbeforeprint" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onbeforeunload">
+<code class="sig-name descname">onbeforeunload</code><a class="headerlink" href="#HTMLBodyElement.onbeforeunload" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onblur">
+<code class="sig-name descname">onblur</code><a class="headerlink" href="#HTMLBodyElement.onblur" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onerror">
+<code class="sig-name descname">onerror</code><a class="headerlink" href="#HTMLBodyElement.onerror" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onfocus">
+<code class="sig-name descname">onfocus</code><a class="headerlink" href="#HTMLBodyElement.onfocus" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">onhash­</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.change">
+<code class="sig-name descname">change</code><a class="headerlink" href="#HTMLBodyElement.change" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onload">
+<code class="sig-name descname">onload</code><a class="headerlink" href="#HTMLBodyElement.onload" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onmessage">
+<code class="sig-name descname">onmessage</code><a class="headerlink" href="#HTMLBodyElement.onmessage" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onoffline">
+<code class="sig-name descname">onoffline</code><a class="headerlink" href="#HTMLBodyElement.onoffline" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.ononline">
+<code class="sig-name descname">ononline</code><a class="headerlink" href="#HTMLBodyElement.ononline" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onpagehide">
+<code class="sig-name descname">onpagehide</code><a class="headerlink" href="#HTMLBodyElement.onpagehide" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">onpage­show</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onpopstate">
+<code class="sig-name descname">onpopstate</code><a class="headerlink" href="#HTMLBodyElement.onpopstate" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onredo">
+<code class="sig-name descname">onredo</code><a class="headerlink" href="#HTMLBodyElement.onredo" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onresize">
+<code class="sig-name descname">onresize</code><a class="headerlink" href="#HTMLBodyElement.onresize" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onscroll">
+<code class="sig-name descname">onscroll</code><a class="headerlink" href="#HTMLBodyElement.onscroll" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onstorage">
+<code class="sig-name descname">onstorage</code><a class="headerlink" href="#HTMLBodyElement.onstorage" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onundo">
+<code class="sig-name descname">onundo</code><a class="headerlink" href="#HTMLBodyElement.onundo" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLBodyElement.onunload">
+<code class="sig-name descname">onunload</code><a class="headerlink" href="#HTMLBodyElement.onunload" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlbuttonelement">
+<h2>HTMLButtonElement<a class="headerlink" href="#htmlbuttonelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;button&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLButtonElement">
+<em class="property">class </em><code class="sig-name descname">HTMLButtonElement</code><a class="headerlink" href="#HTMLButtonElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLButtonElement.autofocus">
+<code class="sig-name descname">autofocus</code><a class="headerlink" href="#HTMLButtonElement.autofocus" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLButtonElement.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#HTMLButtonElement.disabled" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLButtonElement.form">
+<code class="sig-name descname">form</code><a class="headerlink" href="#HTMLButtonElement.form" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLButtonElement.formaction">
+<code class="sig-name descname">formaction</code><a class="headerlink" href="#HTMLButtonElement.formaction" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLButtonElement.formenctype">
+<code class="sig-name descname">formenctype</code><a class="headerlink" href="#HTMLButtonElement.formenctype" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLButtonElement.formmethod">
+<code class="sig-name descname">formmethod</code><a class="headerlink" href="#HTMLButtonElement.formmethod" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">form­nova­</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLButtonElement.lidate">
+<code class="sig-name descname">lidate</code><a class="headerlink" href="#HTMLButtonElement.lidate" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLButtonElement.formtarget">
+<code class="sig-name descname">formtarget</code><a class="headerlink" href="#HTMLButtonElement.formtarget" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLButtonElement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#HTMLButtonElement.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLButtonElement.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#HTMLButtonElement.type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLButtonElement.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#HTMLButtonElement.value" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlbrelement">
+<h2>HTMLBRElement<a class="headerlink" href="#htmlbrelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;br&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLBRElement">
+<em class="property">class </em><code class="sig-name descname">HTMLBRElement</code><a class="headerlink" href="#HTMLBRElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmldlistelement">
+<h2>HTMLDListElement<a class="headerlink" href="#htmldlistelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;dl&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLDListElement">
+<em class="property">class </em><code class="sig-name descname">HTMLDListElement</code><a class="headerlink" href="#HTMLDListElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmldirectoryelement">
+<h2>HTMLDirectoryElement<a class="headerlink" href="#htmldirectoryelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;dir&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLDirectoryElement">
+<em class="property">class </em><code class="sig-name descname">HTMLDirectoryElement</code><a class="headerlink" href="#HTMLDirectoryElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmldivelement">
+<h2>HTMLDivElement<a class="headerlink" href="#htmldivelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;div&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLDivElement">
+<em class="property">class </em><code class="sig-name descname">HTMLDivElement</code><a class="headerlink" href="#HTMLDivElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlfieldsetelement">
+<h2>HTMLFieldSetElement<a class="headerlink" href="#htmlfieldsetelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;fieldset&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLFieldSetElement">
+<em class="property">class </em><code class="sig-name descname">HTMLFieldSetElement</code><a class="headerlink" href="#HTMLFieldSetElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLFieldSetElement.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#HTMLFieldSetElement.disabled" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLFieldSetElement.form">
+<code class="sig-name descname">form</code><a class="headerlink" href="#HTMLFieldSetElement.form" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLFieldSetElement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#HTMLFieldSetElement.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlfontelement">
+<h2>HTMLFontElement<a class="headerlink" href="#htmlfontelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;font&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLFontElement">
+<em class="property">class </em><code class="sig-name descname">HTMLFontElement</code><a class="headerlink" href="#HTMLFontElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlformelement">
+<h2>HTMLFormElement<a class="headerlink" href="#htmlformelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;from&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLFormElement">
+<em class="property">class </em><code class="sig-name descname">HTMLFormElement</code><a class="headerlink" href="#HTMLFormElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt>
+<code class="sig-name descname">accept-charset</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLFormElement.action">
+<code class="sig-name descname">action</code><a class="headerlink" href="#HTMLFormElement.action" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLFormElement.autocomplete">
+<code class="sig-name descname">autocomplete</code><a class="headerlink" href="#HTMLFormElement.autocomplete" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLFormElement.elements">
+<code class="sig-name descname">elements</code><a class="headerlink" href="#HTMLFormElement.elements" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLFormElement.enctype">
+<code class="sig-name descname">enctype</code><a class="headerlink" href="#HTMLFormElement.enctype" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLFormElement.method">
+<code class="sig-name descname">method</code><a class="headerlink" href="#HTMLFormElement.method" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLFormElement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#HTMLFormElement.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLFormElement.novalidate">
+<code class="sig-name descname">novalidate</code><a class="headerlink" href="#HTMLFormElement.novalidate" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLFormElement.target">
+<code class="sig-name descname">target</code><a class="headerlink" href="#HTMLFormElement.target" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLFormElement.length">
+<code class="sig-name descname">length</code><a class="headerlink" href="#HTMLFormElement.length" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLFormElement.submit">
+<code class="sig-name descname">submit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLFormElement.submit" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLFormElement.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLFormElement.reset" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlframeelement">
+<h2>HTMLFrameElement<a class="headerlink" href="#htmlframeelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;frame&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLFrameElement">
+<em class="property">class </em><code class="sig-name descname">HTMLFrameElement</code><a class="headerlink" href="#HTMLFrameElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlframesetelement">
+<h2>HTMLFrameSetElement<a class="headerlink" href="#htmlframesetelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;frameset&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLFrameSetElement">
+<em class="property">class </em><code class="sig-name descname">HTMLFrameSetElement</code><a class="headerlink" href="#HTMLFrameSetElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlheadelement">
+<h2>HTMLHeadElement<a class="headerlink" href="#htmlheadelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;head&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLHeadElement">
+<em class="property">class </em><code class="sig-name descname">HTMLHeadElement</code><a class="headerlink" href="#HTMLHeadElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlheadingelement">
+<h2>HTMLHeadingElement<a class="headerlink" href="#htmlheadingelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;h1&gt; … &lt;h6&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLHeadingElement">
+<em class="property">class </em><code class="sig-name descname">HTMLHeadingElement</code><a class="headerlink" href="#HTMLHeadingElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlhtmlelement">
+<h2>HTMLHtmlElement<a class="headerlink" href="#htmlhtmlelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;html&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLHtmlElement">
+<em class="property">class </em><code class="sig-name descname">HTMLHtmlElement</code><a class="headerlink" href="#HTMLHtmlElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLHtmlElement.manifest">
+<code class="sig-name descname">manifest</code><a class="headerlink" href="#HTMLHtmlElement.manifest" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlhrelement">
+<h2>HTMLHRElement<a class="headerlink" href="#htmlhrelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;hr&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLHRElement">
+<em class="property">class </em><code class="sig-name descname">HTMLHRElement</code><a class="headerlink" href="#HTMLHRElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlimageelement">
+<h2>HTMLImageElement<a class="headerlink" href="#htmlimageelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;image&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLImageElement">
+<em class="property">class </em><code class="sig-name descname">HTMLImageElement</code><a class="headerlink" href="#HTMLImageElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLImageElement.alt">
+<code class="sig-name descname">alt</code><a class="headerlink" href="#HTMLImageElement.alt" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLImageElement.src">
+<code class="sig-name descname">src</code><a class="headerlink" href="#HTMLImageElement.src" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLImageElement.usemap">
+<code class="sig-name descname">usemap</code><a class="headerlink" href="#HTMLImageElement.usemap" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLImageElement.ismap">
+<code class="sig-name descname">ismap</code><a class="headerlink" href="#HTMLImageElement.ismap" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLImageElement.width">
+<code class="sig-name descname">width</code><a class="headerlink" href="#HTMLImageElement.width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLImageElement.height">
+<code class="sig-name descname">height</code><a class="headerlink" href="#HTMLImageElement.height" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlinputelement">
+<h2>HTMLInputElement<a class="headerlink" href="#htmlinputelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;input&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLInputElement">
+<em class="property">class </em><code class="sig-name descname">HTMLInputElement</code><a class="headerlink" href="#HTMLInputElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLInputElement.accept">
+<code class="sig-name descname">accept</code><a class="headerlink" href="#HTMLInputElement.accept" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.alt">
+<code class="sig-name descname">alt</code><a class="headerlink" href="#HTMLInputElement.alt" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.autocomplete">
+<code class="sig-name descname">autocomplete</code><a class="headerlink" href="#HTMLInputElement.autocomplete" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.autofocus">
+<code class="sig-name descname">autofocus</code><a class="headerlink" href="#HTMLInputElement.autofocus" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.checked">
+<code class="sig-name descname">checked</code><a class="headerlink" href="#HTMLInputElement.checked" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.defaultChecked">
+<code class="sig-name descname">defaultChecked</code><a class="headerlink" href="#HTMLInputElement.defaultChecked" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.defaultValue">
+<code class="sig-name descname">defaultValue</code><a class="headerlink" href="#HTMLInputElement.defaultValue" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.dirname">
+<code class="sig-name descname">dirname</code><a class="headerlink" href="#HTMLInputElement.dirname" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#HTMLInputElement.disabled" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.form">
+<code class="sig-name descname">form</code><a class="headerlink" href="#HTMLInputElement.form" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">form­</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">ac­tion</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.formenctype">
+<code class="sig-name descname">formenctype</code><a class="headerlink" href="#HTMLInputElement.formenctype" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.formmethod">
+<code class="sig-name descname">formmethod</code><a class="headerlink" href="#HTMLInputElement.formmethod" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.formnovalidate">
+<code class="sig-name descname">formnovalidate</code><a class="headerlink" href="#HTMLInputElement.formnovalidate" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.formtarget">
+<code class="sig-name descname">formtarget</code><a class="headerlink" href="#HTMLInputElement.formtarget" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.height">
+<code class="sig-name descname">height</code><a class="headerlink" href="#HTMLInputElement.height" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.list">
+<code class="sig-name descname">list</code><a class="headerlink" href="#HTMLInputElement.list" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.max">
+<code class="sig-name descname">max</code><a class="headerlink" href="#HTMLInputElement.max" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.maxlength">
+<code class="sig-name descname">maxlength</code><a class="headerlink" href="#HTMLInputElement.maxlength" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.min">
+<code class="sig-name descname">min</code><a class="headerlink" href="#HTMLInputElement.min" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.multiple">
+<code class="sig-name descname">multiple</code><a class="headerlink" href="#HTMLInputElement.multiple" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#HTMLInputElement.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.pattern">
+<code class="sig-name descname">pattern</code><a class="headerlink" href="#HTMLInputElement.pattern" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.placeholder">
+<code class="sig-name descname">placeholder</code><a class="headerlink" href="#HTMLInputElement.placeholder" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.readonly">
+<code class="sig-name descname">readonly</code><a class="headerlink" href="#HTMLInputElement.readonly" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.required">
+<code class="sig-name descname">required</code><a class="headerlink" href="#HTMLInputElement.required" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.size">
+<code class="sig-name descname">size</code><a class="headerlink" href="#HTMLInputElement.size" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.src">
+<code class="sig-name descname">src</code><a class="headerlink" href="#HTMLInputElement.src" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.step">
+<code class="sig-name descname">step</code><a class="headerlink" href="#HTMLInputElement.step" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#HTMLInputElement.type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#HTMLInputElement.value" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLInputElement.width">
+<code class="sig-name descname">width</code><a class="headerlink" href="#HTMLInputElement.width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLInputElement.blur">
+<code class="sig-name descname">blur</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLInputElement.blur" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLInputElement.click">
+<code class="sig-name descname">click</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLInputElement.click" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLInputElement.focus">
+<code class="sig-name descname">focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLInputElement.focus" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLInputElement.select">
+<code class="sig-name descname">select</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLInputElement.select" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlisindexelement">
+<h2>HTMLIsIndexElement<a class="headerlink" href="#htmlisindexelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;isindex&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLIsIndexElement">
+<em class="property">class </em><code class="sig-name descname">HTMLIsIndexElement</code><a class="headerlink" href="#HTMLIsIndexElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmliframeelement">
+<h2>HTMLIFrameElement<a class="headerlink" href="#htmliframeelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;iframe&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLIFrameElement">
+<em class="property">class </em><code class="sig-name descname">HTMLIFrameElement</code><a class="headerlink" href="#HTMLIFrameElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLIFrameElement.src">
+<code class="sig-name descname">src</code><a class="headerlink" href="#HTMLIFrameElement.src" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLIFrameElement.srcdoc">
+<code class="sig-name descname">srcdoc</code><a class="headerlink" href="#HTMLIFrameElement.srcdoc" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLIFrameElement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#HTMLIFrameElement.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLIFrameElement.sandbox">
+<code class="sig-name descname">sandbox</code><a class="headerlink" href="#HTMLIFrameElement.sandbox" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLIFrameElement.seamless">
+<code class="sig-name descname">seamless</code><a class="headerlink" href="#HTMLIFrameElement.seamless" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLIFrameElement.width">
+<code class="sig-name descname">width</code><a class="headerlink" href="#HTMLIFrameElement.width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLIFrameElement.height">
+<code class="sig-name descname">height</code><a class="headerlink" href="#HTMLIFrameElement.height" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmllabelelement">
+<h2>HTMLLabelElement<a class="headerlink" href="#htmllabelelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;label&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLLabelElement">
+<em class="property">class </em><code class="sig-name descname">HTMLLabelElement</code><a class="headerlink" href="#HTMLLabelElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLLabelElement.form">
+<code class="sig-name descname">form</code><a class="headerlink" href="#HTMLLabelElement.form" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLLabelElement.for">
+<code class="sig-name descname">for</code><a class="headerlink" href="#HTMLLabelElement.for" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmllegendelement">
+<h2>HTMLLegendElement<a class="headerlink" href="#htmllegendelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;legend&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLLegendElement">
+<em class="property">class </em><code class="sig-name descname">HTMLLegendElement</code><a class="headerlink" href="#HTMLLegendElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmllinkelement">
+<h2>HTMLLinkElement<a class="headerlink" href="#htmllinkelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;li&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLLinkElement">
+<em class="property">class </em><code class="sig-name descname">HTMLLinkElement</code><a class="headerlink" href="#HTMLLinkElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLLinkElement.href">
+<code class="sig-name descname">href</code><a class="headerlink" href="#HTMLLinkElement.href" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLLinkElement.rel">
+<code class="sig-name descname">rel</code><a class="headerlink" href="#HTMLLinkElement.rel" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLLinkElement.media">
+<code class="sig-name descname">media</code><a class="headerlink" href="#HTMLLinkElement.media" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLLinkElement.hreflang">
+<code class="sig-name descname">hreflang</code><a class="headerlink" href="#HTMLLinkElement.hreflang" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLLinkElement.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#HTMLLinkElement.type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLLinkElement.sizes">
+<code class="sig-name descname">sizes</code><a class="headerlink" href="#HTMLLinkElement.sizes" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmllielement">
+<h2>HTMLLIElement<a class="headerlink" href="#htmllielement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;li&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLLIElement">
+<em class="property">class </em><code class="sig-name descname">HTMLLIElement</code><a class="headerlink" href="#HTMLLIElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLLIElement.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#HTMLLIElement.value" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlmapelement">
+<h2>HTMLMapElement<a class="headerlink" href="#htmlmapelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;map&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLMapElement">
+<em class="property">class </em><code class="sig-name descname">HTMLMapElement</code><a class="headerlink" href="#HTMLMapElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLMapElement.map">
+<code class="sig-name descname">map</code><a class="headerlink" href="#HTMLMapElement.map" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlmenuelement">
+<h2>HTMLMenuElement<a class="headerlink" href="#htmlmenuelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;menu&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLMenuElement">
+<em class="property">class </em><code class="sig-name descname">HTMLMenuElement</code><a class="headerlink" href="#HTMLMenuElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLMenuElement.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#HTMLMenuElement.type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLMenuElement.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#HTMLMenuElement.label" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlmetaelement">
+<h2>HTMLMetaElement<a class="headerlink" href="#htmlmetaelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;meta&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLMetaElement">
+<em class="property">class </em><code class="sig-name descname">HTMLMetaElement</code><a class="headerlink" href="#HTMLMetaElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLMetaElement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#HTMLMetaElement.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">http-equiv</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLMetaElement.content">
+<code class="sig-name descname">content</code><a class="headerlink" href="#HTMLMetaElement.content" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLMetaElement.charset">
+<code class="sig-name descname">charset</code><a class="headerlink" href="#HTMLMetaElement.charset" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlmodelement">
+<h2>HTMLModElement<a class="headerlink" href="#htmlmodelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;del&gt;</cite>, <cite>&lt;ins&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLModElement">
+<em class="property">class </em><code class="sig-name descname">HTMLModElement</code><a class="headerlink" href="#HTMLModElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLModElement.cite">
+<code class="sig-name descname">cite</code><a class="headerlink" href="#HTMLModElement.cite" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLModElement.datetime">
+<code class="sig-name descname">datetime</code><a class="headerlink" href="#HTMLModElement.datetime" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlobjectelement">
+<h2>HTMLObjectElement<a class="headerlink" href="#htmlobjectelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;object&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLObjectElement">
+<em class="property">class </em><code class="sig-name descname">HTMLObjectElement</code><a class="headerlink" href="#HTMLObjectElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLObjectElement.data">
+<code class="sig-name descname">data</code><a class="headerlink" href="#HTMLObjectElement.data" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLObjectElement.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#HTMLObjectElement.type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLObjectElement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#HTMLObjectElement.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLObjectElement.usemap">
+<code class="sig-name descname">usemap</code><a class="headerlink" href="#HTMLObjectElement.usemap" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLObjectElement.form">
+<code class="sig-name descname">form</code><a class="headerlink" href="#HTMLObjectElement.form" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLObjectElement.width">
+<code class="sig-name descname">width</code><a class="headerlink" href="#HTMLObjectElement.width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLObjectElement.height">
+<code class="sig-name descname">height</code><a class="headerlink" href="#HTMLObjectElement.height" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmloptgroupelement">
+<h2>HTMLOptGroupElement<a class="headerlink" href="#htmloptgroupelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;optgroup&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLOptGroupElement">
+<em class="property">class </em><code class="sig-name descname">HTMLOptGroupElement</code><a class="headerlink" href="#HTMLOptGroupElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLOptGroupElement.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#HTMLOptGroupElement.disabled" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLOptGroupElement.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#HTMLOptGroupElement.label" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmloptionelement">
+<h2>HTMLOptionElement<a class="headerlink" href="#htmloptionelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;option&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLOptionElement">
+<em class="property">class </em><code class="sig-name descname">HTMLOptionElement</code><a class="headerlink" href="#HTMLOptionElement" title="Ссылка на это определение">¶</a></dt>
+<dd><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Option</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">defaultSelected</span><span class="p">,</span> <span class="nx">selected</span><span class="p">);</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="HTMLOptionElement.form">
+<code class="sig-name descname">form</code><a class="headerlink" href="#HTMLOptionElement.form" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLOptionElement.defaultSelected">
+<code class="sig-name descname">defaultSelected</code><a class="headerlink" href="#HTMLOptionElement.defaultSelected" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLOptionElement.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#HTMLOptionElement.disabled" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLOptionElement.index">
+<code class="sig-name descname">index</code><a class="headerlink" href="#HTMLOptionElement.index" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLOptionElement.label">
+<code class="sig-name descname">label</code><a class="headerlink" href="#HTMLOptionElement.label" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLOptionElement.selected">
+<code class="sig-name descname">selected</code><a class="headerlink" href="#HTMLOptionElement.selected" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLOptionElement.text">
+<code class="sig-name descname">text</code><a class="headerlink" href="#HTMLOptionElement.text" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLOptionElement.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#HTMLOptionElement.value" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlolistelement">
+<h2>HTMLOListElement<a class="headerlink" href="#htmlolistelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;ol&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLOListElement">
+<em class="property">class </em><code class="sig-name descname">HTMLOListElement</code><a class="headerlink" href="#HTMLOListElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLOListElement.reversed">
+<code class="sig-name descname">reversed</code><a class="headerlink" href="#HTMLOListElement.reversed" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLOListElement.start">
+<code class="sig-name descname">start</code><a class="headerlink" href="#HTMLOListElement.start" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlparagraphelement">
+<h2>HTMLParagraphElement<a class="headerlink" href="#htmlparagraphelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;p&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLParagraphElement">
+<em class="property">class </em><code class="sig-name descname">HTMLParagraphElement</code><a class="headerlink" href="#HTMLParagraphElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLParagraphElement.cite">
+<code class="sig-name descname">cite</code><a class="headerlink" href="#HTMLParagraphElement.cite" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlparamelement">
+<h2>HTMLParamElement<a class="headerlink" href="#htmlparamelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;param&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLParamElement">
+<em class="property">class </em><code class="sig-name descname">HTMLParamElement</code><a class="headerlink" href="#HTMLParamElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLParamElement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#HTMLParamElement.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLParamElement.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#HTMLParamElement.value" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlpreelement">
+<h2>HTMLPreElement<a class="headerlink" href="#htmlpreelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;pre&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLPreElement">
+<em class="property">class </em><code class="sig-name descname">HTMLPreElement</code><a class="headerlink" href="#HTMLPreElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlquoteelement">
+<h2>HTMLQuoteElement<a class="headerlink" href="#htmlquoteelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;q&gt;</cite>, <cite>&lt;blockquote&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLQuoteElement">
+<em class="property">class </em><code class="sig-name descname">HTMLQuoteElement</code><a class="headerlink" href="#HTMLQuoteElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLQuoteElement.cite">
+<code class="sig-name descname">cite</code><a class="headerlink" href="#HTMLQuoteElement.cite" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlscriptelement">
+<h2>HTMLScriptElement<a class="headerlink" href="#htmlscriptelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;script&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLScriptElement">
+<em class="property">class </em><code class="sig-name descname">HTMLScriptElement</code><a class="headerlink" href="#HTMLScriptElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLScriptElement.src">
+<code class="sig-name descname">src</code><a class="headerlink" href="#HTMLScriptElement.src" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLScriptElement.async">
+<code class="sig-name descname">async</code><a class="headerlink" href="#HTMLScriptElement.async" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLScriptElement.defer">
+<code class="sig-name descname">defer</code><a class="headerlink" href="#HTMLScriptElement.defer" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLScriptElement.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#HTMLScriptElement.type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLScriptElement.charset">
+<code class="sig-name descname">charset</code><a class="headerlink" href="#HTMLScriptElement.charset" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlselectelement">
+<h2>HTMLSelectElement<a class="headerlink" href="#htmlselectelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;select&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLSelectElement">
+<em class="property">class </em><code class="sig-name descname">HTMLSelectElement</code><a class="headerlink" href="#HTMLSelectElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLSelectElement.autofocus">
+<code class="sig-name descname">autofocus</code><a class="headerlink" href="#HTMLSelectElement.autofocus" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#HTMLSelectElement.disabled" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.form">
+<code class="sig-name descname">form</code><a class="headerlink" href="#HTMLSelectElement.form" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.length">
+<code class="sig-name descname">length</code><a class="headerlink" href="#HTMLSelectElement.length" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.multiple">
+<code class="sig-name descname">multiple</code><a class="headerlink" href="#HTMLSelectElement.multiple" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#HTMLSelectElement.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.options">
+<code class="sig-name descname">options</code><a class="headerlink" href="#HTMLSelectElement.options" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.required">
+<code class="sig-name descname">required</code><a class="headerlink" href="#HTMLSelectElement.required" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.selectedIndex">
+<code class="sig-name descname">selectedIndex</code><a class="headerlink" href="#HTMLSelectElement.selectedIndex" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.size">
+<code class="sig-name descname">size</code><a class="headerlink" href="#HTMLSelectElement.size" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.tabIndex">
+<code class="sig-name descname">tabIndex</code><a class="headerlink" href="#HTMLSelectElement.tabIndex" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#HTMLSelectElement.type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLSelectElement.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#HTMLSelectElement.value" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLSelectElement.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLSelectElement.add" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLSelectElement.blur">
+<code class="sig-name descname">blur</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLSelectElement.blur" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLSelectElement.focus">
+<code class="sig-name descname">focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLSelectElement.focus" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLSelectElement.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLSelectElement.remove" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmlstyleelement">
+<h2>HTMLStyleElement<a class="headerlink" href="#htmlstyleelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;select&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLStyleElement">
+<em class="property">class </em><code class="sig-name descname">HTMLStyleElement</code><a class="headerlink" href="#HTMLStyleElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLStyleElement.media">
+<code class="sig-name descname">media</code><a class="headerlink" href="#HTMLStyleElement.media" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLStyleElement.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#HTMLStyleElement.type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLStyleElement.scoped">
+<code class="sig-name descname">scoped</code><a class="headerlink" href="#HTMLStyleElement.scoped" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmltablecaptionelement">
+<h2>HTMLTableCaptionElement<a class="headerlink" href="#htmltablecaptionelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;caption&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLTableCaptionElement">
+<em class="property">class </em><code class="sig-name descname">HTMLTableCaptionElement</code><a class="headerlink" href="#HTMLTableCaptionElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmltablecellelement">
+<h2>HTMLTableCellElement<a class="headerlink" href="#htmltablecellelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;td&gt;</cite>, <cite>&lt;th&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLTableCellElement">
+<em class="property">class </em><code class="sig-name descname">HTMLTableCellElement</code><a class="headerlink" href="#HTMLTableCellElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLTableCellElement.align">
+<code class="sig-name descname">align</code><a class="headerlink" href="#HTMLTableCellElement.align" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableCellElement.cellIndex">
+<code class="sig-name descname">cellIndex</code><a class="headerlink" href="#HTMLTableCellElement.cellIndex" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableCellElement.colspan">
+<code class="sig-name descname">colspan</code><a class="headerlink" href="#HTMLTableCellElement.colspan" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableCellElement.rowspan">
+<code class="sig-name descname">rowspan</code><a class="headerlink" href="#HTMLTableCellElement.rowspan" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableCellElement.headers">
+<code class="sig-name descname">headers</code><a class="headerlink" href="#HTMLTableCellElement.headers" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableCellElement.height">
+<code class="sig-name descname">height</code><a class="headerlink" href="#HTMLTableCellElement.height" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableCellElement.innerHTML">
+<code class="sig-name descname">innerHTML</code><a class="headerlink" href="#HTMLTableCellElement.innerHTML" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableCellElement.textContent">
+<code class="sig-name descname">textContent</code><a class="headerlink" href="#HTMLTableCellElement.textContent" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableCellElement.vAlign">
+<code class="sig-name descname">vAlign</code><a class="headerlink" href="#HTMLTableCellElement.vAlign" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableCellElement.width">
+<code class="sig-name descname">width</code><a class="headerlink" href="#HTMLTableCellElement.width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmltablecolelement">
+<h2>HTMLTableColElement<a class="headerlink" href="#htmltablecolelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;col&gt;</cite>, <cite>&lt;colgroup&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLTableColElement">
+<em class="property">class </em><code class="sig-name descname">HTMLTableColElement</code><a class="headerlink" href="#HTMLTableColElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLTableColElement.span">
+<code class="sig-name descname">span</code><a class="headerlink" href="#HTMLTableColElement.span" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmltableelement">
+<h2>HTMLTableElement<a class="headerlink" href="#htmltableelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;table&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLTableElement">
+<em class="property">class </em><code class="sig-name descname">HTMLTableElement</code><a class="headerlink" href="#HTMLTableElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLTableElement.border">
+<code class="sig-name descname">border</code><a class="headerlink" href="#HTMLTableElement.border" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableElement.caption">
+<code class="sig-name descname">caption</code><a class="headerlink" href="#HTMLTableElement.caption" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableElement.cellPadding">
+<code class="sig-name descname">cellPadding</code><a class="headerlink" href="#HTMLTableElement.cellPadding" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableElement.cellSpacing">
+<code class="sig-name descname">cellSpacing</code><a class="headerlink" href="#HTMLTableElement.cellSpacing" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">rows[]</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableElement.summary">
+<code class="sig-name descname">summary</code><a class="headerlink" href="#HTMLTableElement.summary" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">tBodies[]</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableElement.tFoot">
+<code class="sig-name descname">tFoot</code><a class="headerlink" href="#HTMLTableElement.tFoot" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableElement.tHead">
+<code class="sig-name descname">tHead</code><a class="headerlink" href="#HTMLTableElement.tHead" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableElement.width">
+<code class="sig-name descname">width</code><a class="headerlink" href="#HTMLTableElement.width" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableElement.createCaption">
+<code class="sig-name descname">createCaption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableElement.createCaption" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableElement.createTFoot">
+<code class="sig-name descname">createTFoot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableElement.createTFoot" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableElement.createTHead">
+<code class="sig-name descname">createTHead</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableElement.createTHead" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableElement.deleteCaption">
+<code class="sig-name descname">deleteCaption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableElement.deleteCaption" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableElement.deleteTFoot">
+<code class="sig-name descname">deleteTFoot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableElement.deleteTFoot" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableElement.deleteTHead">
+<code class="sig-name descname">deleteTHead</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableElement.deleteTHead" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableElement.deleteRow">
+<code class="sig-name descname">deleteRow</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableElement.deleteRow" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableElement.insertRow">
+<code class="sig-name descname">insertRow</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableElement.insertRow" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmltablerowelement">
+<h2>HTMLTableRowElement<a class="headerlink" href="#htmltablerowelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;tr&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLTableRowElement">
+<em class="property">class </em><code class="sig-name descname">HTMLTableRowElement</code><a class="headerlink" href="#HTMLTableRowElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLTableRowElement.bgColor">
+<code class="sig-name descname">bgColor</code><a class="headerlink" href="#HTMLTableRowElement.bgColor" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableRowElement.cells">
+<code class="sig-name descname">cells</code><a class="headerlink" href="#HTMLTableRowElement.cells" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableRowElement.rowIndex">
+<code class="sig-name descname">rowIndex</code><a class="headerlink" href="#HTMLTableRowElement.rowIndex" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableRowElement.sectionRowIndex">
+<code class="sig-name descname">sectionRowIndex</code><a class="headerlink" href="#HTMLTableRowElement.sectionRowIndex" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableRowElement.vAlign">
+<code class="sig-name descname">vAlign</code><a class="headerlink" href="#HTMLTableRowElement.vAlign" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableRowElement.deleteCell">
+<code class="sig-name descname">deleteCell</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableRowElement.deleteCell" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableRowElement.insertCell">
+<code class="sig-name descname">insertCell</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableRowElement.insertCell" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmltablesectionelement">
+<h2>HTMLTableSectionElement<a class="headerlink" href="#htmltablesectionelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;tbody&gt;</cite>, <cite>&lt;tfoot&gt;</cite>, <cite>&lt;thead&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLTableSectionElement">
+<em class="property">class </em><code class="sig-name descname">HTMLTableSectionElement</code><a class="headerlink" href="#HTMLTableSectionElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLTableSectionElement.align">
+<code class="sig-name descname">align</code><a class="headerlink" href="#HTMLTableSectionElement.align" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableSectionElement.rows">
+<code class="sig-name descname">rows</code><a class="headerlink" href="#HTMLTableSectionElement.rows" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTableSectionElement.vAlign">
+<code class="sig-name descname">vAlign</code><a class="headerlink" href="#HTMLTableSectionElement.vAlign" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableSectionElement.deleteRow">
+<code class="sig-name descname">deleteRow</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableSectionElement.deleteRow" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTableSectionElement.insertRow">
+<code class="sig-name descname">insertRow</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTableSectionElement.insertRow" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmltextareaelement">
+<h2>HTMLTextAreaElement<a class="headerlink" href="#htmltextareaelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;textarea&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLTextAreaElement">
+<em class="property">class </em><code class="sig-name descname">HTMLTextAreaElement</code><a class="headerlink" href="#HTMLTextAreaElement" title="Ссылка на это определение">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="HTMLTextAreaElement.autofocus">
+<code class="sig-name descname">autofocus</code><a class="headerlink" href="#HTMLTextAreaElement.autofocus" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.cols">
+<code class="sig-name descname">cols</code><a class="headerlink" href="#HTMLTextAreaElement.cols" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.defaultValue">
+<code class="sig-name descname">defaultValue</code><a class="headerlink" href="#HTMLTextAreaElement.defaultValue" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.disabled">
+<code class="sig-name descname">disabled</code><a class="headerlink" href="#HTMLTextAreaElement.disabled" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.form">
+<code class="sig-name descname">form</code><a class="headerlink" href="#HTMLTextAreaElement.form" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.maxlength">
+<code class="sig-name descname">maxlength</code><a class="headerlink" href="#HTMLTextAreaElement.maxlength" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#HTMLTextAreaElement.name" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.placeholder">
+<code class="sig-name descname">placeholder</code><a class="headerlink" href="#HTMLTextAreaElement.placeholder" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.readonly">
+<code class="sig-name descname">readonly</code><a class="headerlink" href="#HTMLTextAreaElement.readonly" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">requi­r­ed</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.rows">
+<code class="sig-name descname">rows</code><a class="headerlink" href="#HTMLTextAreaElement.rows" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.tabIndex">
+<code class="sig-name descname">tabIndex</code><a class="headerlink" href="#HTMLTextAreaElement.tabIndex" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#HTMLTextAreaElement.type" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#HTMLTextAreaElement.value" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLTextAreaElement.wrap">
+<code class="sig-name descname">wrap</code><a class="headerlink" href="#HTMLTextAreaElement.wrap" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTextAreaElement.blur">
+<code class="sig-name descname">blur</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTextAreaElement.blur" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTextAreaElement.focus">
+<code class="sig-name descname">focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTextAreaElement.focus" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HTMLTextAreaElement.select">
+<code class="sig-name descname">select</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLTextAreaElement.select" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="htmltitleelement">
+<h2>HTMLTitleElement<a class="headerlink" href="#htmltitleelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;title&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLTitleElement">
+<em class="property">class </em><code class="sig-name descname">HTMLTitleElement</code><a class="headerlink" href="#HTMLTitleElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="htmlulistelement">
+<h2>HTMLUListElement<a class="headerlink" href="#htmlulistelement" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Элемент <cite>&lt;ul&gt;</cite></p>
+<p>Наследник <a class="reference internal" href="#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a></p>
+<dl class="class">
+<dt id="HTMLUListElement">
+<em class="property">class </em><code class="sig-name descname">HTMLUListElement</code><a class="headerlink" href="#HTMLUListElement" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Эле­мент</p></th>
+<th class="head"><p>Ат­ри­бу­ты</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt;audio&gt;</p></td>
+<td><p>src, preload, autoplay, loop, controls</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;canvas&gt;</p></td>
+<td><p>width, height</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;command&gt;</p></td>
+<td><p>type, label, icon, disabled, checked, radiogroup</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;details&gt;</p></td>
+<td><p>open</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;embed&gt;</p></td>
+<td><p>src, type, width, height</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;keygen&gt;</p></td>
+<td><p>autofocus, challenge, disabled, form, keytype, name</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;meter&gt;</p></td>
+<td><p>value, min, max, low, high, optimum, form</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;output&gt;</p></td>
+<td><p>for, form, name</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;progress&gt;</p></td>
+<td><p>value, max, form</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;source&gt;</p></td>
+<td><p>src, type, media</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;time&gt;</p></td>
+<td><p>datetime, pubdate</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;track&gt;</p></td>
+<td><p>default, kind, label, src, srclang</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;video&gt;</p></td>
+<td><p>src, poster, preload, autoplay, loop, controls, width, height</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="HTMLCollection.html" class="btn btn-neutral float-right" title="HTMLCollection - коллекия, содержащая елементы Elemnet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="NodeList.html" class="btn btn-neutral float-left" title="NodeList - коллекция, содержащая все виды узлов" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

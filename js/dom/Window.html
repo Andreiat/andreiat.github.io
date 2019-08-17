@@ -1,0 +1,936 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Window &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="CSSRule - правило в таблице стилей CSS" href="CSSRule.html" />
+    <link rel="prev" title="SessionStorage - key-value хранилище" href="SessionStorage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">JavaScript</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../base/index.html">Основные объекты</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">DOM - дерево html документа</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Navigator.html">Navigator - содержит информацию о браузере и операционной системе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Screen.html">Screen - информация об экране</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Location.html">Location - адрес текущей страницы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Document.html">Document(HTMLDocument) - корневой элемент дерева</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Node.html">Node - узел дом дерева документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NodeList.html">NodeList - коллекция, содержащая все виды узлов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Element.html">Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HTMLCollection.html">HTMLCollection - коллекия, содержащая елементы Elemnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CharacterData.html">CharacterData - узел с текстом внутри</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Text.html">Text - текстовая последовательность в документе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Comment.html">Comment - коментарии в доме</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ApplicationCache.html">ApplicationCache - прикладной интерфейс управления кэшем приложений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArrayBufferView.html">ArrayBufferView - общие свойства типов, основанных на ArrayBuffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Attr.html">Attr - атрибут элемента документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Audio.html">Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BeforeUnloadEvent.html">BeforeUnloadEvent - объект Event для событий выгрузки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Blob.html">Blob - блок двоичных данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BlobBuilder.html">BlobBuilder - используется для создания новых Blob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Button.html">Button - html элемент button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Canvas.html">Canvas - канвас</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Console.html">Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="History.html">History - журнал посещений объекта Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Image.html">Image - HTML img</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LocalStorage.html">LocalStorage - key-value хранилище</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SessionStorage.html">SessionStorage - key-value хранилище</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSRule.html">CSSRule - правило в таблице стилей CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSStyleDeclaration.html">CSSStyleDeclaration - набор css-атрибутов и их значений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSStyleSheet.html">CSSStyleSheet - таблица стилей CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasGradient.html">CanvasGradient - цветной градиент для использования в канвасе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasPattern.html">CanvasPattern - шаблон заполнения холста на основе готового изображения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasRenderingContext2D.html">CanvasRenderingContext2D - объект, используемый для создания изображений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ClientRect.html">ClientRect - прямоугольник, описанный вокруг элемента</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CloseEvent.html">CloseEvent - определяет, был ли закрыт веб-сокет без ошибок</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConsoleCommandLine.html">ConsoleCommandLine - утилита для работы с окном консоли</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Context.html">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CustomEvent.html">CustomEvent - конструктор своих событий</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMException.html">DOMException - исключение, возбуждаемое web api</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMImplementation.html">DOMImplementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMSettableTokenList.html">DOMSettableTokenList</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMTokenList.html">DOMTokenList - множество лексем, разделенных пробелами</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataTransfer.html">DataTransfer - передача данных в операциях драгндроп мышью</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataView.html">DataView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DocumentFragment.html">DocumentFragment - смежные узлы и их поддеревья</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DocumentType.html">DocumentType - doctype документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ErrorEvent.html">ErrorEvent - необработанное исключение в фоновом потоке</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Event.html">Event - событие</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EventSource.html">EventTarget - comet-соединение с http-сервером</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EventTarget.html">EventTarget - объект, способный принимать события</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FieldSet.html">FieldSet - HTML fieldset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="File.html">File - файл в локальной файловой системе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileError.html">FileError - ошибка, возникшая во время чтения файла</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileReader.html">FileReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileReaderSync.html">FileReaderSync</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Form.html">Form - HTML form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormControl.html">FormControl - общие особенности всех элементов форм</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormData.html">FormData - тело HTTP-запроса multipart/form-data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormValidity.html">FormValidity - реализует проверку элемента формы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geocoordinates.html">Geocoordinates - географическре местонахождение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geolocation.html">Geolocation - позволяет получить широту и долготу местоположения пользователя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GeolocationError.html">GeolocationError - ошибка возникающая в ходе определения местонахождения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geoposition.html">Geoposition - информация о местонахождении с указанием времени определения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HashChangeEvent.html">HashChangeEvent - объект события, поставляемый по событию hashchange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IFrame.html">IFrame - HTML iframe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageData.html">ImageData - массив пискелей канваса</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Input.html">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Link.html">Link - HTML гиперссылка</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MediaElement.html">MediaElement - элемент проигрывателя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MediaError.html">MediaError - ошибка в элементе audio, video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessageChannel.html">MessageChannel - пара соединенных объектов MessagePorts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessageEvent.html">MessageEvent - сообщение из другого контекста выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessagePort.html">MessagePort - передает асинхронные сообщения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Meter.html">Meter - графический индикатор, шкала</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MouseEvent.html">MouseEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NamedNodeMap.html">NamedNodeMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Option.html">Option - HTML option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Output.html">Output - HTML output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PageTransitionEvent.html">PageTransitionEvent - объект события для событий «pageshow» и «pagehide»</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PopStateEvent.html">PopStateEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProcessingInstruction.html">ProcessingInstruction - инструкция обработки в XML-документе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Progress.html">Progress - индикатор хода выполнения операции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProgressEvent.html">ProgressEvent - событие продолжения загрузки, выгрузки или чтения файла</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Script.html">Script - HTML-script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Select.html">Select - графический список для выбора</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Storage.html">Storage - хранилище пар имя/значение на стороне клиента</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StorageEvent.html">StorageEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Style.html">Style - HTML style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table - HTML table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableCell.html">TableCell - ячейка HTML таблицы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableRow.html">TableRow - HTML tr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableSection.html">TableSection - раздел верхнего или нижнего колонтитула либо тела таблицы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextArea.html">TextArea - многострочная область ввода текста</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextMetrics.html">TextMetrics - определяет размеры текстовой строки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TimeRanges.html">TimeRanges - множество фрагментов мультимедийных данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TypedArray.html">TypedArray - массивы с двоичными элементами фиксированного размера</a></li>
+<li class="toctree-l3"><a class="reference internal" href="URL.html">URL - методы для работы с URL-адресами, ссылающимися на объекты Blob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Video.html">Video - HTML video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WebSocket.html">WebSocket - двунаправленное сетевое соединение, подобное сокету</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Worker.html">Worker - фоновый поток выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerGlobalScope.html">WorkerGlobalScope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerLocation.html">WorkerLocation - URL-адрес главного сценария в фоновом потоке выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerNavigator.html">WorkerNavigator - информация о броузере для фонового потока выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequest.html">XMLHttpRequest(AJAX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequestProgressEvent.html">XMLHttpRequestProgressEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequestUpload.html">XMLHttpRequestUpload</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../frameworks/index.html">Библиотеки, фреймворки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">JavaScript</a> &raquo;</li>
+        
+          <li><a href="index.html">DOM - дерево html документа</a> &raquo;</li>
+        
+      <li>Window</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/js/dom/Window.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="window">
+<h1>Window<a class="headerlink" href="#window" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Окно, вкладка или фрейм веб-броузера.</p>
+<p>Глобальный объект</p>
+<dl class="class">
+<dt id="Window">
+<em class="property">class </em><code class="sig-name descname">Window</code><a class="headerlink" href="#Window" title="Ссылка на это определение">¶</a></dt>
+<dd><p>контейнер выполняющий js код</p>
+<p>Наследник <a class="reference internal" href="EventTarget.html#EventTarget" title="EventTarget"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventTarget</span></code></a></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">test</span><span class="p">(){</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nx">test</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="Window.applicationCache">
+<code class="sig-name descname">applicationCache</code><a class="headerlink" href="#Window.applicationCache" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на <a class="reference internal" href="ApplicationCache.html#ApplicationCache" title="ApplicationCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">ApplicationCache</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.console">
+<code class="sig-name descname">console</code><a class="headerlink" href="#Window.console" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на объект <a class="reference internal" href="Console.html#Console" title="Console"><code class="xref py py-class docutils literal notranslate"><span class="pre">Console</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.defaultStatus">
+<code class="sig-name descname">defaultStatus</code><a class="headerlink" href="#Window.defaultStatus" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Window.dialogArguments">
+<code class="sig-name descname">dialogArguments</code><a class="headerlink" href="#Window.dialogArguments" title="Ссылка на это определение">¶</a></dt>
+<dd><p>В объ­ек­тах Window, соз­дан­ных ме­то­дом showModalDialog(), это свой­ст­во хра­нит зна­че­ние ар­гу­мен­та arguments, пе­ре­дан­но­го ме­то­ду showModalDialog(). В обыч­ных объ­ек­тах Window это свой­ст­во от­сут­ст­ву­ет.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.document">
+<code class="sig-name descname">document</code><a class="headerlink" href="#Window.document" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на объект <a class="reference internal" href="Document.html#Document" title="Document"><code class="xref py py-class docutils literal notranslate"><span class="pre">Document</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.event">
+<code class="sig-name descname">event</code><a class="headerlink" href="#Window.event" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Только для IE. Cссы­ла­ет­ся на объ­ект Event, со­дер­жа­щий све­де­ния о са­мом по­след­нем про­изо­шед­шем в ок­не со­бы­тии. В IE вер­сии 8 и ни­же объ­ект со­ бы­тия не все­гда пе­ре­да­ет­ся об­ра­бот­чи­кам со­бы­тий, и по­это­му ино­гда его при­хо­дит­ся из­вле­кать из это­го свой­ст­ва.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.frameElement">
+<code class="sig-name descname">frameElement</code><a class="headerlink" href="#Window.frameElement" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ес­ли дан­ный объ­ект Window на­хо­дит­ся внут­ри эле­мен­та &lt;iframe&gt;, это свой­ст­во бу­дет ссы­лать­ся на пред­став­ляю­щий его объ­ект IFrame. В  ок­нах верх­не­го уров­ня это свой­ст­во име­ет зна­че­ние null.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.frames">
+<code class="sig-name descname">frames</code><a class="headerlink" href="#Window.frames" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Массив фреймов страницы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.history">
+<code class="sig-name descname">history</code><a class="headerlink" href="#Window.history" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на объект <a class="reference internal" href="History.html#History" title="History"><code class="xref py py-class docutils literal notranslate"><span class="pre">History</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">innerWidth, innerHeight</code></dt>
+<dd><p>Размеры видимой области окна</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.length">
+<code class="sig-name descname">length</code><a class="headerlink" href="#Window.length" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­ли­че­ст­во фрей­мов, со­дер­жа­щих­ся в дан­ном ок­не.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.localStorage">
+<code class="sig-name descname">localStorage</code><a class="headerlink" href="#Window.localStorage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на объект <a class="reference internal" href="LocalStorage.html#LocalStorage" title="LocalStorage"><code class="xref py py-class docutils literal notranslate"><span class="pre">LocalStorage</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.location">
+<code class="sig-name descname">location</code><a class="headerlink" href="#Window.location" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на объект <a class="reference internal" href="Location.html#Location" title="Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#Window.name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Имя ок­на. Имя мо­жет быть за­да­но при соз­да­нии ок­на ме­то­дом open() или в ви­де зна­че­ния ат­ри­бу­та name в те­ге &lt;frame&gt;. Имя ок­на мо­жет ис­поль­зо­вать­ся в ка­че­ст­ве зна­че­ния ат­ри­бу­та target в  те­ге &lt;a&gt; или &lt;form&gt;. При та­ком при­ме­не­нии ат­ри­бут target ука­зы­ва­ет, что до­ку­мент, за­гру­жае­мый по ги­пер­ссыл­ке, или ре­зуль­та­ты от­прав­ки дан­ных фор­мы долж­ны ото­бра­жать­ся в ука­зан­ном ок­не.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.navigator">
+<code class="sig-name descname">navigator</code><a class="headerlink" href="#Window.navigator" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на объект <a class="reference internal" href="Navigator.html#Navigator" title="Navigator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Navigator</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onafterprint">
+<code class="sig-name descname">onafterprint</code><a class="headerlink" href="#Window.onafterprint" title="Ссылка на это определение">¶</a></dt>
+<dd><p>По­сле вы­во­да со­дер­жи­мо­го ок­на на пе­чать</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onbeforeprint">
+<code class="sig-name descname">onbeforeprint</code><a class="headerlink" href="#Window.onbeforeprint" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Пе­ред вы­во­дом со­дер­жи­мо­го ок­на на пе­чать</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onbeforeunload">
+<code class="sig-name descname">onbeforeunload</code><a class="headerlink" href="#Window.onbeforeunload" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Пе­ред тем как бро­узер по­ки­нет те­ку­щ ую стра­ни­цу. Ес­ли воз­вра­ща­ет стро­ку или при­сваи­ва­ет стро­ку свой­ст­ву returnValue объ­ек­та со­бы­тия, эта стро­ка бу­дет вы­ве­де­на в диа­ло­ге под­твер­жде­ния. См. BeforeUnloadEvent.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onblur">
+<code class="sig-name descname">onblur</code><a class="headerlink" href="#Window.onblur" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда ок­но те­ря­ет фо­кус вво­да</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onerror">
+<code class="sig-name descname">onerror</code><a class="headerlink" href="#Window.onerror" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда воз­ни­ка­ет ошиб­ка в Ja­va­Script-сце­на­рии.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onfocus">
+<code class="sig-name descname">onfocus</code><a class="headerlink" href="#Window.onfocus" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда ок­но по­лу­ча­ет фо­кус вво­да</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onhashchange">
+<code class="sig-name descname">onhashchange</code><a class="headerlink" href="#Window.onhashchange" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда иден­ти­фи­ка­тор фраг­мен­та (см. Location.hash) до­ку­мен­та из­ме­ня­ет­ся в ре­зуль­та­те пе­ре­ме­ще­ния по ис­то­рии по­се­ще­ний (см. HashChangeEvent)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onLoad">
+<code class="sig-name descname">onLoad</code><a class="headerlink" href="#Window.onLoad" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда до­ку­мент и все внеш­ние ре­сур­сы бу­дут за­гру­же­ны пол­но­стью</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onmessage">
+<code class="sig-name descname">onmessage</code><a class="headerlink" href="#Window.onmessage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда сце­на­рий в дру­гом ок­не от­пра­вит со­об­ще­ние вы­зо­вом ме­то­да post-Message(). См. MessageEvent.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onoffline">
+<code class="sig-name descname">onoffline</code><a class="headerlink" href="#Window.onoffline" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда бро­узер по­те­ря­ет со­еди­не­ние с Ин­тер­не­том</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.ononline">
+<code class="sig-name descname">ononline</code><a class="headerlink" href="#Window.ononline" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда бро­узер вос­ста­но­вит со­еди­не­ние с Ин­тер­не­том</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onpagehide">
+<code class="sig-name descname">onpagehide</code><a class="headerlink" href="#Window.onpagehide" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Пе­ред на­ча­лом про­це­ду­ры со­хра­не­ния стра­ни­цы в кэ­ше и за­ме­ще­ния ее дру­гой стра­ни­цей</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onpageshow">
+<code class="sig-name descname">onpageshow</code><a class="headerlink" href="#Window.onpageshow" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда стра­ни­ца за­гру­жа­ет­ся впер­вые, со­бы­тие «pageshow» воз­бу­ж­да­ет­ся сра­зу по­сле со­бы­тия «load», при этом свой­ст­во persisted объ­ек­та со­бы­тия име­ет зна­че­ние false. Од­на­ко ко­гда ра­нее за­гру­жен­ная стра­ни­ца вос­ста­нав­ли­ва­ет­ся из кэ­ша бро­узе­ра, раз­ме­щен­но­го в па­мя­ти, со­бы­тие «load» не воз­бу­ж­да­ет­ся (по­сколь­ку стра­ни­ца в кэ­ше счи­та­ет­ся уже за­гру­жен­ной), а со­бы­тие «pageshow» воз­бу­ж­да­ет­ся с объ­ек­том со­бы­тия, свой­ст­во persisted ко­то­ро­го име­ет зна­че­ние true. См. PageTransitionEvent.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onpopstate">
+<code class="sig-name descname">onpopstate</code><a class="headerlink" href="#Window.onpopstate" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Обработчик загрузки новой страницы
+или восстанавливание состояния,
+сохраненное с помощью метода History.pushState()
+или History.replaceState()</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">onpopstate</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="p">...</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onresize">
+<code class="sig-name descname">onresize</code><a class="headerlink" href="#Window.onresize" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда поль­зо­ва­тель из­ме­ня­ет раз­мер ок­на бро­узе­ра</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onscroll">
+<code class="sig-name descname">onscroll</code><a class="headerlink" href="#Window.onscroll" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда поль­зо­ва­тель про­кру­чи­ва­ет ок­но бро­узе­ра</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onstorage">
+<code class="sig-name descname">onstorage</code><a class="headerlink" href="#Window.onstorage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда из­ме­ня­ет­ся со­дер­жи­мое localStorage или sessionStorage. См. StorageEvent.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.onunload">
+<code class="sig-name descname">onunload</code><a class="headerlink" href="#Window.onunload" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Бро­узер по­ки­нул стра­ни­цу. Об­ра­ти­те вни­ма­ние: ес­ли стра­ни­ца за­ре­ги­ст­ри­ру­ет об­ра­бот­чик со­бы­тия onunload, она не бу­дет со­хра­нять­ся в кэ­ше. Что­бы обес­пе­чить бы­ст­рый воз­врат к стра­ни­це без по­втор­ной ее за­груз­ки, сле­ду­ет ис­поль­зо­вать об­ра­бот­чик onpagehide.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.opener">
+<code class="sig-name descname">opener</code><a class="headerlink" href="#Window.opener" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Дос­туп­ная для чте­ния и  за­пи­си ссыл­ка на объ­ект Window, в  ко­то­ром со­дер­жит­ся сце­на­рий, вы­звав­ший ме­тод open() для от­кры­тия в бро­узе­ре ок­на верх­не­го уров­ня, или null в ок­нах, соз­дан­ных иным спо­со­бом. Это свой­ст­во дей­ст­ви­тель­но толь­ко для объ­ек­тов Window, пред­став­ляю­щих ок­на верх­не­го уров­ня, но не для объ­ек­тов, пред­став­ляю­щих фрей­мы. Свой­ст­во opener мо­жет ис­поль­зо­вать­ся во вновь соз­дан­ ном ок­не для дос­ту­па к свой­ст­вам и ме­то­дам соз­дав­ше­го его ок­на.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.outerHeight">
+<code class="sig-name descname">outerHeight</code><a class="headerlink" href="#Window.outerHeight" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Window.outerWidth">
+<code class="sig-name descname">outerWidth</code><a class="headerlink" href="#Window.outerWidth" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Эти свой­ст­ва оп­ре­де­ля­ют об­щую вы­со­ту и ши­ри­ну ок­на бро­узе­ра в пик­се­лах. Эти раз­ме­ры вклю­ча­ют вы­со­ту и ши­ри­ну стро­ки ме­ню, па­не­лей ин­ст­ру­мен­тов, по­лос про­крут­ки, ра­мок ок­на и то­му по­доб­ное. Эти свой­ст­ва не под­дер­жи­ва­ют­ся в IE вер­сии 8 и ни­же.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.pageXOffset">
+<code class="sig-name descname">pageXOffset</code><a class="headerlink" href="#Window.pageXOffset" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Window.pageYOffset">
+<code class="sig-name descname">pageYOffset</code><a class="headerlink" href="#Window.pageYOffset" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Чис­ло пик­се­лов, на ко­то­рые те­ку­щий до­ку­мент был про­кру­чен впра­во (pageXOffset) и вниз (pageYOffset). Эти свой­ст­ва не под­дер­жи­ва­ют­ся в IE вер­сии 8 и ни­же. По­ря­док ис­поль­зо­ва­ния этих свойств и со­вмес­ти­мый про­грамм­ный код, дей­ст­вую­щий в IE, де­мон­ст­ри­ру­ют­ся в при­ме­ре 15.8.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.parent">
+<code class="sig-name descname">parent</code><a class="headerlink" href="#Window.parent" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объ­ект Window, со­дер­жа­щий дан­ное ок­но. Ес­ли дан­ное ок­но яв­ля­ет­ся ок­ном верх­не­го уров­ня, parent ссы­ла­ет­ся на са­мо ок­но. Ес­ли дан­ное ок­но яв­ля­ет­ся фрей­мом, свой­ст­во parent ссы­ла­ет­ся на ок­но или фрейм, в ко­то­ром со­дер­жит­ся дан­ное ок­но.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.returnValue">
+<code class="sig-name descname">returnValue</code><a class="headerlink" href="#Window.returnValue" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во от­сут­ст­ву­ет в обыч­ных ок­нах, но при­сут­ст­ву­ет в объ­ек­тах Window, соз­дан­ных ме­то­дом showModalDialog(), и по умол­ча­нию со­дер­жит пус­тую стро­ку. Ко­гда ок­но диа­ло­га за­кры­ва­ет­ся (см. опи­са­ние ме­то­да close()), это­му свой­ст­ву при­сваи­ва­ет­ся зна­че­ние, воз­вра­щае­мое ме­то­дом showModalDialog().</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.screen">
+<code class="sig-name descname">screen</code><a class="headerlink" href="#Window.screen" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на объект <a class="reference internal" href="Screen.html#Screen" title="Screen"><code class="xref py py-class docutils literal notranslate"><span class="pre">Screen</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">screenLeft, screenTop</code></dt>
+<dd><p>Координаты левого верхнего угла, для IE</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">screenX, screenY</code></dt>
+<dd><p>Координаты левого верхнего угла, для Firefox</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.self">
+<code class="sig-name descname">self</code><a class="headerlink" href="#Window.self" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссыл­ка на са­мо ок­но. Си­но­ним свой­ст­ва window.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.sessionStorage">
+<code class="sig-name descname">sessionStorage</code><a class="headerlink" href="#Window.sessionStorage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на объект <a class="reference internal" href="SessionStorage.html#SessionStorage" title="SessionStorage"><code class="xref py py-class docutils literal notranslate"><span class="pre">SessionStorage</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.status">
+<code class="sig-name descname">status</code><a class="headerlink" href="#Window.status" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Window.top">
+<code class="sig-name descname">top</code><a class="headerlink" href="#Window.top" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ок­но верх­не­го уров­ня, со­дер­жа­щее дан­ное ок­но. Ес­ли дан­ное ок­но яв­ля­ет­ся ок­ном верх­не­го уров­ня, свой­ст­во top со­дер­жит ссыл­ку на са­мо ок­но. Ес­ли дан­ное ок­но пред­став­ля­ет со­бой фрейм, свой­ст­во top ссы­ла­ет­ся на ок­но верх­не­го уров­ня, со­дер­жа­щее дан­ный фрейм. Срав­ни­те со свой­ст­вом parent.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.URL">
+<code class="sig-name descname">URL</code><a class="headerlink" href="#Window.URL" title="Ссылка на это определение">¶</a></dt>
+<dd><p>На мо­мент на­пи­са­ния этих строк дан­ное свой­ст­во бы­ло ссыл­кой на объ­ект, оп­ре­де­ляю­щий функ­ции, ко­то­рые бы­ли опи­са­ны в спра­воч­ной ста­тье URL. В бу­ду­щем это свой­ст­во мо­жет пре­вра­тить­ся в  кон­ст­рук­тор URL() и  оп­ре­де­лять при­клад­ной ин­тер­фейс для ана­ли­за URL-ад­ре­сов и строк за­про­са в них.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.window">
+<code class="sig-name descname">window</code><a class="headerlink" href="#Window.window" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Свой­ст­во window иден­тич­но свой­ст­ву self – оно со­дер­жит ссыл­ку на дан­ное ок­но. По­сколь­ку в  кли­ент­ских сце­на­ри­ях на язы­ке Ja­va­Script объ­ект Window яв­ля­ет­ся гло­баль­ным объ­ек­том, дан­ное свой­ст­во по­зво­ля­ет об­ра­щать­ся к гло­баль­но­му объ­ек­ту как к гло­баль­ной пе­ре­мен­ной window.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.addEventListener">
+<code class="sig-name descname">addEventListener</code><span class="sig-paren">(</span><em class="sig-param">event</em>, <em class="sig-param">callback</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.addEventListener" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Добавляет обработчик события для события</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keydown&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">keyCode</span> <span class="o">==</span> <span class="mi">27</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.alert">
+<code class="sig-name descname">alert</code><span class="sig-paren">(</span><em class="sig-param">String text</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.alert" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вывод информационное окно</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.atob">
+<code class="sig-name descname">atob</code><span class="sig-paren">(</span><em class="sig-param">string atob</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.atob" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Эта вспо­мо­га­тель­ная функ­ция при­ни­ма­ет стро­ку в фор­ма­те base64 и де­ко­ди­ру­ет ее в дво­ич­ную стро­ку, где ка­ж­дый сим­вол пред­став­лен един­ст­вен­ным бай­том. Из­вле­кать зна­че­ния бай­тов из по­лу­чен­ной стро­ки мож­но с по­мо­щью ее ме­то­да char­Co­deAt(). См. так­же btoa()</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.blur">
+<code class="sig-name descname">blur</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Window.blur" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ме­тод blur() уби­ра­ет фо­кус вво­да из ок­на верх­не­го уров­ня, со­от­вет­ст­вую­ще­го объ­ек­ту Window. Точ­но не оп­ре­де­ле­но, ка­ко­му ок­ну пе­ре­да­ет­ся фо­кус в ре­зуль­та­те вы­зо­ва это­го ме­то­да. В  не­ко­то­рых бро­узе­рах и/или на не­ко­то­рых плат­фор­мах дан­ный ме­тод мо­жет не ока­зы­вать ни­ка­ко­го эф­фек­та.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.btoa">
+<code class="sig-name descname">btoa</code><span class="sig-paren">(</span><em class="sig-param">string btoa</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.btoa" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Эта вспо­мо­га­тель­ная функ­ция при­ни­ма­ет дво­ич­ную стро­ку (в  ко­то­рой ка­ж­дый сим­вол пред­став­лен един­ст­вен­ным бай­том) и воз­вра­ща­ет ее в фор­ма­те base64. Соз­дать дво­ич­ную стро­ку из про­из­воль­ной по­сле­до­ва­тель­но­сти бай­тов мож­но с по­мо­щью ме­то­да String.fromCharCode(). См. так­же atob().</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.clearInterval">
+<code class="sig-name descname">clearInterval</code><span class="sig-paren">(</span><em class="sig-param">timer_id)</em>, <em class="sig-param">clearTimeout(timer_id</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.clearInterval" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Выключает таймер</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.clearTimeout">
+<code class="sig-name descname">clearTimeout</code><span class="sig-paren">(</span><em class="sig-param">long handle</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.clearTimeout" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ме­тод clearTimeout() от­ме­ня­ет вы­пол­не­ние про­грамм­но­го ко­да, от­ло­жен­ное ме­то­дом setTimeout(). Ар­гу­мент handle – это зна­че­ние, воз­вра­щае­мое вы­зо­вом setTime­out() и иден­ти­фи­ци­рую­щее блок про­грамм­но­го ко­да, от­ло­жен­ное ис­пол­не­ние ко­то­ро­го от­ме­ня­ет­ся.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.close">
+<code class="sig-name descname">close</code><a class="headerlink" href="#Window.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Закрывает окно</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.confirm">
+<code class="sig-name descname">confirm</code><span class="sig-paren">(</span><em class="sig-param">message</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.confirm" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вы­во­дит со­об­ще­ние message в диа­ло­го­вом ок­не, со­дер­жа­щем кноп­ки OK и Cancel (От­ме­на), с по­мо­щью ко­то­рых поль­зо­ва­тель дол­жен от­ве­тить на во­прос. Ес­ли поль­зо­ва­тель щелк­нет на кноп­ке OK, ме­тод confirm() вер­нет true. Ес­ли поль­зо­ва­тель щелк­нет на кноп­ке Cancel, ме­тод confirm() вер­нет false.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.decodeURI">
+<code class="sig-name descname">decodeURI</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.decodeURI" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Декодирует символы в URI</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.decodeURIComponent">
+<code class="sig-name descname">decodeURIComponent</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.decodeURIComponent" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Де­ко­ди­ру­ет управ­ляю­щие по­сле­до­ва­тель­но­сти сим­во­лов в ком­по­нен­те URI</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.encodeURI">
+<code class="sig-name descname">encodeURI</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.encodeURI" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Вы­пол­ня­ет ко­ди­ро­ва­ние URI с по­мо­щью управ­ляю­щих по­с ле­до­ва­тель­но­стей</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">encodeURI</span><span class="p">(</span><span class="s2">&quot;http://www.isp.com/app.cgi?arg1=1&amp;arg2=hello world&quot;</span><span class="p">);</span>
+<span class="c1">// http://www.isp.com/app.cgi?arg1=1&amp;arg2=hello%20world</span>
+
+<span class="nb">encodeURI</span><span class="p">(</span><span class="s2">&quot;\u00a9&quot;</span><span class="p">);</span>
+<span class="c1">// %C2%A9</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.encodeURIComponent">
+<code class="sig-name descname">encodeURIComponent</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.encodeURIComponent" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Кодирование данных</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="s1">&#39;hello &amp; world&#39;</span><span class="p">);</span>
+<span class="c1">// hello%20%26%20world</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.escape">
+<code class="sig-name descname">escape</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.escape" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Кодирует строку</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">escape</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+<span class="c1">// Вер­нет &quot;Hello%20World%21&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.eval">
+<code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param">String code</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.eval" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Выполняет строку как код</p>
+<p>Возбуждает исключение <a class="reference internal" href="../base/Error.html#EvalError" title="EvalError"><code class="xref py py-class docutils literal notranslate"><span class="pre">EvalError</span></code></a></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span><span class="p">(</span><span class="s2">&quot;1+2&quot;</span><span class="p">);</span>
+<span class="c1">// 3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.focus">
+<code class="sig-name descname">focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Window.focus" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Пе­ре­да­ет фо­кус вво­да ок­ну верх­не­го уров­ня, со­от­вет­ст­вую­ще­му объ­ек­ту Window.
+На боль­шин­ст­ве плат­форм при по­лу­че­нии фо­ку­са ок­но верх­не­го уров­ня пе­ре­ме­ща­ет­ся на вер­ши­ну сте­ка окон.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.getComputedStyle">
+<code class="sig-name descname">getComputedStyle</code><span class="sig-paren">(</span><em class="sig-param">Element elt</em><span class="optional">[</span>, <em class="sig-param">string pseudoElt</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Window.getComputedStyle" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Эле­мент до­ку­мен­та мо­жет по­лу­чать ин­фор­ма­цию о сти­ле из встро­ен­но­го ат­ри­бу­та style и из про­из­воль­но­го чис­ла кас­кад­ных таб­лиц сти­лей. Пре­ж­де чем эле­мент бу­дет ото­бра­жен в ок­не, ин­фор­ма­ция о сти­лях для это­го эле­мен­та долж­на быть из­вле­че­на из кас­кад­ных таб­лиц сти­лей, а ве­ли­чи­ны, вы­ра­жае­мые в от­но­си­тель­ных еди­ни­цах (та­ких как про­цен­ты или «ems»), долж­ны быть «вы­чис­ле­ны» и пре­об­ра­зо­ва­ны в аб­со­лют­ные зна­че­ния. Эти вы­чис­лен­ные зна­че­ния ино­гда на­зы­ва­ют «ис­поль­зуе­мы­ми» зна­че­ния­ми.</p>
+<p>Дан­ный ме­тод воз­вра­ща­ет дос­туп­ный толь­ко для чте­ния объ­ект CSSStyleDeclaration, ко­то­рый пред­став­ля­ет эти вы­чис­лен­ные CSS-сти­ли, фак­ти­че­ски ис­поль­зуе­мые при ото­бра­же­нии эле­мен­тов. Все раз­ме­ры в этих сти­лях вы­ра­же­ны в пик­се­лах.</p>
+<p>Вто­рой ар­гу­мент при вы­зо­ве это­го ме­то­да обыч­но опус­ка­ет­ся или в нем пе­ре­да­ет­ся зна­че­ние null, од­на­ко в нем мож­но так­же пе­ре­дать псев­до­эле­мент CSS «::before» или «::after», что­бы оп­ре­де­лить сти­ли для со­дер­жи­мо­го.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.isFinite">
+<code class="sig-name descname">isFinite</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.isFinite" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Определяет, является ли число конечным</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.isNan">
+<code class="sig-name descname">isNan</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.isNan" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает булево, является ли аргумент нечисловым значением</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">isNaN</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="c1">// false</span>
+
+<span class="nb">isNaN</span><span class="p">(</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="p">);</span>
+<span class="c1">// true</span>
+
+<span class="nb">isNaN</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">));</span>
+<span class="c1">// false</span>
+
+<span class="nb">isNaN</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">));</span>
+<span class="c1">// true</span>
+
+<span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">);</span>
+<span class="c1">// false</span>
+
+<span class="nb">isNaN</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">);</span>
+<span class="c1">// true</span>
+
+<span class="nb">isNaN</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="c1">// false</span>
+
+<span class="nb">isNaN</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
+<span class="c1">// true</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="Window.open">
+<code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">window_title</em>, <em class="sig-param">window_params</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.open" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает ссылку и открывает новое окно в браузере</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">w</span> <span class="o">=</span> <span class="nx">open</span><span class="p">(</span><span class="s1">&#39;ilnurgi.html&#39;</span><span class="p">,</span> <span class="s1">&#39;Window Name&#39;</span><span class="p">,</span> <span class="s2">&quot;width=400,height=400,status=yes,resizable=no&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.parseFloat">
+<code class="sig-name descname">parseFloat</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.parseFloat" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает числовое представление объекта</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">parseFloat</span><span class="p">(</span><span class="s2">&quot;74.54&quot;</span><span class="p">);</span>
+<span class="c1">// 74.54</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.parseInt">
+<code class="sig-name descname">parseInt</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="optional">[</span>, <em class="sig-param">base=10</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Window.parseInt" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает числовое представление объекта</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры</dt>
+<dd class="field-odd"><p><strong>base</strong> – система исчисления</p>
+</dd>
+</dl>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;18&quot;</span><span class="p">);</span>
+<span class="c1">// 18</span>
+
+<span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;19kdjas&quot;</span><span class="p">);</span>
+<span class="c1">// 19</span>
+
+<span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;74.54&quot;</span><span class="p">);</span>
+<span class="c1">// 74</span>
+
+<span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;ff&quot;</span><span class="p">);</span>
+<span class="c1">// Nan</span>
+
+<span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;ff&quot;</span><span class="p">,</span> <span class="s2">&quot;16&quot;</span><span class="p">);</span>
+<span class="c1">// 255</span>
+
+<span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;0x10&quot;</span><span class="p">);</span>
+<span class="c1">// 16</span>
+
+<span class="nb">parseInt</span><span class="p">(</span><span class="s2">&quot;0x10&quot;</span><span class="p">,</span><span class="s2">&quot;10&quot;</span><span class="p">);</span>
+<span class="c1">// 0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.postMessage">
+<code class="sig-name descname">postMessage</code><span class="sig-paren">(</span><em class="sig-param">any message</em>, <em class="sig-param">string targetOrigin</em><span class="optional">[</span>, <em class="sig-param">MessagePort[] ports</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Window.postMessage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>По­сы­ла­ет дан­но­му ок­ну ко­пию со­об­ще­ния message в  пор­ты ports, но толь­ко ес­ли до­ку­мент, ото­бра­жае­мый в дан­ном ок­не, име­ет про­ис­хо­ж­де­ние targetOrigin.</p>
+<p>В  ар­гу­мен­те message мож­но пе­ре­дать лю­бой объ­ект, ко­то­рый мож­но ско­пи­ро­вать с при­ме­не­ни­ем ал­го­рит­ма струк­ту­ри­ро­ван­но­го ко­пи­ро­ва­ния. Ар­гу­мент targetOrigin дол­жен быть аб­со­лют­ным URL-ад­ре­сом, со­дер­жа­щим про­то­кол, имя хос­та и  порт, ко­то­рые оп­ре­де­ля­ют тре­буе­мое про­ис­хо­ж­де­ние. Ес­ли про­ис­хо­ж­де­ние не име­ет зна­че­ния, в  ар­гу­мен­те targetOrigin мож­но пе­ре­дать стро­ку «*», а что­бы ука­зать соб­ст­вен­ное про­ис­хо­ж­де­ние сце­на­рия – стро­ку «/». Вы­зов это­го ме­то­да ге­не­ри­ру­ет со­бы­тие «message» в  ок­не.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.print">
+<code class="sig-name descname">print</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Window.print" title="Ссылка на это определение">¶</a></dt>
+<dd><p>На вы­зов ме­то­да print() бро­узер реа­ги­ру­ет так же, как ес­ли бы поль­зо­ва­тель вы­брал пункт ме­ню или щелк­нул на кноп­ке Print (Пе­чать). Обыч­но по­сле это­го по­яв­ля­ ет­ся диа­ло­го­вое ок­но, по­зво­ляю­щее от­ме­нить опе­ра­цию пе­ча­ти или вы­пол­нить до­пол­ни­тель­ную на­строй­ку.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.prompt">
+<code class="sig-name descname">prompt</code><span class="sig-paren">(</span><em class="sig-param">message</em>, <em class="sig-param">default_value</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.prompt" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Выводит сообщение <cite>message</cite> в  диалоговом окне,
+содержащем поле ввода и  кнопки <cite>OK</cite> и  <cite>Cancel</cite>,
+и  блокирует работу сценария, пока пользователь не щелкнет на одной из кнопок.</p>
+<p>Если пользователь щелкнет на кнопке <cite>Cancel</cite>, метод вернет null.</p>
+<p>Если пользователь щелкнет на кнопке <cite>OK</cite>, метод вернет значение,
+указанное в этот момент в поле ввода.</p>
+<p>Аргумент <cite>default_value</cite> определяет начальное содержимое поля ввода.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">userName</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;What is your name?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.scroll">
+<code class="sig-name descname">scroll</code><span class="sig-paren">(</span><em class="sig-param">long x</em>, <em class="sig-param">long y</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.scroll" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Си­но­ним ме­то­да scrollTo().</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.scrollBy">
+<code class="sig-name descname">scrollBy</code><span class="sig-paren">(</span><em class="sig-param">long x</em>, <em class="sig-param">long y</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.scrollBy" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Про­кру­чи­ва­ет до­ку­мент, ото­бра­жае­мый в ок­не, на от­но­си­тель­ную ве­ли­чи­ну, за­дан­ную ар­гу­мен­та­ми x и y.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.scrollTo">
+<code class="sig-name descname">scrollTo</code><span class="sig-paren">(</span><em class="sig-param">long x</em>, <em class="sig-param">long y</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.scrollTo" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Про­кру­чи­ва­ет до­ку­мент, ото­бра­жае­мый в ок­не, так, что­бы точ­ка с ко­ор­ди­на­та­ми x и y в до­ку­мен­те ока­за­лась в ле­вом верх­нем уг­лу, ес­ли это воз­мож­но.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.setInterval">
+<code class="sig-name descname">setInterval</code><span class="sig-paren">(</span><em class="sig-param">func</em>, <em class="sig-param">time</em>, <em class="sig-param">args</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.setInterval" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает индентификатор таймера и запускает функцию в цикле с указанной периодичностью, миллисекунды</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.setTimeout">
+<code class="sig-name descname">setTimeout</code><span class="sig-paren">(</span><em class="sig-param">func</em>, <em class="sig-param">time</em>, <em class="sig-param">args</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.setTimeout" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает идентификатор таймера и запускает функцию через время, миллисекунды</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.showModalDialog">
+<code class="sig-name descname">showModalDialog</code><span class="sig-paren">(</span><em class="sig-param">string url</em><span class="optional">[</span>, <em class="sig-param">any arguments</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#Window.showModalDialog" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Соз­да­ет но­вый объ­ект Window, со­хра­ня­ет зна­че­ние arguments в свой­ст­ве dialogArguments это­го объ­ек­та, за­гру­жа­ет в ок­но до­ку­мент с ад­ре­сом url и бло­ки­ру­ет вы­пол­не­ние сце­на­рия, по­ка ок­но не бу­дет за­кры­то. По­сле за­кры­тия ок­на ме­тод воз­вра­ща­ет зна­че­ние свой­ст­ва returnValue ок­на.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Window.unescape">
+<code class="sig-name descname">unescape</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#Window.unescape" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Декодирует строку</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CSSRule.html" class="btn btn-neutral float-right" title="CSSRule - правило в таблице стилей CSS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SessionStorage.html" class="btn btn-neutral float-left" title="SessionStorage - key-value хранилище" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

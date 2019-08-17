@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>WorkerGlobalScope &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="WorkerLocation - URL-адрес главного сценария в фоновом потоке выполнения" href="WorkerLocation.html" />
+    <link rel="prev" title="Worker - фоновый поток выполнения" href="Worker.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">JavaScript</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../base/index.html">Основные объекты</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">DOM - дерево html документа</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Navigator.html">Navigator - содержит информацию о браузере и операционной системе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Screen.html">Screen - информация об экране</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Location.html">Location - адрес текущей страницы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Document.html">Document(HTMLDocument) - корневой элемент дерева</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Node.html">Node - узел дом дерева документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NodeList.html">NodeList - коллекция, содержащая все виды узлов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Element.html">Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HTMLCollection.html">HTMLCollection - коллекия, содержащая елементы Elemnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CharacterData.html">CharacterData - узел с текстом внутри</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Text.html">Text - текстовая последовательность в документе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Comment.html">Comment - коментарии в доме</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ApplicationCache.html">ApplicationCache - прикладной интерфейс управления кэшем приложений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArrayBufferView.html">ArrayBufferView - общие свойства типов, основанных на ArrayBuffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Attr.html">Attr - атрибут элемента документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Audio.html">Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BeforeUnloadEvent.html">BeforeUnloadEvent - объект Event для событий выгрузки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Blob.html">Blob - блок двоичных данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BlobBuilder.html">BlobBuilder - используется для создания новых Blob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Button.html">Button - html элемент button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Canvas.html">Canvas - канвас</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Console.html">Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="History.html">History - журнал посещений объекта Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Image.html">Image - HTML img</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LocalStorage.html">LocalStorage - key-value хранилище</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SessionStorage.html">SessionStorage - key-value хранилище</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Window.html">Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSRule.html">CSSRule - правило в таблице стилей CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSStyleDeclaration.html">CSSStyleDeclaration - набор css-атрибутов и их значений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSStyleSheet.html">CSSStyleSheet - таблица стилей CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasGradient.html">CanvasGradient - цветной градиент для использования в канвасе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasPattern.html">CanvasPattern - шаблон заполнения холста на основе готового изображения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasRenderingContext2D.html">CanvasRenderingContext2D - объект, используемый для создания изображений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ClientRect.html">ClientRect - прямоугольник, описанный вокруг элемента</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CloseEvent.html">CloseEvent - определяет, был ли закрыт веб-сокет без ошибок</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConsoleCommandLine.html">ConsoleCommandLine - утилита для работы с окном консоли</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Context.html">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CustomEvent.html">CustomEvent - конструктор своих событий</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMException.html">DOMException - исключение, возбуждаемое web api</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMImplementation.html">DOMImplementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMSettableTokenList.html">DOMSettableTokenList</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMTokenList.html">DOMTokenList - множество лексем, разделенных пробелами</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataTransfer.html">DataTransfer - передача данных в операциях драгндроп мышью</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataView.html">DataView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DocumentFragment.html">DocumentFragment - смежные узлы и их поддеревья</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DocumentType.html">DocumentType - doctype документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ErrorEvent.html">ErrorEvent - необработанное исключение в фоновом потоке</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Event.html">Event - событие</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EventSource.html">EventTarget - comet-соединение с http-сервером</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EventTarget.html">EventTarget - объект, способный принимать события</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FieldSet.html">FieldSet - HTML fieldset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="File.html">File - файл в локальной файловой системе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileError.html">FileError - ошибка, возникшая во время чтения файла</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileReader.html">FileReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileReaderSync.html">FileReaderSync</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Form.html">Form - HTML form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormControl.html">FormControl - общие особенности всех элементов форм</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormData.html">FormData - тело HTTP-запроса multipart/form-data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormValidity.html">FormValidity - реализует проверку элемента формы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geocoordinates.html">Geocoordinates - географическре местонахождение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geolocation.html">Geolocation - позволяет получить широту и долготу местоположения пользователя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GeolocationError.html">GeolocationError - ошибка возникающая в ходе определения местонахождения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geoposition.html">Geoposition - информация о местонахождении с указанием времени определения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HashChangeEvent.html">HashChangeEvent - объект события, поставляемый по событию hashchange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IFrame.html">IFrame - HTML iframe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageData.html">ImageData - массив пискелей канваса</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Input.html">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Link.html">Link - HTML гиперссылка</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MediaElement.html">MediaElement - элемент проигрывателя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MediaError.html">MediaError - ошибка в элементе audio, video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessageChannel.html">MessageChannel - пара соединенных объектов MessagePorts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessageEvent.html">MessageEvent - сообщение из другого контекста выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessagePort.html">MessagePort - передает асинхронные сообщения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Meter.html">Meter - графический индикатор, шкала</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MouseEvent.html">MouseEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NamedNodeMap.html">NamedNodeMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Option.html">Option - HTML option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Output.html">Output - HTML output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PageTransitionEvent.html">PageTransitionEvent - объект события для событий «pageshow» и «pagehide»</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PopStateEvent.html">PopStateEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProcessingInstruction.html">ProcessingInstruction - инструкция обработки в XML-документе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Progress.html">Progress - индикатор хода выполнения операции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProgressEvent.html">ProgressEvent - событие продолжения загрузки, выгрузки или чтения файла</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Script.html">Script - HTML-script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Select.html">Select - графический список для выбора</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Storage.html">Storage - хранилище пар имя/значение на стороне клиента</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StorageEvent.html">StorageEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Style.html">Style - HTML style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table - HTML table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableCell.html">TableCell - ячейка HTML таблицы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableRow.html">TableRow - HTML tr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableSection.html">TableSection - раздел верхнего или нижнего колонтитула либо тела таблицы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextArea.html">TextArea - многострочная область ввода текста</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextMetrics.html">TextMetrics - определяет размеры текстовой строки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TimeRanges.html">TimeRanges - множество фрагментов мультимедийных данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TypedArray.html">TypedArray - массивы с двоичными элементами фиксированного размера</a></li>
+<li class="toctree-l3"><a class="reference internal" href="URL.html">URL - методы для работы с URL-адресами, ссылающимися на объекты Blob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Video.html">Video - HTML video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WebSocket.html">WebSocket - двунаправленное сетевое соединение, подобное сокету</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Worker.html">Worker - фоновый поток выполнения</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">WorkerGlobalScope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerLocation.html">WorkerLocation - URL-адрес главного сценария в фоновом потоке выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerNavigator.html">WorkerNavigator - информация о броузере для фонового потока выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequest.html">XMLHttpRequest(AJAX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequestProgressEvent.html">XMLHttpRequestProgressEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequestUpload.html">XMLHttpRequestUpload</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../frameworks/index.html">Библиотеки, фреймворки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">JavaScript</a> &raquo;</li>
+        
+          <li><a href="index.html">DOM - дерево html документа</a> &raquo;</li>
+        
+      <li>WorkerGlobalScope</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/js/dom/WorkerGlobalScope.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="workerglobalscope">
+<h1>WorkerGlobalScope<a class="headerlink" href="#workerglobalscope" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt id="WorkerGlobalScope">
+<em class="property">class </em><code class="sig-name descname">WorkerGlobalScope</code><a class="headerlink" href="#WorkerGlobalScope" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Наследник <a class="reference internal" href="EventTarget.html#EventTarget" title="EventTarget"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventTarget</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Global</span></code></p>
+<dl class="attribute">
+<dt id="WorkerGlobalScope.location">
+<code class="sig-name descname">location</code><a class="headerlink" href="#WorkerGlobalScope.location" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во, по­доб­но свой­ст­ву window.location, яв­ля­ет­ся объ­ек­том Location: оно по­зво­ля­ет фо­но­во­му по­то­ку про­ве­рить URL-ад­рес, от­ку­да был за­гру­жен вы­пол­няе­мый в нем сце­на­рий, и вклю­ча­ет в се­бя свой­ст­ва, воз­вра­щаю­щие от­дель­ные час­ти URL.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="WorkerGlobalScope.navigator">
+<code class="sig-name descname">navigator</code><a class="headerlink" href="#WorkerGlobalScope.navigator" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во, по­доб­но свой­ст­ву window.navigator, яв­ля­ет­ся объ­ек­том Navigator: оно оп­ре­де­ля­ет свой­ст­ва, по­зво­ляю­щие фо­но­во­му по­то­ку оп­ре­де­лить тип бро­узе­ра, в ко­то­ром он вы­пол­ня­ет­ся, и со­стоя­ние под­клю­че­ния к се­ти.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="WorkerGlobalScope.onerror">
+<code class="sig-name descname">onerror</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WorkerGlobalScope.onerror" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это не­обыч­ный об­ра­бот­чик со­бы­тия: это свой­ст­во боль­ше по­хо­же на свой­ст­во onerror объ­ек­та Window, чем на свой­ст­во onerror объ­ек­та Worker. Ко­гда в фо­но­вом по­то­ ке вы­пол­не­ния по­яв­ля­ет­ся не­об­ра­бо­тан­ное ис­клю­че­ние, бу­дет вы­зва­на эта функ­ция, ес­ли она оп­ре­де­ле­на, с тре­мя стро­ко­вы­ми ар­гу­мен­та­ми, оп­ре­де­ляю­щи­ми со­об­ще­ние об ошиб­ке, URL-ад­рес сце­на­рия и но­мер стро­ки в сце­на­рии. Ес­ли функ­ция вер­нет false, ис­клю­че­ние бу­дет счи­тать­ся об­ра­бо­тан­ным и пре­кра­тит даль­ней­шее рас­про­стра­не­ние. В про­тив­ном слу­чае, ес­ли это свой­ст­во не ус­та­нов­ле­но или об­ра­бот­чик не вер­нул false, ис­клю­че­ние про­дол­жит рас­про­стра­не­ние и вы­зо­вет со­бы­тие «error» в объ­ек­те Worker в ро­ди­тель­ском по­то­ке вы­пол­не­ние.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="WorkerGlobalScope.onmessage">
+<code class="sig-name descname">onmessage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WorkerGlobalScope.onmessage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­гда ро­ди­тель­ский по­ток вы­пол­не­ния вы­зы­ва­ет ме­тод postMessage() объ­ек­та Wor­ker, пред­став­ляю­ще­го дан­ный фо­но­вый по­ток вы­пол­не­ния, в дан­ном объ­ек­те Wor­ker­GlobalScope ге­не­ри­ру­ет­ся со­бы­тие «message». Об­ра­бот­чи­ку это­го со­бы­тия бу­детпе­ре­дан объ­ект MessageEvent, свой­ст­во data ко­то­ро­го хра­нит ко­пию ар­гу­мен­та mes­sa­ge, пе­ре­дан­но­го ро­ди­тель­ским по­то­ком вы­пол­не­ния.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="WorkerGlobalScope.self">
+<code class="sig-name descname">self</code><a class="headerlink" href="#WorkerGlobalScope.self" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во ссы­ла­ет­ся на сам гло­баль­ный объ­ект WorkerGlobalScope. Оно по­хо­же на свой­ст­во window объ­ек­та Window в глав­ном по­то­ке вы­пол­не­ния.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="WorkerGlobalScope.clearInterval">
+<code class="sig-name descname">clearInterval</code><span class="sig-paren">(</span><em class="sig-param">long handle</em><span class="sig-paren">)</span><a class="headerlink" href="#WorkerGlobalScope.clearInterval" title="Ссылка на это определение">¶</a></dt>
+<dd><p>В точ­но­сти со­от­вет­ст­ву­ет од­но­имен­но­му ме­то­ду объ­ек­та Window.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="WorkerGlobalScope.clearTimeout">
+<code class="sig-name descname">clearTimeout</code><span class="sig-paren">(</span><em class="sig-param">long handle</em><span class="sig-paren">)</span><a class="headerlink" href="#WorkerGlobalScope.clearTimeout" title="Ссылка на это определение">¶</a></dt>
+<dd><p>В точ­но­сти со­от­вет­ст­ву­ет од­но­имен­но­му ме­то­ду объ­ек­та Window.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="WorkerGlobalScope.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WorkerGlobalScope.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Пе­ре­во­дит по­ток вы­пол­не­ния в осо­бое со­стоя­ние «за­вер­ше­ния». Ока­зав­шись в этом со­стоя­нии он боль­ше не бу­дет воз­бу­ж­дать со­бы­тия. Сце­на­рий про­дол­жит ра­бо­ту до мо­мен­та воз­вра­та в цикл со­бы­тий фо­но­во­го по­то­ка вы­пол­не­ния, где тут же бу­дет ос­та­нов­лен.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="WorkerGlobalScope.importScripts">
+<code class="sig-name descname">importScripts</code><span class="sig-paren">(</span><em class="sig-param">string urls...</em><span class="sig-paren">)</span><a class="headerlink" href="#WorkerGlobalScope.importScripts" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Для ка­ж­до­го из ар­гу­мен­тов urls этот ме­тод раз­ре­ша­ет URL-ад­рес от­но­си­тель­но свой­ст­ва location, за­тем за­гру­жа­ет со­дер­жи­мое URL-ад­ре­са и вы­пол­ня­ет его, как про­грамм­ный код на язы­ке Ja­va­Script. Об­ра­ти­те вни­ма­ние, что это син­хрон­ныйме­тод. Он за­гру­жа­ет и вы­пол­ня­ет фай­лы по оче­ре­ди и не воз­вра­ща­ет управ­ле­ние, по­ка не вы­пол­нит все сце­на­рии. (Од­на­ко, ес­ли ка­кой-то сце­на­рий воз­бу­дит ис­клю­че­ние, это ис­клю­че­ние нач­нет рас­про­стра­не­ние и по­ме­ша­ет за­груз­ке и вы­пол­не­нию сле­дую­щих за ним сце­на­ри­ев.)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="WorkerGlobalScope.postMessage">
+<code class="sig-name descname">postMessage</code><span class="sig-paren">(</span><em class="sig-param">any message</em><span class="optional">[</span>, <em class="sig-param">MessagePort[] ports</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#WorkerGlobalScope.postMessage" title="Ссылка на это определение">¶</a></dt>
+<dd><p>От­прав­ля­ет со­об­ще­ние message (и мас­сив пор­тов, ес­ли ука­зан) по­то­ку вы­пол­не­ния, по­ро­див­ше­му дан­ный фо­но­вый по­ток. Вы­зов это­го ме­то­да ге­не­ри­ру­ет со­бы­тие «message» в объ­ек­те Worker в ро­ди­тель­ском по­то­ке вы­пол­не­ния, об­ра­бот­чи­ку ко­то­ро­го пе­ре­да­ет­ся объ­ект MessageEvent со свой­ст­вом data, со­дер­жа­щим ко­пию ар­гу­мен­та message. Об­ра­ти­те вни­ма­ние, что в фо­но­вом по­то­ке вы­пол­не­ния ме­тод post­Mes­sage() яв­ля­ет­ся гло­баль­ной функ­ци­ей.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="WorkerGlobalScope.setInterval">
+<code class="sig-name descname">setInterval</code><span class="sig-paren">(</span><em class="sig-param">any handler</em>, <span class="optional">[</span><em class="sig-param">any timeout</em>, <span class="optional">]</span><em class="sig-param">any args...</em><span class="sig-paren">)</span><a class="headerlink" href="#WorkerGlobalScope.setInterval" title="Ссылка на это определение">¶</a></dt>
+<dd><p>В точ­но­сти со­от­вет­ст­ву­ет од­но­имен­но­му ме­то­ду объ­ек­та Window.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="WorkerGlobalScope.setTimeout">
+<code class="sig-name descname">setTimeout</code><span class="sig-paren">(</span><em class="sig-param">any handler</em>, <span class="optional">[</span><em class="sig-param">any timeout</em>, <span class="optional">]</span><em class="sig-param">any args...</em><span class="sig-paren">)</span><a class="headerlink" href="#WorkerGlobalScope.setTimeout" title="Ссылка на это определение">¶</a></dt>
+<dd><p>В точ­но­сти со­от­вет­ст­ву­ет од­но­имен­но­му ме­то­ду объ­ек­та Window.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="WorkerLocation.html" class="btn btn-neutral float-right" title="WorkerLocation - URL-адрес главного сценария в фоновом потоке выполнения" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Worker.html" class="btn btn-neutral float-left" title="Worker - фоновый поток выполнения" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

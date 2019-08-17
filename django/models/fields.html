@@ -1,0 +1,667 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Поля модели &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Связи моделей" href="relations.html" />
+    <link rel="prev" title="Метаданные" href="meta.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">DJANGO</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../settings.html">Конфигурирование проекта</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Модель</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="meta.html">Метаданные</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Поля модели</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#field">Field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#autofield">AutoField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bigintegerfield">BigIntegerField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#booleanfield">BooleanField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#charfield">CharField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datefield">DateField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datetimefield">DateTimeField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#emailfield">EmailField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filefield">FileField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#floatfield">FloatField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#genericipaddressfield">GenericIPAddressField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#imagefield">ImageField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integerfield">IntegerField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ipaddressfield">IPAddressField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#positiveintegerfield">PositiveIntegerField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#positivesmallintegerfield">PositiveSmallIntegerField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#slugfield">SlugField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#smallintegerfield">SmallIntegerField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#textfield">TextField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#timefield">TimeField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#urlfield">URLField</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="relations.html">Связи моделей</a></li>
+<li class="toctree-l3"><a class="reference internal" href="query.html">Менеджер модели, запросы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="migrations.html">Миграции</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../views/index.html">Представления</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forms/index.html">Формы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../templates.html">Шаблоны</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../urls.html">Роутинг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../signals.html">Сигналы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contrib/index.html">Батарейки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auth/index.html">Пользователи, права, авторизация</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli.html">Консольные команды</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Другое</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">DJANGO</a> &raquo;</li>
+        
+          <li><a href="index.html">Модель</a> &raquo;</li>
+        
+      <li>Поля модели</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/django/models/fields.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Поля модели<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="field">
+<h2>Field<a class="headerlink" href="#field" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.Field">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">Field</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.db.models.Field" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Базовый класс для полей модели</p>
+<ul class="simple">
+<li><p>blank=False - булево, поле может хранить пустое значение</p></li>
+<li><p>choices=None - список значений, которые может хранить поле</p></li>
+<li><p>default=NOT_PROVIDED - значение поля по умолчанию</p></li>
+<li><p>db_column=None - строка, имя поля таблицы, если не задано,
+будет использоваться имя поля модели</p></li>
+<li><p>db_index=False - булево, создавать индекс для поля</p></li>
+<li><p>editable=True - булево, пле редактируемо</p></li>
+<li><p>help_text=““ - строка, доп описание</p></li>
+<li><p>max_length - число, максимальная длина поля</p></li>
+<li><p>null=False - булево, поле может хранить значение null</p></li>
+<li><p>primary_key=False - булево, поле является первичным ключом</p></li>
+<li><p>unique=False - булево, значения в поле уникальны</p></li>
+<li><p>unique_for_date=None - имя поля модели
+(<code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code> или <code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code>)
+относительно которых данное поле уникально</p></li>
+<li><p>unique_for_month=None - имя поля модели
+(<code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code> или <code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code>)
+относительно которых данное поле уникально</p></li>
+<li><p>unique_for_year=None - имя поля модели
+(<code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code> или <code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code>)
+относительно которых данное поле уникально</p></li>
+<li><p>verbose_name=None - имя поля</p></li>
+<li><p>auto_created=False</p></li>
+<li><p>error_messages=Non</p></li>
+<li><p>db_tablespace=None</p></li>
+<li><p>name=None</p></li>
+<li><p>rel=None</p></li>
+<li><p>serialize=True</p></li>
+<li><p>validators=[]</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="autofield">
+<h2>AutoField<a class="headerlink" href="#autofield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.AutoField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">AutoField</code><a class="headerlink" href="#django.db.models.AutoField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Счетчик</p>
+</dd></dl>
+
+</div>
+<div class="section" id="bigintegerfield">
+<h2>BigIntegerField<a class="headerlink" href="#bigintegerfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.BigIntegerField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">BigIntegerField</code><a class="headerlink" href="#django.db.models.BigIntegerField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>64-разрядное, длинное число.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="booleanfield">
+<h2>BooleanField<a class="headerlink" href="#booleanfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.BooleanField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">BooleanField</code><a class="headerlink" href="#django.db.models.BooleanField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Логическое поле</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">is_done</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span>
+    <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">db_index</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;done&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="charfield">
+<h2>CharField<a class="headerlink" href="#charfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.CharField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">CharField</code><a class="headerlink" href="#django.db.models.CharField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Строковое поле</p>
+<p>Наследник <code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></p>
+<p>Обязательные поля:</p>
+<ul class="simple">
+<li><p>max_length - число, максимальное количесвто символов</p></li>
+<li><p>unique - булево, поле уникально</p></li>
+<li><p>unique_for_date - поле, для которого это поле уникально</p></li>
+<li><p>verbose_name - название поля</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+    <span class="n">max_length</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">verbose_name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+    <span class="n">unique_for_date</span><span class="o">=</span><span class="s2">&quot;pubdate&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="datefield">
+<h2>DateField<a class="headerlink" href="#datefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.DateField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">DateField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.db.models.DateField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле с датой</p>
+<p>Наследник <code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></p>
+<ul class="simple">
+<li><p>auto_now=False - булево, автоматический прописывать текущее время
+при сохранении</p></li>
+<li><p>auto_now_add=False - булево, автоматический прописывать текущее время
+при добавлении</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Good</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="n">updated</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="datetimefield">
+<h2>DateTimeField<a class="headerlink" href="#datetimefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.DateTimeField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">DateTimeField</code><a class="headerlink" href="#django.db.models.DateTimeField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле с датой и временем</p>
+<p>Наследник <code class="xref py py-class docutils literal notranslate"><span class="pre">DateField</span></code></p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">updated</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="emailfield">
+<h2>EmailField<a class="headerlink" href="#emailfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.EmailField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">EmailField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.db.models.EmailField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле с электронной почтой</p>
+<p>Наследник <code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></p>
+<ul class="simple">
+<li><p>max_length = 254</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">email</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EmailField</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="filefield">
+<h2>FileField<a class="headerlink" href="#filefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.FileField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">FileField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.db.models.FileField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле для хранения файла любого типа</p>
+<ul class="simple">
+<li><p>upload_to - строка, путь к папке куда грузить файлы</p></li>
+</ul>
+<dl class="attribute">
+<dt id="django.db.models.FileField.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#django.db.models.FileField.name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Путь к файлу, относитльно MEDIA_ROOT</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.db.models.FileField.size">
+<code class="sig-name descname">size</code><a class="headerlink" href="#django.db.models.FileField.size" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Размер файла в байтах</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.db.models.FileField.url">
+<code class="sig-name descname">url</code><a class="headerlink" href="#django.db.models.FileField.url" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Интернет адрес файла</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="floatfield">
+<h2>FloatField<a class="headerlink" href="#floatfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.FloatField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">FloatField</code><a class="headerlink" href="#django.db.models.FloatField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Число с плавающей точкой</p>
+</dd></dl>
+
+</div>
+<div class="section" id="genericipaddressfield">
+<h2>GenericIPAddressField<a class="headerlink" href="#genericipaddressfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.GenericIPAddressField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">GenericIPAddressField</code><a class="headerlink" href="#django.db.models.GenericIPAddressField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле с IPv4 или IPv6 адресом</p>
+</dd></dl>
+
+</div>
+<div class="section" id="imagefield">
+<h2>ImageField<a class="headerlink" href="#imagefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.ImageField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">ImageField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.db.models.ImageField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле для хранения изображений</p>
+<p>Требует установленной библиоткеи pillow</p>
+<ul class="simple">
+<li><p>upload_to - строка, путь к папке куда грузить файлы</p></li>
+<li><p>width_field - имя поля модели, где будет храниться ширина изображения</p></li>
+<li><p>height_field - имя поля модели, где будет храниться высота изображения</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ImageField</span><span class="p">(</span><span class="n">upload_to</span><span class="o">=</span><span class="s1">&#39;images/&#39;</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ImageField</span><span class="p">(</span><span class="n">upload_to</span><span class="o">=</span><span class="s1">&#39;images/%Y/%m/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">thumbnail_width</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveSmallIntegerField</span><span class="p">()</span>
+<span class="n">thumbnail_height</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveSmallIntegerField</span><span class="p">()</span>
+<span class="n">thumbnail</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ImageField</span><span class="p">(</span>
+    <span class="n">upload_to</span><span class="o">=</span><span class="s1">&#39;thumbnails/&#39;</span><span class="p">,</span>
+    <span class="n">width_field</span><span class="o">=</span><span class="s1">&#39;thumbnail_width&#39;</span><span class="p">,</span>
+    <span class="n">height_field</span><span class="o">=</span><span class="s1">&#39;thumbnail_height&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="n">SomeModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="c1"># obj.thumbnail.url</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="django.db.models.ImageField.height">
+<code class="sig-name descname">height</code><a class="headerlink" href="#django.db.models.ImageField.height" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Высота картинки</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.db.models.ImageField.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#django.db.models.ImageField.name" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Путь к файлу, относитльно MEDIA_ROOT</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.db.models.ImageField.size">
+<code class="sig-name descname">size</code><a class="headerlink" href="#django.db.models.ImageField.size" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Размер файла в байтах</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.db.models.ImageField.url">
+<code class="sig-name descname">url</code><a class="headerlink" href="#django.db.models.ImageField.url" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Интернет адрес файла</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="django.db.models.ImageField.width">
+<code class="sig-name descname">width</code><a class="headerlink" href="#django.db.models.ImageField.width" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Высота картинки</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="django.db.models.ImageField.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">save=True</em><span class="sig-paren">)</span><a class="headerlink" href="#django.db.models.ImageField.delete" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Удаляет выбранный файл.</p>
+<p>Параметр save указывает, сохранять ли модель после удаления файла.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SomeModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">this_record</span> <span class="o">=</span> <span class="n">SomeModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">this_record</span><span class="o">.</span><span class="n">thumbnail</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">thumbnail</span><span class="p">:</span>
+            <span class="n">this_record</span><span class="o">.</span><span class="n">thumbnail</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">save</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">thumbnail</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">save</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="integerfield">
+<h2>IntegerField<a class="headerlink" href="#integerfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.IntegerField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">IntegerField</code><a class="headerlink" href="#django.db.models.IntegerField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>32-разрядное, обычное число</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.core.validators</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MinValueValidator</span><span class="p">,</span>  <span class="n">MaxValueValidator</span><span class="p">)</span>
+
+<span class="n">CATEGORIES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;car&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;house&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Good</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="n">category</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">choices</span><span class="o">=</span><span class="n">CATEGORIES</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">db_index</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">discount</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">MinValueValidator</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+                    <span class="n">MaxValueValidator</span><span class="p">(</span><span class="mi">100</span><span class="p">)])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="ipaddressfield">
+<h2>IPAddressField<a class="headerlink" href="#ipaddressfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.IPAddressField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">IPAddressField</code><a class="headerlink" href="#django.db.models.IPAddressField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле с IPv4 адресом</p>
+</dd></dl>
+
+</div>
+<div class="section" id="positiveintegerfield">
+<h2>PositiveIntegerField<a class="headerlink" href="#positiveintegerfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.PositiveIntegerField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">PositiveIntegerField</code><a class="headerlink" href="#django.db.models.PositiveIntegerField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>32-разрядное, положительное число</p>
+</dd></dl>
+
+</div>
+<div class="section" id="positivesmallintegerfield">
+<h2>PositiveSmallIntegerField<a class="headerlink" href="#positivesmallintegerfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.PositiveSmallIntegerField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">PositiveSmallIntegerField</code><a class="headerlink" href="#django.db.models.PositiveSmallIntegerField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>16-разрядное положительное число</p>
+</dd></dl>
+
+</div>
+<div class="section" id="slugfield">
+<h2>SlugField<a class="headerlink" href="#slugfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.SlugField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">SlugField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.db.models.SlugField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Короткий заголовок или название, которое включает только символы латиницы,
+цифры, дефисы и символы подчеркивания.</p>
+<p>Наследник <code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></p>
+<ul class="simple">
+<li><p>max_length = 50</p></li>
+<li><p>db_index = True</p></li>
+</ul>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.utils.text</span> <span class="kn">import</span> <span class="n">slugify</span>
+
+<span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">slug</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">SlugField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slug</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Image</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="smallintegerfield">
+<h2>SmallIntegerField<a class="headerlink" href="#smallintegerfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.SmallIntegerField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">SmallIntegerField</code><a class="headerlink" href="#django.db.models.SmallIntegerField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>16-разрядное положительное число</p>
+</dd></dl>
+
+</div>
+<div class="section" id="textfield">
+<h2>TextField<a class="headerlink" href="#textfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.TextField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">TextField</code><a class="headerlink" href="#django.db.models.TextField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Текстовое поле</p>
+<p>Наследник <code class="xref py py-class docutils literal notranslate"><span class="pre">Field</span></code></p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="timefield">
+<h2>TimeField<a class="headerlink" href="#timefield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.TimeField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">TimeField</code><a class="headerlink" href="#django.db.models.TimeField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле со временем</p>
+</dd></dl>
+
+</div>
+<div class="section" id="urlfield">
+<h2>URLField<a class="headerlink" href="#urlfield" title="Ссылка на этот заголовок">¶</a></h2>
+<dl class="class">
+<dt id="django.db.models.URLField">
+<em class="property">class </em><code class="sig-prename descclassname">django.db.models.</code><code class="sig-name descname">URLField</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#django.db.models.URLField" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Поле с интернет адресом</p>
+<p>Наследник <code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></p>
+<ul class="simple">
+<li><p>max_length = 200</p></li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="relations.html" class="btn btn-neutral float-right" title="Связи моделей" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="meta.html" class="btn btn-neutral float-left" title="Метаданные" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

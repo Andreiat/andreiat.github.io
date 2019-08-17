@@ -1,0 +1,565 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Анимации, преобразования и переходы &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="next" title="Псевдоклассы" href="psevdoclass.html" />
+    <link rel="prev" title="table - таблицы" href="table.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html5/index.html">HTML5</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">CSS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="selectors.html">Селекторы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html">Фон</a></li>
+<li class="toctree-l2"><a class="reference internal" href="border.html">Границы, отступы и поля</a></li>
+<li class="toctree-l2"><a class="reference internal" href="font.html">Текст</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">Списки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="marking.html">Разметка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">table - таблицы</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Анимации, преобразования и переходы</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#animation">animation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animation-name">animation-name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animation-duration">animation-duration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animation-timing-function">animation-timing-function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animation-delay">animation-delay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animation-iteration-count">animation-iteration-count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animation-direction">animation-direction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animation-fill-mode">animation-fill-mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animation-play-state">animation-play-state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keyframes">keyframes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transform">transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transform-origin">transform-origin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transition">transition</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#transition-property">transition-property</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transition-duration">transition-duration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transition-timing-function">transition-timing-function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transition-delay">transition-delay</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoclass.html">Псевдоклассы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psevdoelements.html">Псевдоэлементы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flex.html">flex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">Цвета</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">Единицы измерения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#content">content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#cursor">cursor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#linear-gradient">linear-gradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#media">media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#opacity">opacity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#orphans">orphans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#page-break-after">page-break-after</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#page-break-before">page-break-before</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#page-break-inside">page-break-inside</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#widows">widows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">CSS</a> &raquo;</li>
+        
+      <li>Анимации, преобразования и переходы</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/css/animation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Анимации, преобразования и переходы<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="animation">
+<h2>animation<a class="headerlink" href="#animation" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Анимация</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">animation</span><span class="p">:</span> <span class="k">animation-name</span> <span class="k">animation-duration</span> <span class="k">animation-timing-function</span> <span class="k">animation-iteration-count</span> <span class="k">animation-direction</span> <span class="k">animation-delay</span> <span class="k">animation-fill-mode</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">div</span> <span class="p">{</span>
+    <span class="k">animation</span><span class="p">:</span> <span class="n">fadeOut</span> <span class="mi">2</span><span class="kt">s</span> <span class="kc">ease-in-out</span> <span class="mi">2</span> <span class="kc">alternate</span> <span class="mi">5</span><span class="kt">s</span> <span class="kc">forwards</span><span class="p">,</span> <span class="n">glow</span> <span class="mi">5</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="animation-name">
+<h2>animation-name<a class="headerlink" href="#animation-name" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Назначает анимацию, созданной с помощью <a class="reference internal" href="#keyframes"><span class="std std-ref">keyframes</span></a></p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">animation-name</span><span class="p">:</span> <span class="n">myAnimation</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="animation-duration">
+<h2>animation-duration<a class="headerlink" href="#animation-duration" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Продолжительность анимации</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem1</span> <span class="p">{</span>
+    <span class="k">animation-duration</span><span class="p">:</span> <span class="mi">2</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem2</span> <span class="p">{</span>
+    <span class="k">animation-duration</span><span class="p">:</span> <span class="mi">1000</span><span class="kt">ms</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="animation-timing-function">
+<h2>animation-timing-function<a class="headerlink" href="#animation-timing-function" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Скорость анимации в течении выделенной ей периода.</p>
+<ul class="simple">
+<li><p>linear</p></li>
+<li><p>ease</p></li>
+<li><p>easi-in</p></li>
+<li><p>easi-out</p></li>
+<li><p>easi-in-out</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem1</span> <span class="p">{</span>
+    <span class="k">animation-timing-function</span><span class="p">:</span> <span class="kc">ease-in-out</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem2</span> <span class="p">{</span>
+    <span class="k">animation-timing-function</span><span class="p">:</span> <span class="nb">cubic-bezier</span><span class="p">(</span><span class="mf">.20</span><span class="p">,</span> <span class="mf">.96</span><span class="p">,</span> <span class="mf">.74</span><span class="p">,</span> <span class="mf">.07</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="animation-delay">
+<h2>animation-delay<a class="headerlink" href="#animation-delay" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Время задержки начала анимации</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem1</span> <span class="p">{</span>
+    <span class="k">animation-delay</span><span class="p">:</span> <span class="mi">2</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem2</span> <span class="p">{</span>
+    <span class="k">animation-delay</span><span class="p">:</span> <span class="mi">1000</span><span class="kt">ms</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="animation-iteration-count">
+<h2>animation-iteration-count<a class="headerlink" href="#animation-iteration-count" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Количество запусков анимации</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem1</span> <span class="p">{</span>
+    <span class="k">animation-iteration-count</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem2</span> <span class="p">{</span>
+    <span class="k">animation-iteration-count</span><span class="p">:</span> <span class="kc">infinite</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="animation-direction">
+<h2>animation-direction<a class="headerlink" href="#animation-direction" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Стартовая точка анимации, для последующей анимации</p>
+<ul class="simple">
+<li><p>normal - по умолчанию</p></li>
+<li><p>alternate</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">animation-direction</span><span class="p">:</span> <span class="kc">alternate</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="animation-fill-mode">
+<h2>animation-fill-mode<a class="headerlink" href="#animation-fill-mode" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Стилизация элемента вначале и-или в конце</p>
+<ul class="simple">
+<li><p>backwards</p></li>
+<li><p>forwards</p></li>
+<li><p>both</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">animation-fill-mode</span><span class="p">:</span> <span class="kc">backwards</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="animation-play-state">
+<h2>animation-play-state<a class="headerlink" href="#animation-play-state" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Управляет проигрыванием анимации, например можно использовать с псевдоклассом <cite>hover</cite></p>
+<ul class="simple">
+<li><p>pause</p></li>
+<li><p>running</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">animation-play-state</span><span class="p">:</span> <span class="k">pause</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="keyframes">
+<span id="id2"></span><h2>keyframes<a class="headerlink" href="#keyframes" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Позволяет дать анимации имя, которое потом можно будет применить к любому элементу страницы.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">keyframes</span> <span class="nt">myAnimation</span> <span class="p">{</span>
+    <span class="nt">from</span> <span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">to</span> <span class="p">{</span>
+        <span class="k">background-color</span><span class="p">:</span> <span class="n">whote</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="nt">плавно</span> <span class="nt">опускает</span> <span class="nt">элемент</span>
+<span class="p">@</span><span class="k">keyframes</span> <span class="nt">bounce</span> <span class="p">{</span>
+    <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">translateY</span><span class="p">(</span><span class="mi">-2000</span><span class="kt">px</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">70</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">translateY</span><span class="p">(</span><span class="mi">30</span><span class="kt">px</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">90</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">translateY</span><span class="p">(</span><span class="mi">-10</span><span class="kt">px</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">translateY</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">some-class</span> <span class="p">{</span>
+    <span class="k">animation</span><span class="p">:</span> <span class="n">bounce</span> <span class="mf">0.6</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="nt">встряска</span> <span class="nt">формы</span>
+<span class="p">@</span><span class="k">keyframes</span> <span class="nt">shake</span> <span class="p">{</span>
+    <span class="nt">0</span><span class="o">%,</span> <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">translateX</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">10</span><span class="o">%,</span> <span class="nt">30</span><span class="o">%,</span> <span class="nt">50</span><span class="o">%,</span> <span class="nt">70</span><span class="o">%,</span> <span class="nt">90</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">translateX</span><span class="p">(</span><span class="mi">-10</span><span class="kt">px</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">20</span><span class="o">%,</span> <span class="nt">40</span><span class="o">%,</span> <span class="nt">60</span><span class="o">%,</span> <span class="nt">80</span><span class="o">%</span> <span class="p">{</span>
+        <span class="k">transform</span><span class="p">:</span> <span class="nb">translateX</span><span class="p">(</span><span class="mi">10</span><span class="kt">px</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">some-class</span> <span class="p">{</span>
+    <span class="k">animation</span><span class="p">:</span> <span class="n">shake</span> <span class="mf">0.6</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transform">
+<h2>transform<a class="headerlink" href="#transform" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Трансформация элемента: масштабирование, вращение, наклон или пермещение.</p>
+<ul class="simple">
+<li><p>perspective</p></li>
+<li><p>rotate</p></li>
+<li><p>rotateX</p></li>
+<li><p>rotateY</p></li>
+<li><p>rotate3d</p></li>
+<li><p>scale</p></li>
+<li><p>scaleX</p></li>
+<li><p>scaleY</p></li>
+<li><p>scaleZ</p></li>
+<li><p>scale3d</p></li>
+<li><p>skew</p></li>
+<li><p>skewX</p></li>
+<li><p>skewY</p></li>
+<li><p>translate</p></li>
+<li><p>translateX</p></li>
+<li><p>translateY</p></li>
+<li><p>translateZ</p></li>
+<li><p>translate3d</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem1</span> <span class="p">{</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">45</span><span class="kt">deg</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">elem2</span> <span class="p">{</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nt">elem3</span> <span class="p">{</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nf">skew</span><span class="p">(</span><span class="mi">45</span><span class="kt">deg</span> <span class="mi">0</span><span class="p">)</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">200</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate</span><span class="p">(</span><span class="mi">100</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="nb">scale</span><span class="p">(</span><span class="mf">.5</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transform-origin">
+<h2>transform-origin<a class="headerlink" href="#transform-origin" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Точка, в которой применяется трансформация.</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem1</span> <span class="p">{</span>
+    <span class="k">transform-origin</span><span class="p">:</span> <span class="kc">left</span> <span class="kc">top</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">transform-origin</span><span class="p">:</span> <span class="mi">0</span><span class="kt">%</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">transform-origin</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="mi">-100</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transition">
+<h2>transition<a class="headerlink" href="#transition" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Анимирует изменения CSS свойств элемента</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">transition</span><span class="p">:</span>
+        <span class="k">transition-property</span>
+        <span class="k">transition-duration</span>
+        <span class="k">transition-timing-function</span>
+        <span class="k">transition-delay</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">transition</span><span class="p">:</span> <span class="k">background-color</span> <span class="mf">1.5</span><span class="kt">s</span> <span class="kc">ease-in-out</span> <span class="mi">500</span><span class="kt">ms</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="transition-property">
+<h3>transition-property<a class="headerlink" href="#transition-property" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Определяет конкретные css-свойства</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">transition-property</span><span class="p">:</span> <span class="k">width</span><span class="p">,</span> <span class="kc">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem1</span> <span class="p">{</span>
+    <span class="k">transition-property</span><span class="p">:</span> <span class="kc">all</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transition-duration">
+<h3>transition-duration<a class="headerlink" href="#transition-duration" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Продолжительность анимации перехода</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem</span> <span class="p">{</span>
+    <span class="k">transition-duration</span><span class="p">:</span> <span class="mi">2</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem1</span> <span class="p">{</span>
+    <span class="k">transition-duration</span><span class="p">:</span> <span class="mi">2000</span><span class="kt">ms</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transition-timing-function">
+<h3>transition-timing-function<a class="headerlink" href="#transition-timing-function" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Скорость анимации перехода</p>
+<ul class="simple">
+<li><p>linear</p></li>
+<li><p>ease</p></li>
+<li><p>easi-in</p></li>
+<li><p>easi-out</p></li>
+<li><p>easi-in-out</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem1</span> <span class="p">{</span>
+    <span class="k">transition-timing-function</span><span class="p">:</span> <span class="kc">ease-in-out</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem2</span> <span class="p">{</span>
+    <span class="k">transition-timing-function</span><span class="p">:</span> <span class="nb">cubic-bezier</span><span class="p">(</span><span class="mf">.20</span><span class="p">,</span> <span class="mf">.96</span><span class="p">,</span> <span class="mf">.74</span><span class="p">,</span> <span class="mf">.07</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transition-delay">
+<h3>transition-delay<a class="headerlink" href="#transition-delay" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Время задержки перед началом анимации перехода</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">elem1</span> <span class="p">{</span>
+    <span class="k">transition-delay</span><span class="p">:</span> <span class="mi">2</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">elem2</span> <span class="p">{</span>
+    <span class="k">transition-delay</span><span class="p">:</span> <span class="mi">1000</span><span class="kt">ms</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="psevdoclass.html" class="btn btn-neutral float-right" title="Псевдоклассы" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="table.html" class="btn btn-neutral float-left" title="table - таблицы" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

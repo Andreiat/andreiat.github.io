@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>String - строки &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Boolean - логический тип данных" href="Boolean.html" />
+    <link rel="prev" title="NaN - нечисло" href="NaN.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">JavaScript</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Основные объекты</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data_structure/index.html">Типы данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Number.html">Числа (Number)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array.html">Массивы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html">Ассоциативный массив (object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Infinity.html">Infinity - бесконечность</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NaN.html">NaN - нечисло</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">String - строки</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Интерполяция</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Многострочные строки</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Boolean.html">Boolean - логический тип данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="null.html">null - ссылка на несуществующий объект</a></li>
+<li class="toctree-l3"><a class="reference internal" href="undefined.html">undefined - неопределнное значение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Function.html">Функции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules.html">Модули</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oper.html">Операторы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class.html">Классы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArrayBuffer.html">ArrayBuffer - буферный массив</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArrayTyped.html">Типизированные массивы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set.html">Set, WeakSet - коллекция уникальных типов любого типа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Map.html">Map, WeakMap - коллекция пар ключ-значение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Date.html">Date - объект дата</a></li>
+<li class="toctree-l3"><a class="reference internal" href="JSON.html">JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Math.html">Math - математические операции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RegExp.html">RegExp - Регулярные выражения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Symbol.html">Symbol - символ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Error.html">Исключения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Promise.html">Promise - асинхронная операция</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reflect.html">Reflect - исследование и обаботка свойств объектов</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dom/index.html">DOM - дерево html документа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frameworks/index.html">Библиотеки, фреймворки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">JavaScript</a> &raquo;</li>
+        
+          <li><a href="index.html">Основные объекты</a> &raquo;</li>
+        
+      <li>String - строки</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/js/base/String.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="string">
+<h1>String - строки<a class="headerlink" href="#string" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt id="String">
+<em class="property">class </em><code class="sig-name descname">String</code><a class="headerlink" href="#String" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Строки</p>
+<p>Наследник <a class="reference internal" href="data_structure/Object.html#Object" title="Object"><code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code></a></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
+<span class="nx">string</span> <span class="o">=</span> <span class="s1">&#39;ilnurgi&#39;</span><span class="p">;</span>
+<span class="nx">s</span> <span class="o">+=</span> <span class="s1">&#39;s&#39;</span><span class="p">;</span>
+
+<span class="s1">&#39;ilnurgi&#39;</span> <span class="o">+</span> <span class="mi">123</span><span class="p">;</span>
+<span class="c1">// &#39;ilnurgi123&#39;</span>
+
+<span class="s1">&#39;12&#39;</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c1">// 7</span>
+
+<span class="s1">&#39;day&#39;</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">// NaN</span>
+
+<span class="s1">&#39;a&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;b&#39;</span><span class="p">;</span>
+<span class="c1">// true</span>
+
+<span class="s1">&#39;c&#39;</span> <span class="o">&lt;</span> <span class="s1">&#39;b&#39;</span><span class="p">;</span>
+<span class="c1">// false</span>
+
+<span class="s1">&#39;bra&#39;</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">// NaN</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="String.length">
+<code class="sig-name descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#String.length" title="Ссылка на это определение">¶</a></dt>
+<dd><div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ilnurgi&#39;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="c1">// 7</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.charAt">
+<code class="sig-name descname">charAt</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#String.charAt" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает символ по индексу</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ilnurgi&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// &#39;n&#39;</span>
+
+<span class="s1">&#39;ilnurgi&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="c1">// &#39;&#39;</span>
+
+<span class="s1">&#39;ilnurgi&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1">// &#39;&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.charCodeAt">
+<code class="sig-name descname">charCodeAt</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#String.charCodeAt" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, код символа из строки</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;!&#39;</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="c1">// 33</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.codePointAt">
+<code class="sig-name descname">codePointAt</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#String.codePointAt" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает неотрицательное целое число - кодовый пнкт символа.</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;\uD83D\uDE91&#39;</span><span class="p">.</span><span class="nx">codePointAt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1">// 56977</span>
+
+<span class="s1">&#39;\u{1F691}&#39;</span><span class="p">.</span><span class="nx">codePointAt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1">// 56977</span>
+
+<span class="s1">&#39;hello&#39;</span><span class="p">.</span><span class="nx">codePointAt</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// 1080</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.concat">
+<code class="sig-name descname">concat</code><span class="sig-paren">(</span><em class="sig-param">string..</em><span class="sig-paren">)</span><a class="headerlink" href="#String.concat" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает новую строку, соединенную с указанными</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C&quot;</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">);</span>
+<span class="c1">// &quot;Cat&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.endsWith">
+<code class="sig-name descname">endsWith</code><span class="sig-paren">(</span><em class="sig-param">string</em>, <em class="sig-param">index</em><span class="sig-paren">)</span><a class="headerlink" href="#String.endsWith" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Проверяет, заканчивается ли строка на указанную</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ilnurgi&quot;</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;il&quot;</span><span class="p">);</span>
+<span class="c1">// false</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.fromCharCode">
+<code class="sig-name descname">fromCharCode</code><span class="sig-paren">(</span><em class="sig-param">char...</em><span class="sig-paren">)</span><a class="headerlink" href="#String.fromCharCode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Статический метод, возвращает строку из последовательности чисел</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mi">33</span><span class="p">);</span>
+<span class="c1">// &#39;!&#39;</span>
+
+<span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mi">104</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">);</span>
+<span class="c1">// &quot;hello&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.fromCodePoint">
+<code class="sig-name descname">fromCodePoint</code><span class="sig-paren">(</span><em class="sig-param">number1</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#String.fromCodePoint" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку по кодовым пунктам</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCodePoint</span><span class="p">(</span><span class="mh">0x61</span><span class="p">,</span> <span class="mh">0x62</span><span class="p">,</span> <span class="mh">0x63</span><span class="p">);</span>
+<span class="c1">// &#39;abc&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.includes">
+<code class="sig-name descname">includes</code><span class="sig-paren">(</span><em class="sig-param">string</em>, <em class="sig-param">index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#String.includes" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Проверяет наличие подстроки в строке</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ilnurgi&quot;</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;il&#39;</span><span class="p">);</span>
+<span class="c1">// true</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.indexOf">
+<code class="sig-name descname">indexOf</code><span class="sig-paren">(</span><em class="sig-param">searchString</em><span class="optional">[</span>, <em class="sig-param">start_pos</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#String.indexOf" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, индекс вхождения подстроки в строку.</p>
+<p>Возвращает -1 если не найдено</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;строка&#39;</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;ока&quot;</span><span class="p">);</span>
+<span class="c1">// 3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.lastIndexOf">
+<code class="sig-name descname">lastIndexOf</code><span class="sig-paren">(</span><em class="sig-param">searchString</em><span class="optional">[</span>, <em class="sig-param">start_pos</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#String.lastIndexOf" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, индекс вхождения подстроки в строку с конца</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;строка&#39;</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s2">&quot;ока&quot;</span><span class="p">);</span>
+<span class="c1">// 3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.localeCompare">
+<code class="sig-name descname">localeCompare</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#String.localeCompare" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сравнивает строки с учетом порядка следования символов национальных алфавитов</p>
+<p>Возвращает 0 если строки равны
+Возвращает отрицательное число если аргумент меньше</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">regexp</em><span class="sig-paren">)</span><a class="headerlink" href="#String.match" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает массив найденных вхождений по регулярке</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;kj5k3&quot;</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\d/</span><span class="p">);</span>
+<span class="c1">// [&quot;5&quot;]</span>
+
+<span class="s2">&quot;kj5k3&quot;</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\d/g</span><span class="p">);</span>
+<span class="c1">// [&quot;5&quot;, &quot;3&quot;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.normalize">
+<code class="sig-name descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#String.normalize" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает нормализованную строку, по умолчанию NFC.</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Нормализованная версия не используется для отображение, только для различных операции: сравнение и т.п.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.repeat">
+<code class="sig-name descname">repeat</code><span class="sig-paren">(</span><em class="sig-param">count</em><span class="sig-paren">)</span><a class="headerlink" href="#String.repeat" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, содержащую указанное количество копии</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;a&quot;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="c1">// &quot;aaaaa&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.replace">
+<code class="sig-name descname">replace</code><span class="sig-paren">(</span><em class="sig-param">searchValue</em>, <em class="sig-param">replaceValue</em><span class="sig-paren">)</span><a class="headerlink" href="#String.replace" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает новую строку, заменяя в исходной указанные значения</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;mother_in_low&quot;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">);</span>
+<span class="c1">// &quot;mother-in-low&quot;</span>
+
+<span class="s2">&quot;mother_in_low&quot;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">c</span><span class="p">){});</span>
+
+<span class="s2">&quot;(777)888-2323&quot;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\((\d{3})\)/g</span><span class="p">,</span> <span class="s2">&quot;$1-&quot;</span><span class="p">);</span>
+<span class="c1">// &quot;111-888-2323&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param">regexp</em><span class="sig-paren">)</span><a class="headerlink" href="#String.search" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает число, позицию первого символа соответсвия</p>
+<p>В отличие от <a class="reference internal" href="#String.indexOf" title="String.indexOf"><code class="xref py py-meth docutils literal notranslate"><span class="pre">String.indexOf()</span></code></a>
+работает только с регулярными выражениями</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.slice">
+<code class="sig-name descname">slice</code><span class="sig-paren">(</span><em class="sig-param">start</em><span class="optional">[</span>, <em class="sig-param">end</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#String.slice" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает срез строки</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;stringify&#39;</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="c1">// &#39;s&#39;</span>
+
+<span class="s1">&#39;stringify&#39;</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="c1">// &#39;ingify&#39;</span>
+
+<span class="s1">&#39;stringify&#39;</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">);</span>
+<span class="c1">// &#39;ngify&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.split">
+<code class="sig-name descname">split</code><span class="sig-paren">(</span><em class="sig-param">separator</em>, <em class="sig-param">limit</em><span class="sig-paren">)</span><a class="headerlink" href="#String.split" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возаращает массив строк, полученная путем разбиения исходной</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;12345&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="c1">// [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]</span>
+
+<span class="s2">&quot;last, first ,middle&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/\s*,\s*/</span><span class="p">);</span>
+<span class="c1">// [&quot;last&quot;, &quot;first&quot;, &quot;middle&quot;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.startsWith">
+<code class="sig-name descname">startsWith</code><span class="sig-paren">(</span><em class="sig-param">string</em>, <em class="sig-param">index=0</em><span class="sig-paren">)</span><a class="headerlink" href="#String.startsWith" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Проверяет, начинается ли строка с указанной строки</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ilnurgi&quot;</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;il&quot;</span><span class="p">);</span>
+<span class="c1">// true</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.substr">
+<code class="sig-name descname">substr</code><span class="sig-paren">(</span><em class="sig-param">start</em><span class="optional">[</span>, <em class="sig-param">length</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#String.substr" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Срез строки с позиции <cite>start</cite>, количество <cite>length</cite> символов</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;stringify&#39;</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="c1">// &#39;ring&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.substring">
+<code class="sig-name descname">substring</code><span class="sig-paren">(</span><em class="sig-param">start</em><span class="optional">[</span>, <em class="sig-param">end</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#String.substring" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает срез строки</p>
+<p>В отличие от <a class="reference internal" href="#String.slice" title="String.slice"><code class="xref py py-meth docutils literal notranslate"><span class="pre">String.slice()</span></code></a>
+отрицательные значение приравниваются к нулю.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;stringify&#39;</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="c1">// &#39;s&#39;</span>
+
+<span class="s1">&#39;stringify&#39;</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// &#39;ringify&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.toLocalLowerCase">
+<code class="sig-name descname">toLocalLowerCase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#String.toLocalLowerCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, приведенную к нижнему регистру в соответсвйи с локалью</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.toLocalUpperCase">
+<code class="sig-name descname">toLocalUpperCase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#String.toLocalUpperCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, приведенную к верхнему регистру в соответсвйи с локалью</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.toLowerCase">
+<code class="sig-name descname">toLowerCase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#String.toLowerCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, приведенную к нижнему регистру</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.toUpperCase">
+<code class="sig-name descname">toUpperCase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#String.toUpperCase" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает строку, приведенную к верхнему регистру</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="String.trim">
+<code class="sig-name descname">trim</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#String.trim" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает копию строки, с удаленными пробелами вначале и в конце</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="id1">
+<h2>Интерполяция<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;My first name is &quot;</span> <span class="o">+</span> <span class="s2">&quot;ilnur&quot;</span> <span class="o">+</span> <span class="s2">&quot; and last name &quot;</span> <span class="o">+</span> <span class="s2">&quot;ilnur&quot;</span> <span class="o">+</span> <span class="s2">&quot;gii&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;ilnur&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">last_nme</span> <span class="o">=</span> <span class="s2">&quot;gii&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="sb">`My first name is </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> and last name </span><span class="si">${</span><span class="nx">name</span> <span class="o">+</span> <span class="nx">last_name</span><span class="si">}</span><span class="sb">`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Многострочные строки<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">multiline_str</span> <span class="o">=</span> <span class="s2">&quot;1\n2&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>EcmaScript6</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">multiline_str</span> <span class="o">=</span> <span class="sb">`1</span>
+<span class="sb">2`</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Boolean.html" class="btn btn-neutral float-right" title="Boolean - логический тип данных" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="NaN.html" class="btn btn-neutral float-left" title="NaN - нечисло" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

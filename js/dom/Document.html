@@ -1,0 +1,785 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Document(HTMLDocument) - корневой элемент дерева &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="next" title="Node - узел дом дерева документа" href="Node.html" />
+    <link rel="prev" title="Location - адрес текущей страницы" href="Location.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">JavaScript</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../base/index.html">Основные объекты</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">DOM - дерево html документа</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Navigator.html">Navigator - содержит информацию о браузере и операционной системе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Screen.html">Screen - информация об экране</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Location.html">Location - адрес текущей страницы</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Document(HTMLDocument) - корневой элемент дерева</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Node.html">Node - узел дом дерева документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NodeList.html">NodeList - коллекция, содержащая все виды узлов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Element.html">Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HTMLCollection.html">HTMLCollection - коллекия, содержащая елементы Elemnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CharacterData.html">CharacterData - узел с текстом внутри</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Text.html">Text - текстовая последовательность в документе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Comment.html">Comment - коментарии в доме</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ApplicationCache.html">ApplicationCache - прикладной интерфейс управления кэшем приложений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ArrayBufferView.html">ArrayBufferView - общие свойства типов, основанных на ArrayBuffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Attr.html">Attr - атрибут элемента документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Audio.html">Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BeforeUnloadEvent.html">BeforeUnloadEvent - объект Event для событий выгрузки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Blob.html">Blob - блок двоичных данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BlobBuilder.html">BlobBuilder - используется для создания новых Blob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Button.html">Button - html элемент button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Canvas.html">Canvas - канвас</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Console.html">Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="History.html">History - журнал посещений объекта Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Image.html">Image - HTML img</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LocalStorage.html">LocalStorage - key-value хранилище</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SessionStorage.html">SessionStorage - key-value хранилище</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Window.html">Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSRule.html">CSSRule - правило в таблице стилей CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSStyleDeclaration.html">CSSStyleDeclaration - набор css-атрибутов и их значений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CSSStyleSheet.html">CSSStyleSheet - таблица стилей CSS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasGradient.html">CanvasGradient - цветной градиент для использования в канвасе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasPattern.html">CanvasPattern - шаблон заполнения холста на основе готового изображения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CanvasRenderingContext2D.html">CanvasRenderingContext2D - объект, используемый для создания изображений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ClientRect.html">ClientRect - прямоугольник, описанный вокруг элемента</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CloseEvent.html">CloseEvent - определяет, был ли закрыт веб-сокет без ошибок</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ConsoleCommandLine.html">ConsoleCommandLine - утилита для работы с окном консоли</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Context.html">Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CustomEvent.html">CustomEvent - конструктор своих событий</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMException.html">DOMException - исключение, возбуждаемое web api</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMImplementation.html">DOMImplementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMSettableTokenList.html">DOMSettableTokenList</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DOMTokenList.html">DOMTokenList - множество лексем, разделенных пробелами</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataTransfer.html">DataTransfer - передача данных в операциях драгндроп мышью</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DataView.html">DataView</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DocumentFragment.html">DocumentFragment - смежные узлы и их поддеревья</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DocumentType.html">DocumentType - doctype документа</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ErrorEvent.html">ErrorEvent - необработанное исключение в фоновом потоке</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Event.html">Event - событие</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EventSource.html">EventTarget - comet-соединение с http-сервером</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EventTarget.html">EventTarget - объект, способный принимать события</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FieldSet.html">FieldSet - HTML fieldset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="File.html">File - файл в локальной файловой системе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileError.html">FileError - ошибка, возникшая во время чтения файла</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileReader.html">FileReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileReaderSync.html">FileReaderSync</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Form.html">Form - HTML form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormControl.html">FormControl - общие особенности всех элементов форм</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormData.html">FormData - тело HTTP-запроса multipart/form-data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FormValidity.html">FormValidity - реализует проверку элемента формы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geocoordinates.html">Geocoordinates - географическре местонахождение</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geolocation.html">Geolocation - позволяет получить широту и долготу местоположения пользователя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GeolocationError.html">GeolocationError - ошибка возникающая в ходе определения местонахождения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Geoposition.html">Geoposition - информация о местонахождении с указанием времени определения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HashChangeEvent.html">HashChangeEvent - объект события, поставляемый по событию hashchange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IFrame.html">IFrame - HTML iframe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ImageData.html">ImageData - массив пискелей канваса</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Input.html">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Link.html">Link - HTML гиперссылка</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MediaElement.html">MediaElement - элемент проигрывателя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MediaError.html">MediaError - ошибка в элементе audio, video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessageChannel.html">MessageChannel - пара соединенных объектов MessagePorts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessageEvent.html">MessageEvent - сообщение из другого контекста выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessagePort.html">MessagePort - передает асинхронные сообщения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Meter.html">Meter - графический индикатор, шкала</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MouseEvent.html">MouseEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NamedNodeMap.html">NamedNodeMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Option.html">Option - HTML option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Output.html">Output - HTML output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PageTransitionEvent.html">PageTransitionEvent - объект события для событий «pageshow» и «pagehide»</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PopStateEvent.html">PopStateEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProcessingInstruction.html">ProcessingInstruction - инструкция обработки в XML-документе</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Progress.html">Progress - индикатор хода выполнения операции</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ProgressEvent.html">ProgressEvent - событие продолжения загрузки, выгрузки или чтения файла</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Script.html">Script - HTML-script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Select.html">Select - графический список для выбора</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Storage.html">Storage - хранилище пар имя/значение на стороне клиента</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StorageEvent.html">StorageEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Style.html">Style - HTML style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Table.html">Table - HTML table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableCell.html">TableCell - ячейка HTML таблицы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableRow.html">TableRow - HTML tr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TableSection.html">TableSection - раздел верхнего или нижнего колонтитула либо тела таблицы</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextArea.html">TextArea - многострочная область ввода текста</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TextMetrics.html">TextMetrics - определяет размеры текстовой строки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TimeRanges.html">TimeRanges - множество фрагментов мультимедийных данных</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TypedArray.html">TypedArray - массивы с двоичными элементами фиксированного размера</a></li>
+<li class="toctree-l3"><a class="reference internal" href="URL.html">URL - методы для работы с URL-адресами, ссылающимися на объекты Blob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Video.html">Video - HTML video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WebSocket.html">WebSocket - двунаправленное сетевое соединение, подобное сокету</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Worker.html">Worker - фоновый поток выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerGlobalScope.html">WorkerGlobalScope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerLocation.html">WorkerLocation - URL-адрес главного сценария в фоновом потоке выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WorkerNavigator.html">WorkerNavigator - информация о броузере для фонового потока выполнения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequest.html">XMLHttpRequest(AJAX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequestProgressEvent.html">XMLHttpRequestProgressEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="XMLHttpRequestUpload.html">XMLHttpRequestUpload</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../frameworks/index.html">Библиотеки, фреймворки</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../environment/index.html">Environment</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">JavaScript</a> &raquo;</li>
+        
+          <li><a href="index.html">DOM - дерево html документа</a> &raquo;</li>
+        
+      <li>Document(HTMLDocument) - корневой элемент дерева</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/js/dom/Document.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="document-htmldocument">
+<h1>Document(HTMLDocument) - корневой элемент дерева<a class="headerlink" href="#document-htmldocument" title="Ссылка на этот заголовок">¶</a></h1>
+<dl class="class">
+<dt id="Document">
+<em class="property">class </em><code class="sig-name descname">Document</code><a class="headerlink" href="#Document" title="Ссылка на это определение">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="HTMLDocument">
+<em class="property">class </em><code class="sig-name descname">HTMLDocument</code><a class="headerlink" href="#HTMLDocument" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Наследник <a class="reference internal" href="Node.html#Node" title="Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">test</span><span class="p">,</span>
+        <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">test_input</span><span class="p">,</span>
+        <span class="nx">elem</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&#39;test&#39;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&#39;test_input&#39;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="HTMLDocument.activeElement">
+<code class="sig-name descname">activeElement</code><a class="headerlink" href="#HTMLDocument.activeElement" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Элемент документа <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a>, владею­щий в настоящий момент фокусом ввода.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.all">
+<code class="sig-name descname">all</code><a class="headerlink" href="#HTMLDocument.all" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Коллекция, <a class="reference internal" href="HTMLCollection.html#HTMLAllCollection" title="HTMLAllCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLAllCollection</span></code></a>,
+всех элементов дерева, в порядке их появления в разметке</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">all</span><span class="p">;</span>
+<span class="c1">// HTMLAllCollection[11]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.anchors">
+<code class="sig-name descname">anchors</code><a class="headerlink" href="#HTMLDocument.anchors" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Список <cite>&lt;a&gt;</cite> элементов страницы с атрибутом <cite>name</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.applets">
+<code class="sig-name descname">applets</code><a class="headerlink" href="#HTMLDocument.applets" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Список <cite>&lt;applet&gt;</cite> элементов страницы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.async">
+<code class="sig-name descname">async</code><a class="headerlink" href="#HTMLDocument.async" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Определяет, будет ли загрузка XML документа с сервера осуществяться асинхронно</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.body">
+<code class="sig-name descname">body</code><a class="headerlink" href="#HTMLDocument.body" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Тело документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.bgColor">
+<code class="sig-name descname">bgColor</code><a class="headerlink" href="#HTMLDocument.bgColor" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Цвет фона документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.characterSet">
+<code class="sig-name descname">characterSet</code><a class="headerlink" href="#HTMLDocument.characterSet" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­ди­ров­ка сим­во­лов до­ку­мен­та</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.charset">
+<code class="sig-name descname">charset</code><a class="headerlink" href="#HTMLDocument.charset" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­ди­ров­ка сим­во­лов до­ку­мен­та. Это свой­ст­во по­доб­но свой­ст­ву characterSet, но его зна­че­ние мож­но из­ме­нить, что­бы сме­нить ко­ди­ров­ку до­ку­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.compatMode">
+<code class="sig-name descname">compatMode</code><a class="headerlink" href="#HTMLDocument.compatMode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во со­дер­жит стро­ку «BackCompat», ес­ли до­ку­мент ото­бра­жа­ет­ся в «ре­жи­ме со­вмес­ти­мо­сти» для об­рат­ной со­вмес­ти­мо­сти со старыми браузерами</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.cookie">
+<code class="sig-name descname">cookie</code><a class="headerlink" href="#HTMLDocument.cookie" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сслыка на куки</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s2">&quot;info=123; max-age=604800&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.defaultCharset">
+<code class="sig-name descname">defaultCharset</code><a class="headerlink" href="#HTMLDocument.defaultCharset" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ко­ди­ров­ка сим­во­лов в бро­узе­ре по умол­ча­нию.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.defaultView">
+<code class="sig-name descname">defaultView</code><a class="headerlink" href="#HTMLDocument.defaultView" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объ­ект <a class="reference internal" href="Window.html#Window" title="Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code></a> бро­узе­ра, в ко­то­ром ото­бра­жа­ет­ся дан­ный до­ку­мент.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.designMode">
+<code class="sig-name descname">designMode</code><a class="headerlink" href="#HTMLDocument.designMode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ес­ли это свой­ст­во име­ет зна­че­ние «on», до­ку­мент це­ли­ком дос­ту­пен для ре­дак­ти­ро­ва­ния. Ес­ли это свой­ст­во име­ет зна­че­ние «off», до­ку­мент це­ли­ком не­дос­ту­пен для ре­дак­ти­ро­ва­ния. (Но при этом дос­туп­ны­ми для ре­дак­ти­ро­ва­ния мо­гут быть от­ дель­ные эле­мен­ты с ус­та­нов­лен­ным свой­ст­вом contenteditable.)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.dir">
+<code class="sig-name descname">dir</code><a class="headerlink" href="#HTMLDocument.dir" title="Ссылка на это определение">¶</a></dt>
+<dd><p>В  HTML-до­ку­мен­тах это свой­ст­во со­от­вет­ст­ву­ет ат­ри­бу­ту dir эле­мен­та &lt;html&gt;. То есть это то же са­мое зна­че­ние, что и documentElement.dir.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.doctype">
+<code class="sig-name descname">doctype</code><a class="headerlink" href="#HTMLDocument.doctype" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Узел <a class="reference internal" href="DocumentType.html#DocumentType" title="DocumentType"><code class="xref py py-class docutils literal notranslate"><span class="pre">DocumentType</span></code></a>, пред­став­ляю­щий объ­яв­ле­ние &lt;!DOCTYPE&gt; до­ку­мен­та.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.documentElement">
+<code class="sig-name descname">documentElement</code><a class="headerlink" href="#HTMLDocument.documentElement" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает корневой элемент документа <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.domain">
+<code class="sig-name descname">domain</code><a class="headerlink" href="#HTMLDocument.domain" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Доменное имя сервера</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.embeds">
+<code class="sig-name descname">embeds</code><a class="headerlink" href="#HTMLDocument.embeds" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Объ­ект, по­доб­ный мас­си­ву, со­дер­жа­щий эле­мен­ты &lt;embed&gt;, при­сут­ст­вую­щие в до­ку­мен­те.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.forms">
+<code class="sig-name descname">forms</code><a class="headerlink" href="#HTMLDocument.forms" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Список <cite>&lt;form&gt;</cite> элементов страницы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.head">
+<code class="sig-name descname">head</code><a class="headerlink" href="#HTMLDocument.head" title="Ссылка на это определение">¶</a></dt>
+<dd><p>В HTML-до­ку­мен­тах это свой­ст­во ссы­ла­ет­ся на эле­мент &lt;head&gt;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.inputEncoding">
+<code class="sig-name descname">inputEncoding</code><a class="headerlink" href="#HTMLDocument.inputEncoding" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает входную кодировку документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.images">
+<code class="sig-name descname">images</code><a class="headerlink" href="#HTMLDocument.images" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Список <cite>&lt;img&gt;</cite> элементов страницы</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.implementation">
+<code class="sig-name descname">implementation</code><a class="headerlink" href="#HTMLDocument.implementation" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на <a class="reference internal" href="DOMImplementation.html#DOMImplementation" title="DOMImplementation"><code class="xref py py-class docutils literal notranslate"><span class="pre">DOMImplementation</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.lastModified">
+<code class="sig-name descname">lastModified</code><a class="headerlink" href="#HTMLDocument.lastModified" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Дата последнего изменения документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.links">
+<code class="sig-name descname">links</code><a class="headerlink" href="#HTMLDocument.links" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Список <cite>&lt;a&gt;</cite> элементов с атрибутом <cite>href</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.location">
+<code class="sig-name descname">location</code><a class="headerlink" href="#HTMLDocument.location" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Ссылка на урл <a class="reference internal" href="Location.html#Location" title="Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> документа</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.plugins">
+<code class="sig-name descname">plugins</code><a class="headerlink" href="#HTMLDocument.plugins" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Синоним embed</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.readyState">
+<code class="sig-name descname">readyState</code><a class="headerlink" href="#HTMLDocument.readyState" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Это свой­ст­во со­дер­жит стро­ку «loading», по­ка про­дол­жа­ет­ся за­груз­ка до­ку­мен­та, и стро­ку «complete» по ее окон­ча­нии. Ко­гда это свой­ст­во по­лу­ча­ет зна­че­ние «comp­le­te», бро­узер воз­бу­ж­да­ет со­бы­тие «readystatechange» в объ­ек­те Document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.referrer">
+<code class="sig-name descname">referrer</code><a class="headerlink" href="#HTMLDocument.referrer" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Адрес документа, содержащего ссылку, которая привела на текущую страницу</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.scripts">
+<code class="sig-name descname">scripts</code><a class="headerlink" href="#HTMLDocument.scripts" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Коллекция, содержащий все элементы &lt;script&gt;, присутствующие в документе.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.styleSheets">
+<code class="sig-name descname">styleSheets</code><a class="headerlink" href="#HTMLDocument.styleSheets" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Коллекция стилей, <a class="reference internal" href="CSSStyleSheet.html#CSSStyleSheet" title="CSSStyleSheet"><code class="xref py py-class docutils literal notranslate"><span class="pre">CSSStyleSheet</span></code></a>, присутсвующих в документе</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.title">
+<code class="sig-name descname">title</code><a class="headerlink" href="#HTMLDocument.title" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Заголовок окна</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="HTMLDocument.xmlEncoding">
+<code class="sig-name descname">xmlEncoding</code><a class="headerlink" href="#HTMLDocument.xmlEncoding" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает XML кодировку документа</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.adoptNode">
+<code class="sig-name descname">adoptNode</code><span class="sig-paren">(</span><em class="sig-param">node</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.adoptNode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Уда­ля­ет узел node из лю­бо­го до­ку­мен­та, ча­стью ко­то­ро­го он яв­лял­ся на мо­мент вы­зо­ва, и  за­пи­сы­ва­ет в  свой­ст­во ownerDocument уз­ла ссыл­ку на те­ку­щий до­ку­мент, под­го­тав­ли­вая его к  до­бав­ле­нию в  те­ку­щий до­ку­мент.</p>
+<p>По­хо­жий на не­го ме­тод importNode() ко­пи­ру­ет узел из дру­го­го до­ку­мен­та, не уда­ляя его.</p>
+<p>Возвращает <a class="reference internal" href="Node.html#Node" title="Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.close" title="Ссылка на это определение">¶</a></dt>
+<dd><p>За­кры­ва­ет по­ток вы­во­да до­ку­мен­та, от­кры­тый ме­то­дом open(), за­став­ляя вы­вес­ти все бу­фе­ри­зо­ван­ные дан­ные.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.createAttribute">
+<code class="sig-name descname">createAttribute</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.createAttribute" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="Attr.html#Attr" title="Attr"><code class="xref py py-class docutils literal notranslate"><span class="pre">Attr</span></code></a>, создает атрибутный узел с указанным именем</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.createComment">
+<code class="sig-name descname">createComment</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.createComment" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает и возвращает узел <a class="reference internal" href="Comment.html#Comment" title="Comment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Comment</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.createDocumentFragment">
+<code class="sig-name descname">createDocumentFragment</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.createDocumentFragment" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает и возвращает <a class="reference internal" href="DocumentFragment.html#DocumentFragment" title="DocumentFragment"><code class="xref py py-class docutils literal notranslate"><span class="pre">DocumentFragment</span></code></a> пустой фрагмент документа</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.createElement">
+<code class="sig-name descname">createElement</code><span class="sig-paren">(</span><em class="sig-param">tagname</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.createElement" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает и возвращает новый <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a>, указанного типа</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">input_element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.createElementNS">
+<code class="sig-name descname">createElementNS</code><span class="sig-paren">(</span><em class="sig-param">namespace</em>, <em class="sig-param">qualifiedName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.createElementNS" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает и возвращает новый уникальный <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.createProcessingInstruction">
+<code class="sig-name descname">createProcessingInstruction</code><span class="sig-paren">(</span><em class="sig-param">target</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.createProcessingInstruction" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="ProcessingInstruction.html#ProcessingInstruction" title="ProcessingInstruction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingInstruction</span></code></a> узел</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.createEvent">
+<code class="sig-name descname">createEvent</code><span class="sig-paren">(</span><em class="sig-param">eventInterface</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.createEvent" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Создает и возвращает неинициализированный объект <a class="reference internal" href="Event.html#Event" title="Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a></p>
+<ul>
+<li><p><cite>eventInterface</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><cite>Event</cite></p></li>
+<li><p><cite>UIEvent</cite></p></li>
+<li><p><cite>MouseEvent</cite></p></li>
+<li><p><cite>MessageEvent</cite></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">createProcessingInstruction</code><span class="sig-paren">(</span><em class="sig-param">target</em>, <em class="sig-param">data</em><span class="sig-paren">)</span></dt>
+<dd><p>Создает и возвращает новый узел <a class="reference internal" href="ProcessingInstruction.html#ProcessingInstruction" title="ProcessingInstruction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessingInstruction</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.createTextNode">
+<code class="sig-name descname">createTextNode</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.createTextNode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает текстовый узел <a class="reference internal" href="Text.html#Text" title="Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.elementFromPoint">
+<code class="sig-name descname">elementFromPoint</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.elementFromPoint" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает самый глубоко вложенный <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> с оконными координатами</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.execCommand">
+<code class="sig-name descname">execCommand</code><span class="sig-paren">(</span><em class="sig-param">commandId</em><span class="optional">[</span>, <em class="sig-param">showUI</em><span class="optional">[</span>, <em class="sig-param">value</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.execCommand" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Выполняет команду редактирования.</p>
+<ul class="simple">
+<li><p><cite>bold</cite></p></li>
+<li><p><cite>createLi</cite></p></li>
+<li><p><cite>delete</cite></p></li>
+<li><p><cite>formatBloc</cite></p></li>
+<li><p><cite>forwardDelete</cite></p></li>
+<li><p><cite>insertImage</cite></p></li>
+<li><p><cite>insertHTML</cite></p></li>
+<li><p><cite>insertLineBreak</cite></p></li>
+<li><p><cite>insertOrderedList</cite></p></li>
+<li><p><cite>insertUnorderedList</cite></p></li>
+<li><p><cite>insertParagraph</cite></p></li>
+<li><p><cite>insertText</cite></p></li>
+<li><p><cite>italic</cite></p></li>
+<li><p><cite>redo</cite></p></li>
+<li><p><cite>selectAll</cite></p></li>
+<li><p><cite>subscript</cite></p></li>
+<li><p><cite>superscript</cite></p></li>
+<li><p><cite>undo</cite></p></li>
+<li><p><cite>unlink</cite></p></li>
+<li><p><cite>unselect</cite></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.getElementById">
+<code class="sig-name descname">getElementById</code><span class="sig-paren">(</span><em class="sig-param">elementId</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.getElementById" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает элемент <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> по id</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.getElementsByClassName">
+<code class="sig-name descname">getElementsByClassName</code><span class="sig-paren">(</span><em class="sig-param">elementClassName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.getElementsByClassName" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref py py-class docutils literal notranslate"><span class="pre">NodeList</span></code></a> элементов с указанным классом</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.getElementsByName">
+<code class="sig-name descname">getElementsByName</code><span class="sig-paren">(</span><em class="sig-param">elementName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.getElementsByName" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref py py-class docutils literal notranslate"><span class="pre">NodeList</span></code></a> элементов с указанным именем</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.getElementsByTagName">
+<code class="sig-name descname">getElementsByTagName</code><span class="sig-paren">(</span><em class="sig-param">tagName</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.getElementsByTagName" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает список <a class="reference internal" href="NodeList.html#NodeList" title="NodeList"><code class="xref py py-class docutils literal notranslate"><span class="pre">NodeList</span></code></a> элементов с указанным тегом</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.hasFocus">
+<code class="sig-name descname">hasFocus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.hasFocus" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Документ в фокусе</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.importNode">
+<code class="sig-name descname">importNode</code><span class="sig-paren">(</span><em class="sig-param">node</em>, <em class="sig-param">deep</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.importNode" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает узел <a class="reference internal" href="Node.html#Node" title="Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> определенный в другом документе.</p>
+<ul class="simple">
+<li><p><cite>deep</cite> - копировать потомки узла</p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.open">
+<code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">name</em>, <em class="sig-param">features</em><span class="optional">[</span>, <em class="sig-param">replace</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.open" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Возвращает <a class="reference internal" href="Window.html#Window" title="Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code></a>, аналог <code class="xref js js-func docutils literal notranslate"><span class="pre">Window.open()</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">open</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">type='text/html'</em><span class="optional">[</span>, <em class="sig-param">replace</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><p>Возвращает <a class="reference internal" href="#Document" title="Document"><code class="xref py py-class docutils literal notranslate"><span class="pre">Document</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.queryCommandEnabled">
+<code class="sig-name descname">queryCommandEnabled</code><span class="sig-paren">(</span><em class="sig-param">string commandId</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.queryCommandEnabled" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Воз­вра­ща­ет true, ес­ли в на­стоя­щий мо­мент мож­но пе­ре­дать ко­ман­ду commandId ме­то­ ду execCommand(), и false – в про­тив­ном слу­чае. На­при­мер, бес­смыс­лен­но пе­ре­да­вать ко­ман­ду «undo», ко­гда не­че­го от­ме­нять.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.queryCommandIndeterm">
+<code class="sig-name descname">queryCommandIndeterm</code><span class="sig-paren">(</span><em class="sig-param">string commandId</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.queryCommandIndeterm" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Воз­вра­ща­ет true, ес­ли commandId на­хо­дит­ся в со­стоя­нии, для ко­то­ро­го query­Com­mand­State() не мо­жет вер­нуть ка­кое-то оп­ре­де­лен­ное зна­че­ние. Ко­ман­ды, оп­ре­де­ляе­мые спе­ци­фи­ка­ци­ей HTML5, не мо­гут на­хо­дить­ся в не­оп­ре­де­лен­ном со­стоя­нии, но ко­ман­ды, оп­ре­де­ляе­мые бро­узе­ром, – мо­гут.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.queryCommandState">
+<code class="sig-name descname">queryCommandState</code><span class="sig-paren">(</span><em class="sig-param">string commandId</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.queryCommandState" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Воз­вра­ща­ет со­стоя­ние ко­ман­ды commandId. Не­ко­то­рые ко­ман­ды ре­дак­ти­ро­ва­ния, та­кие как «bold» и  «italic», име­ют со­стоя­ние true, ес­ли под тек­сто­вым кур­со­ром или в вы­де­лен­ной об­лас­ти на­хо­дит­ся текст, на­бран­ный кур­си­вом, и false – в про­тив­ном слу­чае. Од­на­ко боль­шин­ст­во ко­манд не име­ют со­стоя­ния, и для них этот ме­тод все­гда воз­вра­ща­ет false.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.queryCommandSupported">
+<code class="sig-name descname">queryCommandSupported</code><span class="sig-paren">(</span><em class="sig-param">string commandId</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.queryCommandSupported" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Воз­вра­ща­ет true, ес­ли бро­узер под­дер­жи­ва­ет ука­зан­ную ко­ман­ду, и false – в про­тив­ном слу­чае.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.queryCommandValue">
+<code class="sig-name descname">queryCommandValue</code><span class="sig-paren">(</span><em class="sig-param">string commandId</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.queryCommandValue" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Воз­вра­ща­ет со­стоя­ние ука­зан­ной ко­ман­ды в ви­де стро­ки.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.querySelector">
+<code class="sig-name descname">querySelector</code><span class="sig-paren">(</span><em class="sig-param">selector</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.querySelector" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Выборка элементов из дом дерева по селектору</p>
+<p>Возвращает <a class="reference internal" href="Element.html#HTMLElement" title="HTMLElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLElement</span></code></a> или <a class="reference internal" href="Element.html#Element" title="Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.some_class&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.write">
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">text[, text1 [...]]</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.write" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Записываем строку в документ</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="HTMLDocument.writeln">
+<code class="sig-name descname">writeln</code><span class="sig-paren">(</span><em class="sig-param">text</em><span class="sig-paren">)</span><a class="headerlink" href="#HTMLDocument.writeln" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Записываем строку в документ с переводом каретки</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Node.html" class="btn btn-neutral float-right" title="Node - узел дом дерева документа" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Location.html" class="btn btn-neutral float-left" title="Location - адрес текущей страницы" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

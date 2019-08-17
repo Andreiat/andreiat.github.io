@@ -1,0 +1,767 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ru" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ru" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Usage of Pipenv &mdash; wiki от 1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Алфавитный указатель" href="../../genindex.html" />
+    <link rel="search" title="Поиск" href="../../search.html" />
+    <link rel="prev" title="Basic Usage of Pipenv" href="base.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../django/index.html">DJANGO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../django-extentions/index.html">DJANGO-EXTENTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html/index.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../html5/index.html">HTML5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../css/index.html">CSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../js/index.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootstrap/index.html">BOOTSTRAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jquery/index.html">JQUERY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vuejs/index.html">VUE.JS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Environment</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Pipenv</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="base.html">Basic Usage of Pipenv</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Advanced Usage of Pipenv</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Предостережения</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specifying-package-indexes">Specifying Package Indexes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-a-pypi-mirror">Using a PyPI Mirror</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#injecting-credentials-into-pipfiles-via-environment-variables">Injecting credentials into Pipfiles via environment variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specifying-basically-anything">Specifying Basically Anything</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-pipenv-for-deployments">Using pipenv for Deployments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pipenv-and-other-python-distributions">Pipenv and Other Python Distributions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generating-a-requirements-txt">Generating a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#detection-of-security-vulnerabilities">Detection of Security Vulnerabilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#community-integrations">Community Integrations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#open-a-module-in-your-editor">Open a Module in Your Editor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#automatic-python-installation">Automatic Python Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#automatic-loading-of-env">Automatic Loading of <code class="docutils literal notranslate"><span class="pre">.env</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-script-shortcuts">Custom Script Shortcuts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#support-for-environment-variables">Support for Environment Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-with-environment-variables">Configuration With Environment Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-virtual-environment-location">Custom Virtual Environment Location</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testing-projects">Testing Projects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shell-completion">Shell Completion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-platform-provided-python-components">Working with Platform-Provided Python Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pipfile-vs-setup-py">Pipfile vs setup.py</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-pipenv-s-cache-location">Changing Pipenv’s Cache Location</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-default-python-versions">Changing Default Python Versions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Environment</a> &raquo;</li>
+        
+          <li><a href="index.html">Pipenv</a> &raquo;</li>
+        
+      <li>Advanced Usage of Pipenv</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/environment/pipenv/advanced.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-usage-of-pipenv">
+<span id="advanced"></span><h1>Advanced Usage of Pipenv<a class="headerlink" href="#advanced-usage-of-pipenv" title="Ссылка на этот заголовок">¶</a></h1>
+<div class="section" id="id1">
+<h2>Предостережения<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
+<ul class="simple">
+<li><p>Dependencies of wheels provided in a <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> will not be captured by <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pipenv</span> <span class="pre">lock</span></code>.</p></li>
+<li><p>There are some known issues with using private indexes, related to hashing. We’re actively working to solve this problem. You may have great luck with this, however.</p></li>
+<li><p>Installation is intended to be as deterministic as possible  use the <code class="docutils literal notranslate"><span class="pre">--sequential</span></code> flag to increase this, if experiencing issues.</p></li>
+</ul>
+</div>
+<div class="section" id="specifying-package-indexes">
+<h2>Specifying Package Indexes<a class="headerlink" href="#specifying-package-indexes" title="Ссылка на этот заголовок">¶</a></h2>
+<p>If you’d like a specific package to be installed with a specific package index, you can do the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">source</span><span class="p">]]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://pypi.python.org/simple&quot;</span>
+<span class="n">verify_ssl</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;pypi&quot;</span>
+
+<span class="p">[[</span><span class="n">source</span><span class="p">]]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://pypi.home.kennethreitz.org/simple&quot;</span>
+<span class="n">verify_ssl</span> <span class="o">=</span> <span class="n">false</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;home&quot;</span>
+
+<span class="p">[</span><span class="n">dev</span><span class="o">-</span><span class="n">packages</span><span class="p">]</span>
+
+<span class="p">[</span><span class="n">packages</span><span class="p">]</span>
+<span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">}</span>
+<span class="n">maya</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;pypi&quot;</span><span class="p">}</span>
+<span class="n">records</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span>
+</pre></div>
+</div>
+<p>Very fancy.</p>
+</div>
+<div class="section" id="using-a-pypi-mirror">
+<h2>Using a PyPI Mirror<a class="headerlink" href="#using-a-pypi-mirror" title="Ссылка на этот заголовок">¶</a></h2>
+<p>If you’d like to override the default PyPI index urls with the url for a PyPI mirror, you can use the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv install --pypi-mirror &lt;mirror_url&gt;
+
+$ pipenv update --pypi-mirror &lt;mirror_url&gt;
+
+$ pipenv sync --pypi-mirror &lt;mirror_url&gt;
+
+$ pipenv lock --pypi-mirror &lt;mirror_url&gt;
+
+$ pipenv uninstall --pypi-mirror &lt;mirror_url&gt;
+</pre></div>
+</div>
+<p>Alternatively, you can set the <code class="docutils literal notranslate"><span class="pre">PIPENV_PYPI_MIRROR</span></code> environment variable.</p>
+</div>
+<div class="section" id="injecting-credentials-into-pipfiles-via-environment-variables">
+<h2>Injecting credentials into Pipfiles via environment variables<a class="headerlink" href="#injecting-credentials-into-pipfiles-via-environment-variables" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Pipenv will expand environment variables (if defined) in your Pipfile. Quite
+useful if you need to authenticate to a private PyPI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">source</span><span class="p">]]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://$USERNAME:$</span><span class="si">{PASSWORD}</span><span class="s2">@mypypi.example.com/simple&quot;</span>
+<span class="n">verify_ssl</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;pypi&quot;</span>
+</pre></div>
+</div>
+<p>Luckily - pipenv will hash your Pipfile <em>before</em> expanding environment
+variables (and, helpfully, will substitute the environment variables again when
+you install from the lock file - so no need to commit any secrets! Woo!)</p>
+<p>If your credentials contain a special character, surround the references to the environment variables with quotation marks. For example, if your password contain a double quotation mark, surround the password variable with single quotation marks. Otherwise, you may get a <code class="docutils literal notranslate"><span class="pre">ValueError,</span> <span class="pre">&quot;No</span> <span class="pre">closing</span> <span class="pre">quotation&quot;</span></code> error while installing dependencies.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">source</span><span class="p">]]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://$USERNAME:&#39;$</span><span class="si">{PASSWORD}</span><span class="s2">&#39;@mypypi.example.com/simple&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="specifying-basically-anything">
+<h2>Specifying Basically Anything<a class="headerlink" href="#specifying-basically-anything" title="Ссылка на этот заголовок">¶</a></h2>
+<p>If you’d like to specify that a specific package only be installed on certain systems,
+you can use <a class="reference external" href="https://www.python.org/dev/peps/pep-0508/">PEP 508 specifiers</a> to accomplish this.</p>
+<p>Here’s an example <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code>, which will only install <code class="docutils literal notranslate"><span class="pre">pywinusb</span></code> on Windows systems:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">source</span><span class="p">]]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://pypi.python.org/simple&quot;</span>
+<span class="n">verify_ssl</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;pypi&quot;</span>
+
+<span class="p">[</span><span class="n">packages</span><span class="p">]</span>
+<span class="n">requests</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span>
+<span class="n">pywinusb</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">sys_platform</span> <span class="o">=</span> <span class="s2">&quot;== &#39;win32&#39;&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Here’s a more complex example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">source</span><span class="p">]]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://pypi.python.org/simple&quot;</span>
+<span class="n">verify_ssl</span> <span class="o">=</span> <span class="n">true</span>
+
+<span class="p">[</span><span class="n">packages</span><span class="p">]</span>
+<span class="n">unittest2</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;&gt;=1.0,&lt;3.0&quot;</span><span class="p">,</span> <span class="n">markers</span><span class="o">=</span><span class="s2">&quot;python_version &lt; &#39;2.7.9&#39; or (python_version &gt;= &#39;3.0&#39; and python_version &lt; &#39;3.4&#39;)&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Magic. Pure, unadulterated magic.</p>
+</div>
+<div class="section" id="using-pipenv-for-deployments">
+<h2>Using pipenv for Deployments<a class="headerlink" href="#using-pipenv-for-deployments" title="Ссылка на этот заголовок">¶</a></h2>
+<p>You may want to use <code class="docutils literal notranslate"><span class="pre">pipenv</span></code> as part of a deployment process.</p>
+<p>You can enforce that your <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> is up to date using the <code class="docutils literal notranslate"><span class="pre">--deploy</span></code> flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv install --deploy
+</pre></div>
+</div>
+<p>This will fail a build if the <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> is out of date, instead of generating a new one.</p>
+<p>Or you can install packages exactly as specified in <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> using the <code class="docutils literal notranslate"><span class="pre">sync</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv sync
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p><code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">install</span> <span class="pre">--ignore-pipfile</span></code> is nearly equivalent to <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">sync</span></code>, but <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">sync</span></code> will <em>never</em> attempt to re-lock your dependencies as it is considered an atomic operation.  <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">install</span></code> by default does attempt to re-lock unless using the <code class="docutils literal notranslate"><span class="pre">--deploy</span></code> flag.</p>
+</div>
+<div class="section" id="deploying-system-dependencies">
+<h3>Deploying System Dependencies<a class="headerlink" href="#deploying-system-dependencies" title="Ссылка на этот заголовок">¶</a></h3>
+<p>You can tell Pipenv to install a Pipfile’s contents into its parent system with the <code class="docutils literal notranslate"><span class="pre">--system</span></code> flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv install --system
+</pre></div>
+</div>
+<p>This is useful for managing the system Python, and deployment infrastructure (e.g. Heroku does this).</p>
+</div>
+</div>
+<div class="section" id="pipenv-and-other-python-distributions">
+<h2>Pipenv and Other Python Distributions<a class="headerlink" href="#pipenv-and-other-python-distributions" title="Ссылка на этот заголовок">¶</a></h2>
+<p>To use Pipenv with a third-party Python distribution (e.g. Anaconda), you simply provide the path to the Python binary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv install --python=/path/to/python
+</pre></div>
+</div>
+<p>Anaconda uses Conda to manage packages. To reuse Conda installed Python packages, use the <code class="docutils literal notranslate"><span class="pre">--site-packages</span></code> flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv --python=/path/to/python --site-packages
+</pre></div>
+</div>
+</div>
+<div class="section" id="generating-a-requirements-txt">
+<h2>Generating a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code><a class="headerlink" href="#generating-a-requirements-txt" title="Ссылка на этот заголовок">¶</a></h2>
+<p>You can convert a <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> and <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> into a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file very easily, and get all the benefits of extras and other goodies we have included.</p>
+<p>Let’s take this <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">source</span><span class="p">]]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://pypi.python.org/simple&quot;</span>
+<span class="n">verify_ssl</span> <span class="o">=</span> <span class="n">true</span>
+
+<span class="p">[</span><span class="n">packages</span><span class="p">]</span>
+<span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>And generate a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> out of it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv lock -r
+chardet==3.0.4
+requests==2.18.4
+certifi==2017.7.27.1
+idna==2.6
+urllib3==1.22
+</pre></div>
+</div>
+<p>If you wish to generate a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> with only the development requirements you can do that too!  Let’s take the following <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="n">source</span><span class="p">]]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://pypi.python.org/simple&quot;</span>
+<span class="n">verify_ssl</span> <span class="o">=</span> <span class="n">true</span>
+
+<span class="p">[</span><span class="n">dev</span><span class="o">-</span><span class="n">packages</span><span class="p">]</span>
+<span class="n">pytest</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>And generate a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> out of it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv lock -r --dev
+py==1.4.34
+pytest==3.2.3
+</pre></div>
+</div>
+<p>Very fancy.</p>
+</div>
+<div class="section" id="detection-of-security-vulnerabilities">
+<h2>Detection of Security Vulnerabilities<a class="headerlink" href="#detection-of-security-vulnerabilities" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Pipenv includes the <a class="reference external" href="https://github.com/pyupio/safety">safety</a> package, and will use it to scan your dependency graph
+for known security vulnerabilities!</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat Pipfile
+[packages]
+django = &quot;==1.10.1&quot;
+
+$ pipenv check
+Checking PEP 508 requirements
+Passed!
+Checking installed package safety
+
+33075: django &gt;=1.10,&lt;1.10.3 resolved (1.10.1 installed)!
+Django before 1.8.x before 1.8.16, 1.9.x before 1.9.11, and 1.10.x before 1.10.3, when settings.DEBUG is True, allow remote attackers to conduct DNS rebinding attacks by leveraging failure to validate the HTTP Host header against settings.ALLOWED_HOSTS.
+
+33076: django &gt;=1.10,&lt;1.10.3 resolved (1.10.1 installed)!
+Django 1.8.x before 1.8.16, 1.9.x before 1.9.11, and 1.10.x before 1.10.3 use a hardcoded password for a temporary database user created when running tests with an Oracle database, which makes it easier for remote attackers to obtain access to the database server by leveraging failure to manually specify a password in the database settings TEST dictionary.
+
+33300: django &gt;=1.10,&lt;1.10.7 resolved (1.10.1 installed)!
+CVE-2017-7233: Open redirect and possible XSS attack via user-supplied numeric redirect URLs
+============================================================================================
+
+Django relies on user input in some cases  (e.g.
+:func:`django.contrib.auth.views.login` and :doc:`i18n &lt;/topics/i18n/index&gt;`)
+to redirect the user to an &quot;on success&quot; URL. The security check for these
+redirects (namely ``django.utils.http.is_safe_url()``) considered some numeric
+URLs (e.g. ``http:999999999``) &quot;safe&quot; when they shouldn&#39;t be.
+
+Also, if a developer relies on ``is_safe_url()`` to provide safe redirect
+targets and puts such a URL into a link, they could suffer from an XSS attack.
+
+CVE-2017-7234: Open redirect vulnerability in ``django.views.static.serve()``
+=============================================================================
+
+A maliciously crafted URL to a Django site using the
+:func:`~django.views.static.serve` view could redirect to any other domain. The
+view no longer does any redirects as they don&#39;t provide any known, useful
+functionality.
+
+Note, however, that this view has always carried a warning that it is not
+hardened for production use and should be used only as a development aid.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>In order to enable this functionality while maintaining its permissive
+copyright license, <cite>pipenv</cite> embeds an API client key for the backend
+Safety API operated by pyup.io rather than including a full copy of the
+CC-BY-NC-SA licensed Safety-DB database. This embedded client key is
+shared across all <cite>pipenv check</cite> users, and hence will be subject to
+API access throttling based on overall usage rather than individual
+client usage.</p>
+<p>You can also use your own safety API key by setting the
+environment variable <code class="docutils literal notranslate"><span class="pre">PIPENV_PYUP_API_KEY</span></code>.</p>
+</div>
+</div>
+<div class="section" id="community-integrations">
+<h2>Community Integrations<a class="headerlink" href="#community-integrations" title="Ссылка на этот заголовок">¶</a></h2>
+<p>There are a range of community-maintained plugins and extensions available for a range of editors and IDEs, as well as
+different products which integrate with Pipenv projects:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://heroku.com/python">Heroku</a> (Cloud Hosting)</p></li>
+<li><p><a class="reference external" href="https://platform.sh/hosting/python">Platform.sh</a> (Cloud Hosting)</p></li>
+<li><p><a class="reference external" href="https://pyup.io">PyUp</a> (Security Notification)</p></li>
+<li><p><a class="reference external" href="https://github.com/pwalsh/pipenv.el">Emacs</a> (Editor Integration)</p></li>
+<li><p><a class="reference external" href="https://github.com/fisherman/pipenv">Fish Shell</a> (Automatic <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pipenv</span> <span class="pre">shell</span></code>!)</p></li>
+<li><p><a class="reference external" href="https://code.visualstudio.com/docs/python/environments">VS Code</a> (Editor Integration)</p></li>
+<li><p><a class="reference external" href="https://www.jetbrains.com/pycharm/download/">PyCharm</a> (Editor Integration)</p></li>
+</ul>
+<p>Works in progress:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/kennethreitz/pipenv-sublime">Sublime Text</a> (Editor Integration)</p></li>
+<li><p>Mysterious upcoming Google Cloud product (Cloud Hosting)</p></li>
+</ul>
+</div>
+<div class="section" id="open-a-module-in-your-editor">
+<h2>Open a Module in Your Editor<a class="headerlink" href="#open-a-module-in-your-editor" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Pipenv allows you to open any Python module that is installed (including ones in your codebase), with the <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pipenv</span> <span class="pre">open</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv install -e git+https://github.com/kennethreitz/background.git#egg=background
+Installing -e git+https://github.com/kennethreitz/background.git#egg=background
+...
+Updated Pipfile.lock!
+
+$ pipenv open background
+Opening &#39;/Users/kennethreitz/.local/share/virtualenvs/hmm-mGOawwm_/src/background/background.py&#39; in your EDITOR.
+</pre></div>
+</div>
+<p>This allows you to easily read the code you’re consuming, instead of looking it up on GitHub.</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>The standard <code class="docutils literal notranslate"><span class="pre">EDITOR</span></code> environment variable is used for this. If you’re using VS Code, for example, you’ll want to <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">EDITOR=code</span></code> (if you’re on macOS you will want to <a class="reference external" href="https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line">install the command</a> on to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> first).</p>
+</div>
+</div>
+<div class="section" id="automatic-python-installation">
+<h2>Automatic Python Installation<a class="headerlink" href="#automatic-python-installation" title="Ссылка на этот заголовок">¶</a></h2>
+<p>If you have <a class="reference external" href="https://github.com/pyenv/pyenv#simple-python-version-management-pyenv">pyenv</a> installed and configured, Pipenv will automatically ask you if you want to install a required version of Python if you don’t already have it available.</p>
+<p>This is a very fancy feature, and we’re very proud of it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat Pipfile
+[[source]]
+url = &quot;https://pypi.python.org/simple&quot;
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+requests = &quot;*&quot;
+
+[requires]
+python_version = &quot;3.6&quot;
+
+$ pipenv install
+Warning: Python 3.6 was not found on your system
+Would you like us to install latest CPython 3.6 with pyenv? [Y/n]: y
+Installing CPython 3.6.2 with pyenv (this may take a few minutes)
+...
+Making Python installation global
+Creating a virtualenv for this project
+Using /Users/kennethreitz/.pyenv/shims/python3 to create virtualenv
+...
+No package provided, installing all dependencies.
+...
+Installing dependencies from Pipfile.lock
+рЯРН   вЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТвЭТ 5/5 вАФ 00:00:03
+To activate this project&#39;s virtualenv, run the following:
+ $ pipenv shell
+</pre></div>
+</div>
+<p>Pipenv automatically honors both the <code class="docutils literal notranslate"><span class="pre">python_full_version</span></code> and <code class="docutils literal notranslate"><span class="pre">python_version</span></code> <a class="reference external" href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a> specifiers.</p>
+<p>рЯТЂ рЯТЂ</p>
+</div>
+<div class="section" id="automatic-loading-of-env">
+<h2>Automatic Loading of <code class="docutils literal notranslate"><span class="pre">.env</span></code><a class="headerlink" href="#automatic-loading-of-env" title="Ссылка на этот заголовок">¶</a></h2>
+<p>If a <code class="docutils literal notranslate"><span class="pre">.env</span></code> file is present in your project, <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pipenv</span> <span class="pre">shell</span></code> and <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">pipenv</span> <span class="pre">run</span></code> will automatically load it, for you:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat .env
+HELLO=WORLDвПО
+
+$ pipenv run python
+Loading .env environment variables
+Python 2.7.13 (default, Jul 18 2017, 09:17:00)
+[GCC 4.2.1 Compatible Apple LLVM 8.1.0 (clang-802.0.42)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.environ[&#39;HELLO&#39;]
+&#39;WORLD&#39;
+</pre></div>
+</div>
+<p>This is very useful for keeping production credentials out of your codebase.
+We do not recommend committing <code class="docutils literal notranslate"><span class="pre">.env</span></code> files into source control!</p>
+<p>If your <code class="docutils literal notranslate"><span class="pre">.env</span></code> file is located in a different path or has a different name you may set the <code class="docutils literal notranslate"><span class="pre">PIPENV_DOTENV_LOCATION</span></code> environment variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ PIPENV_DOTENV_LOCATION=/path/to/.env pipenv shell
+</pre></div>
+</div>
+<p>To prevent pipenv from loading the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file, set the <code class="docutils literal notranslate"><span class="pre">PIPENV_DONT_LOAD_ENV</span></code> environment variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ PIPENV_DONT_LOAD_ENV=1 pipenv shell
+</pre></div>
+</div>
+</div>
+<div class="section" id="custom-script-shortcuts">
+<h2>Custom Script Shortcuts<a class="headerlink" href="#custom-script-shortcuts" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Pipenv supports creating custom shortcuts in the (optional) <code class="docutils literal notranslate"><span class="pre">[scripts]</span></code> section of your Pipfile.</p>
+<p>You can then run <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">run</span> <span class="pre">&lt;shortcut</span> <span class="pre">name&gt;</span></code> in your terminal to run the command in the
+context of your pipenv virtual environment even if you have not activated the pipenv shell first.</p>
+<p>For example, in your Pipfile:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[scripts]</span>
+<span class="n">printspam</span> <span class="o">=</span> <span class="s">&quot;python -c \&quot;print(&#39;I am a silly example, no one would need to do this&#39;)\&quot;&quot;</span>
+</pre></div>
+</div>
+<p>And then in your terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv run printspam
+I am a silly example, no one would need to do this
+</pre></div>
+</div>
+<p>Commands that expect arguments will also work.
+For example:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[scripts]</span>
+<span class="n">echospam</span> <span class="o">=</span> <span class="s">&quot;echo I am really a very silly example&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv run echospam &quot;indeed&quot;
+I am really a very silly example indeed
+</pre></div>
+</div>
+</div>
+<div class="section" id="support-for-environment-variables">
+<h2>Support for Environment Variables<a class="headerlink" href="#support-for-environment-variables" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Pipenv supports the usage of environment variables in place of authentication fragments
+in your Pipfile. These will only be parsed if they are present in the <code class="docutils literal notranslate"><span class="pre">[[source]]</span></code>
+section. For example:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[[source]]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;https://${PYPI_USERNAME}:${PYPI_PASSWORD}@my_private_repo.example.com/simple&quot;</span>
+<span class="n">verify_ssl</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;pypi&quot;</span>
+
+<span class="k">[dev-packages]</span>
+
+<span class="k">[packages]</span>
+<span class="n">requests</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span><span class="o">=</span><span class="s">&quot;*&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">&quot;home&quot;</span><span class="p">}</span>
+<span class="n">maya</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span><span class="o">=</span><span class="s">&quot;*&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s">&quot;pypi&quot;</span><span class="p">}</span>
+<span class="n">records</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+</pre></div>
+</div>
+<p>Environment variables may be specified as <code class="docutils literal notranslate"><span class="pre">${MY_ENVAR}</span></code> or <code class="docutils literal notranslate"><span class="pre">$MY_ENVAR</span></code>.</p>
+<p>On Windows, <code class="docutils literal notranslate"><span class="pre">%MY_ENVAR%</span></code> is supported in addition to <code class="docutils literal notranslate"><span class="pre">${MY_ENVAR}</span></code> or <code class="docutils literal notranslate"><span class="pre">$MY_ENVAR</span></code>.</p>
+</div>
+<div class="section" id="configuration-with-environment-variables">
+<span id="id2"></span><h2>Configuration With Environment Variables<a class="headerlink" href="#configuration-with-environment-variables" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Pipenv comes with a handful of options that can be enabled via shell environment
+variables. To activate them, simply create the variable in your shell and pipenv
+will detect it.</p>
+<p>If you’d like to set these environment variables on a per-project basis, I recommend utilizing the fantastic <a class="reference external" href="https://direnv.net">direnv</a> project, in order to do so.</p>
+<p>Also note that <a class="reference external" href="https://pip.pypa.io/en/stable/user_guide/#environment-variables">pip itself supports environment variables</a>, if you need additional customization.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ PIP_INSTALL_OPTION=&quot;-- -DCMAKE_BUILD_TYPE=Release&quot; pipenv install -e .
+</pre></div>
+</div>
+</div>
+<div class="section" id="custom-virtual-environment-location">
+<h2>Custom Virtual Environment Location<a class="headerlink" href="#custom-virtual-environment-location" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Pipenv automatically honors the <code class="docutils literal notranslate"><span class="pre">WORKON_HOME</span></code> environment variable, if you
+have it set  so you can tell pipenv to store your virtual environments
+wherever you want, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">WORKON_HOME</span><span class="o">=~/.</span><span class="n">venvs</span>
+</pre></div>
+</div>
+<p>In addition, you can also have Pipenv stick the virtualenv in <code class="docutils literal notranslate"><span class="pre">project/.venv</span></code> by setting the <code class="docutils literal notranslate"><span class="pre">PIPENV_VENV_IN_PROJECT</span></code> environment variable.</p>
+</div>
+<div class="section" id="testing-projects">
+<h2>Testing Projects<a class="headerlink" href="#testing-projects" title="Ссылка на этот заголовок">¶</a></h2>
+<p>Pipenv is being used in projects like <a class="reference external" href="https://github.com/kennethreitz/requests">Requests</a> for declaring development dependencies and running the test suite.</p>
+<p>We’ve currently tested deployments with both <a class="reference external" href="https://travis-ci.org/">Travis-CI</a> and <a class="reference external" href="https://tox.readthedocs.io/en/latest/">tox</a> with success.</p>
+<div class="section" id="travis-ci">
+<h3>Travis CI<a class="headerlink" href="#travis-ci" title="Ссылка на этот заголовок">¶</a></h3>
+<p>An example Travis CI setup can be found in <a class="reference external" href="https://github.com/kennethreitz/requests">Requests</a>. The project uses a Makefile to
+define common functions such as its <code class="docutils literal notranslate"><span class="pre">init</span></code> and <code class="docutils literal notranslate"><span class="pre">tests</span></code> commands. Here is
+a stripped down example <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">language</span><span class="p">:</span> <span class="n">python</span>
+<span class="n">python</span><span class="p">:</span>
+    <span class="o">-</span> <span class="s2">&quot;2.6&quot;</span>
+    <span class="o">-</span> <span class="s2">&quot;2.7&quot;</span>
+    <span class="o">-</span> <span class="s2">&quot;3.3&quot;</span>
+    <span class="o">-</span> <span class="s2">&quot;3.4&quot;</span>
+    <span class="o">-</span> <span class="s2">&quot;3.5&quot;</span>
+    <span class="o">-</span> <span class="s2">&quot;3.6&quot;</span>
+    <span class="o">-</span> <span class="s2">&quot;3.7-dev&quot;</span>
+
+<span class="c1"># command to install dependencies</span>
+<span class="n">install</span><span class="p">:</span> <span class="s2">&quot;make&quot;</span>
+
+<span class="c1"># command to run tests</span>
+<span class="n">script</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">make</span> <span class="n">test</span>
+</pre></div>
+</div>
+<p>and the corresponding Makefile:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">init</span><span class="p">:</span>
+    <span class="n">pip</span> <span class="n">install</span> <span class="n">pipenv</span>
+    <span class="n">pipenv</span> <span class="n">install</span> <span class="o">--</span><span class="n">dev</span>
+
+<span class="n">test</span><span class="p">:</span>
+    <span class="n">pipenv</span> <span class="n">run</span> <span class="n">pytest</span> <span class="n">tests</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tox-automation-project">
+<h3>Tox Automation Project<a class="headerlink" href="#tox-automation-project" title="Ссылка на этот заголовок">¶</a></h3>
+<p>Alternatively, you can configure a <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> like the one below for both local
+and external testing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">tox</span><span class="p">]</span>
+<span class="n">envlist</span> <span class="o">=</span> <span class="n">flake8</span><span class="o">-</span><span class="n">py3</span><span class="p">,</span> <span class="n">py26</span><span class="p">,</span> <span class="n">py27</span><span class="p">,</span> <span class="n">py33</span><span class="p">,</span> <span class="n">py34</span><span class="p">,</span> <span class="n">py35</span><span class="p">,</span> <span class="n">py36</span><span class="p">,</span> <span class="n">pypy</span>
+
+<span class="p">[</span><span class="n">testenv</span><span class="p">]</span>
+<span class="n">deps</span> <span class="o">=</span> <span class="n">pipenv</span>
+<span class="n">commands</span><span class="o">=</span>
+    <span class="n">pipenv</span> <span class="n">install</span> <span class="o">--</span><span class="n">dev</span>
+    <span class="n">pipenv</span> <span class="n">run</span> <span class="n">pytest</span> <span class="n">tests</span>
+
+<span class="p">[</span><span class="n">testenv</span><span class="p">:</span><span class="n">flake8</span><span class="o">-</span><span class="n">py3</span><span class="p">]</span>
+<span class="n">basepython</span> <span class="o">=</span> <span class="n">python3</span><span class="o">.</span><span class="mi">4</span>
+<span class="n">commands</span><span class="o">=</span>
+    <span class="n">pipenv</span> <span class="n">install</span> <span class="o">--</span><span class="n">dev</span>
+    <span class="n">pipenv</span> <span class="n">run</span> <span class="n">flake8</span> <span class="o">--</span><span class="n">version</span>
+    <span class="n">pipenv</span> <span class="n">run</span> <span class="n">flake8</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">docs</span> <span class="n">project</span> <span class="n">test</span>
+</pre></div>
+</div>
+<p>Pipenv will automatically use the virtualenv provided by <code class="docutils literal notranslate"><span class="pre">tox</span></code>. If <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">install</span> <span class="pre">--dev</span></code> installs e.g. <code class="docutils literal notranslate"><span class="pre">pytest</span></code>, then installed command <code class="docutils literal notranslate"><span class="pre">pytest</span></code> will be present in given virtualenv and can be called directly by <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">tests</span></code> instead of <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">run</span> <span class="pre">pytest</span> <span class="pre">tests</span></code>.</p>
+<p>You might also want to add <code class="docutils literal notranslate"><span class="pre">--ignore-pipfile</span></code> to <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">install</span></code>, as to
+not accidentally modify the lock-file on each test run. This causes Pipenv
+to ignore changes to the <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> and (more importantly) prevents it from
+adding the current environment to <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code>. This might be important as
+the current environment (i.e. the virtualenv provisioned by tox) will usually
+contain the current project (which may or may not be desired) and additional
+dependencies from <code class="docutils literal notranslate"><span class="pre">tox</span></code>’s <code class="docutils literal notranslate"><span class="pre">deps</span></code> directive. The initial provisioning may
+alternatively be disabled by adding <code class="docutils literal notranslate"><span class="pre">skip_install</span> <span class="pre">=</span> <span class="pre">True</span></code> to tox.ini.</p>
+<p>This method requires you to be explicit about updating the lock-file, which is
+probably a good idea in any case.</p>
+<p>A 3rd party plugin, <a class="reference external" href="https://tox-pipenv.readthedocs.io/en/latest/">tox-pipenv</a> is also available to use Pipenv natively with tox.</p>
+</div>
+</div>
+<div class="section" id="shell-completion">
+<h2>Shell Completion<a class="headerlink" href="#shell-completion" title="Ссылка на этот заголовок">¶</a></h2>
+<p>To enable completion in fish, add this to your config:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="p">(</span><span class="n">pipenv</span> <span class="o">--</span><span class="n">completion</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Alternatively, with bash or zsh, add this to your config:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;$(pipenv --completion)&quot;</span>
+</pre></div>
+</div>
+<p>Magic shell completions are now enabled!</p>
+</div>
+<div class="section" id="working-with-platform-provided-python-components">
+<h2>Working with Platform-Provided Python Components<a class="headerlink" href="#working-with-platform-provided-python-components" title="Ссылка на этот заголовок">¶</a></h2>
+<p>It’s reasonably common for platform specific Python bindings for
+operating system interfaces to only be available through the system
+package manager, and hence unavailable for installation into virtual
+environments with <cite>pip</cite>. In these cases, the virtual environment can
+be created with access to the system <cite>site-packages</cite> directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv --three --site-packages
+</pre></div>
+</div>
+<p>To ensure that all <cite>pip</cite>-installable components actually are installed
+into the virtual environment and system packages are only used for
+interfaces that don’t participate in Python-level dependency resolution
+at all, use the <cite>PIP_IGNORE_INSTALLED</cite> setting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ PIP_IGNORE_INSTALLED=1 pipenv install --dev
+</pre></div>
+</div>
+</div>
+<div class="section" id="pipfile-vs-setup-py">
+<span id="pipfile-vs-setuppy"></span><h2>Pipfile vs setup.py<a class="headerlink" href="#pipfile-vs-setup-py" title="Ссылка на этот заголовок">¶</a></h2>
+<p>There is a subtle but very important distinction to be made between <strong>applications</strong> and <strong>libraries</strong>. This is a very common source of confusion in the Python community.</p>
+<p>Libraries provide reusable functionality to other libraries and applications (let’s use the umbrella term <strong>projects</strong> here). They are required to work alongside other libraries, all with their own set of subdependencies. They define <strong>abstract dependencies</strong>. To avoid version conflicts in subdependencies of different libraries within a project, libraries should never ever pin dependency versions. Although they may specify lower or (less frequently) upper bounds, if they rely on some specific feature/fix/bug. Library dependencies are specified via <code class="docutils literal notranslate"><span class="pre">install_requires</span></code> in <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>.</p>
+<p>Libraries are ultimately meant to be used in some <strong>application</strong>. Applications are different in that they usually are not depended on by other projects. They are meant to be deployed into some specific environment and only then should the exact versions of all their dependencies and subdependencies be made concrete. To make this process easier is currently the main goal of Pipenv.</p>
+<p>To summarize:</p>
+<ul class="simple">
+<li><p>For libraries, define <strong>abstract dependencies</strong> via <code class="docutils literal notranslate"><span class="pre">install_requires</span></code> in <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>. The decision of which version exactly to be installed and where to obtain that dependency is not yours to make!</p></li>
+<li><p>For applications, define <strong>dependencies and where to get them</strong> in the <cite>Pipfile</cite> and use this file to update the set of <strong>concrete dependencies</strong> in <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code>. This file defines a specific idempotent environment that is known to work for your project. The <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> is your source of truth. The <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> is a convenience for you to create that lock-file, in that it allows you to still remain somewhat vague about the exact version of a dependency to be used. Pipenv is there to help you define a working conflict-free set of specific dependency-versions, which would otherwise be a very tedious task.</p></li>
+<li><p>Of course, <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> and Pipenv are still useful for library developers, as they can be used to define a development or test environment.</p></li>
+<li><p>And, of course, there are projects for which the distinction between library and application isn’t that clear. In that case, use <code class="docutils literal notranslate"><span class="pre">install_requires</span></code> alongside Pipenv and <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code>.</p></li>
+</ul>
+<p>You can also do this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pipenv install -e .
+</pre></div>
+</div>
+<p>This will tell Pipenv to lock all your <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> declared dependencies.</p>
+</div>
+<div class="section" id="changing-pipenv-s-cache-location">
+<h2>Changing Pipenv’s Cache Location<a class="headerlink" href="#changing-pipenv-s-cache-location" title="Ссылка на этот заголовок">¶</a></h2>
+<p>You can force Pipenv to use a different cache location by setting the environment variable <code class="docutils literal notranslate"><span class="pre">PIPENV_CACHE_DIR</span></code> to the location you wish. This is useful in the same situations that you would change <code class="docutils literal notranslate"><span class="pre">PIP_CACHE_DIR</span></code> to a different directory.</p>
+</div>
+<div class="section" id="changing-default-python-versions">
+<h2>Changing Default Python Versions<a class="headerlink" href="#changing-default-python-versions" title="Ссылка на этот заголовок">¶</a></h2>
+<p>By default, Pipenv will initialize a project using whatever version of python the python3 is. Besides starting a project with the <code class="docutils literal notranslate"><span class="pre">--three</span></code> or <code class="docutils literal notranslate"><span class="pre">--two</span></code> flags, you can also use <code class="docutils literal notranslate"><span class="pre">PIPENV_DEFAULT_PYTHON_VERSION</span></code> to specify what version to use when starting a project when <code class="docutils literal notranslate"><span class="pre">--three</span></code> or <code class="docutils literal notranslate"><span class="pre">--two</span></code> aren’t used.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="base.html" class="btn btn-neutral float-left" title="Basic Usage of Pipenv" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, trunin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
